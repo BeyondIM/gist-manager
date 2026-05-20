@@ -1,0 +1,93 @@
+{
+  "app": {
+    "title": "GitHub Gist Manager"
+  },
+  "auth": {
+    "desc": "Enter your GitHub Token to get started",
+    "switchAccount": "Use another account",
+    "tokenLabel": "Personal Access Token",
+    "tokenPlaceholder": "ghp_xxxxxxxxxxxxxxxxxxxx",
+    "tokenHint": "Requires <code>gist</code> scope. Create a token at <a>GitHub Settings</a>",
+    "confirm": "Confirm",
+    "loginAs": "Login as {{login}}",
+    "confirmLogin": "Confirm Login",
+    "verifying": "Verifying...",
+    "enterToken": "Please enter a Token",
+    "tokenInvalid": "Invalid Token: {{message}}"
+  },
+  "nav": {
+    "appName": "Gist Manager",
+    "refresh": "Refresh",
+    "changeToken": "Change Token"
+  },
+  "sidebar": {
+    "searchPlaceholder": "Search Gists...",
+    "new": "New",
+    "loading": "Loading...",
+    "notFound": "No Gists found"
+  },
+  "emptyState": {
+    "hint": "Select a Gist from the left to view",
+    "loadFailed": "Load failed: {{message}}"
+  },
+  "editor": {
+    "edit": "Edit",
+    "delete": "Delete",
+    "save": "Save",
+    "saving": "Saving...",
+    "cancel": "Cancel",
+    "toggleVisibility": "Toggle visibility",
+    "github": "GitHub"
+  },
+  "gistMeta": {
+    "descPlaceholder": "Gist description",
+    "unsaved": "Unsaved Gist",
+    "created": "Created",
+    "updated": "Updated",
+    "noDesc": "(no description)",
+    "newGist": "(New Gist)",
+    "unsavedBadge": "Unsaved"
+  },
+  "files": {
+    "deleteFile": "Delete file",
+    "addFile": "Add file"
+  },
+  "viewer": {
+    "truncated": "⚠ File content is truncated. Editing and saving may lose data.",
+    "lines": "lines"
+  },
+  "overlay": {
+    "saving": "Saving...",
+    "loading": "Loading..."
+  },
+  "comments": {
+    "title": "Comments",
+    "placeholder": "Write a comment...",
+    "submit": "Submit Comment",
+    "saveFirst": "Save before commenting",
+    "noComments": "No comments yet",
+    "enterContent": "Please enter a comment",
+    "posted": "Comment posted",
+    "postFailed": "Comment failed: {{message}}"
+  },
+  "toast": {
+    "loadFailed": "Failed to load Gist: {{message}}",
+    "filenameEmpty": "Filename cannot be empty",
+    "fileContentEmpty": "File \"{{name}}\" content cannot be empty",
+    "gistCreated": "Gist created",
+    "gistSaved": "Gist saved",
+    "saveFailed": "Save failed: {{message}}"
+  },
+  "delete": {
+    "confirmTitle": "Confirm delete this gist?",
+    "confirmText": "Confirm",
+    "cancelText": "Cancel",
+    "deleting": "Deleting...",
+    "deleteFailed": "Delete failed: {{message}}"
+  },
+  "lang": {
+    "zh-CN": "中文",
+    "en": "English",
+    "ja": "日本語"
+  }
+}

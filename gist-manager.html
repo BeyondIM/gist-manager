@@ -24,6 +24,10 @@
   ::-webkit-scrollbar { width: 6px; height: 6px; }
   ::-webkit-scrollbar-track { background: transparent; }
   ::-webkit-scrollbar-thumb { background: #4b5563; border-radius: 3px; }
+  .lang-toggle { display: inline-flex; background: #1e293b; border-radius: 9999px; padding: 2px; gap: 1px; }
+  .lang-btn { padding: 3px 10px; border-radius: 9999px; font-size: 11px; color: #94a3b8; transition: all 0.2s; border: none; cursor: pointer; background: transparent; line-height: 1.5; font-family: inherit; }
+  .lang-btn:hover { color: #e2e8f0; }
+  .lang-btn.active { background: #3b82f6; color: #fff; }
   ::-webkit-scrollbar-thumb:hover { background: #6b7280; }
 </style>
 </head>
@@ -34,28 +38,27 @@
   <div class="bg-gray-900 rounded-xl shadow-2xl w-full max-w-md p-6 mx-4 border border-gray-800">
     <div class="text-center mb-6">
       <svg class="w-12 h-12 mx-auto mb-3 text-blue-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-      <h2 class="text-xl font-semibold">GitHub Gist Manager</h2>
-      <p id="token-modal-desc" class="text-gray-400 text-sm mt-1">输入你的 GitHub Token 以开始</p>
+      <h2 class="text-xl font-semibold" data-i18n="app.title">GitHub Gist Manager</h2>
+      <p id="token-modal-desc" class="text-gray-400 text-sm mt-1" data-i18n="auth.desc">输入你的 GitHub Token 以开始</p>
     </div>
     <div id="remembered-user" class="hidden text-center mb-4">
-      <button id="switch-account-btn" class="text-xs text-blue-400 hover:underline mt-1">使用其他账号</button>
+      <button id="switch-account-btn" class="text-xs text-blue-400 hover:underline mt-1" data-i18n="auth.switchAccount">使用其他账号</button>
     </div>
     <div class="space-y-4">
       <div id="token-input-group">
         <div class="flex items-center justify-between mb-1">
-          <label class="text-sm font-medium text-gray-300">Personal Access Token</label>
+          <label class="text-sm font-medium text-gray-300" data-i18n="auth.tokenLabel">Personal Access Token</label>
           <span id="token-error" class="text-sm text-red-400 hidden"></span>
         </div>
-        <input id="token-input" type="password" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx"
+        <input id="token-input" type="password" data-i18n="[placeholder]auth.tokenPlaceholder" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx"
           class="mono w-full px-3 py-2.5 bg-gray-800 border border-gray-700 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
         <p class="text-xs text-gray-500 mt-1.5">
-          需要 <code class="text-gray-400">gist</code> 权限。去
-          <a href="https://github.com/settings/tokens" target="_blank" class="text-blue-400 hover:underline">GitHub Settings</a> 创建 token
+          <span data-i18n="[html]auth.tokenHint">需要 <code class="text-gray-400">gist</code> 权限。去 <a href="https://github.com/settings/tokens" target="_blank" class="text-blue-400 hover:underline">GitHub Settings</a> 创建 token</span>
         </p>
       </div>
       <button id="token-save-btn" class="w-full py-2.5 bg-blue-600 hover:bg-blue-700 rounded-lg font-medium text-sm transition-colors disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2">
         <svg id="token-btn-spinner" class="hidden animate-spin w-4 h-4" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"/></svg>
-        <span id="token-btn-text">确认</span>
+        <span id="token-btn-text" data-i18n="auth.confirm">确认</span>
       </button>
     </div>
   </div>
@@ -64,13 +67,13 @@
 <!-- Delete Confirmation Modal -->
 <div id="delete-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/70 hidden">
   <div class="bg-gray-900 rounded-xl shadow-2xl w-full max-w-sm p-6 mx-4 border border-gray-800">
-    <p class="text-sm text-gray-300 text-center mb-4">确认删除此gist？</p>
+    <p class="text-sm text-gray-300 text-center mb-4" data-i18n="delete.confirmTitle">确认删除此gist？</p>
     <p id="delete-error" class="text-sm text-red-400 text-center mb-3 hidden"></p>
     <div class="flex items-center gap-3">
-      <button id="delete-cancel-btn" class="flex-1 py-2 bg-gray-800 hover:bg-gray-700 rounded-lg text-sm transition-colors">取消</button>
+      <button id="delete-cancel-btn" class="flex-1 py-2 bg-gray-800 hover:bg-gray-700 rounded-lg text-sm transition-colors" data-i18n="delete.cancelText">取消</button>
       <button id="delete-confirm-btn" class="flex-1 py-2 bg-red-600 hover:bg-red-700 rounded-lg text-sm font-medium transition-colors disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2">
         <svg id="delete-spinner" class="hidden animate-spin w-4 h-4" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"/></svg>
-        <span id="delete-confirm-text">确认</span>
+        <span id="delete-confirm-text" data-i18n="delete.confirmText">确认</span>
       </button>
     </div>
   </div>
@@ -82,15 +85,20 @@
   <header class="flex items-center justify-between px-4 py-2.5 bg-gray-900 border-b border-gray-800 shrink-0">
     <div class="flex items-center gap-2">
       <svg class="w-5 h-5 text-blue-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-      <span class="font-semibold text-sm">Gist Manager</span>
+      <span class="font-semibold text-sm" data-i18n="nav.appName">Gist Manager</span>
     </div>
     <div class="flex items-center gap-3">
       <span id="user-info" class="text-sm text-gray-400"></span>
+      <span id="lang-toggle" class="lang-toggle">
+        <button class="lang-btn" data-lang="zh-CN">中文</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="ja">日本語</button>
+      </span>
       <button id="refresh-btn" class="px-3 py-1.5 text-xs bg-gray-800 hover:bg-gray-700 rounded-md transition-colors flex items-center gap-1">
         <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M23 4v6h-6M1 20v-6h6"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg>
-        刷新
+        <span data-i18n="nav.refresh">刷新</span>
       </button>
-      <button id="logout-btn" class="px-3 py-1.5 text-xs bg-gray-800 hover:bg-gray-700 rounded-md transition-colors">
+      <button id="logout-btn" class="px-3 py-1.5 text-xs bg-gray-800 hover:bg-gray-700 rounded-md transition-colors" data-i18n="nav.changeToken">
         更换Token
       </button>
     </div>
@@ -101,11 +109,11 @@
     <!-- Left Sidebar -->
     <aside class="w-72 shrink-0 bg-gray-900 border-r border-gray-800 flex flex-col">
       <div class="px-3 py-3 border-b border-gray-800 flex gap-2">
-        <input id="search-input" type="text" placeholder="搜索 Gist..."
+        <input id="search-input" type="text" data-i18n="[placeholder]sidebar.searchPlaceholder" placeholder="搜索 Gist..."
           class="flex-1 px-3 py-1.5 bg-gray-800 border border-gray-700 rounded-md text-xs focus:outline-none focus:ring-1 focus:ring-blue-500">
         <button id="new-gist-btn" class="shrink-0 px-3 py-1.5 text-xs bg-blue-600 hover:bg-blue-700 rounded-md transition-colors flex items-center gap-1">
           <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-          新建
+          <span data-i18n="sidebar.new">新建</span>
         </button>
       </div>
       <div id="gist-list" class="flex-1 overflow-y-auto">
@@ -119,7 +127,7 @@
       <div id="empty-state" class="flex-1 flex items-center justify-center">
         <div class="text-center text-gray-500">
           <svg class="w-16 h-16 mx-auto mb-4 text-gray-700" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M14.5 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg>
-          <p class="text-sm">选择左侧的 Gist 查看内容</p>
+          <p class="text-sm" data-i18n="emptyState.hint">选择左侧的 Gist 查看内容</p>
         </div>
       </div>
 
@@ -129,14 +137,14 @@
         <div id="saving-overlay" class="absolute inset-0 z-20 bg-gray-950/80 flex items-center justify-center hidden">
           <div class="flex flex-col items-center gap-3">
             <svg class="spinner w-8 h-8 text-blue-400" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"/></svg>
-            <span class="text-sm text-gray-300">正在保存...</span>
+            <span class="text-sm text-gray-300" data-i18n="overlay.saving">正在保存...</span>
           </div>
         </div>
         <!-- Loading overlay -->
         <div id="loading-overlay" class="absolute inset-0 z-20 bg-gray-950/80 flex items-center justify-center hidden">
           <div class="flex flex-col items-center gap-3">
             <svg class="spinner w-8 h-8 text-blue-400" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"/></svg>
-            <span class="text-sm text-gray-300">正在加载...</span>
+            <span class="text-sm text-gray-300" data-i18n="overlay.loading">正在加载...</span>
           </div>
         </div>
 
@@ -149,26 +157,26 @@
           <div class="flex items-center gap-2">
             <button id="edit-btn" class="px-3 py-1.5 text-xs bg-gray-800 hover:bg-gray-700 rounded-md transition-colors flex items-center gap-1">
               <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
-              编辑
+              <span data-i18n="editor.edit">编辑</span>
             </button>
             <button id="delete-btn" class="px-3 py-1.5 text-xs bg-gray-800 hover:bg-red-700 rounded-md transition-colors flex items-center gap-1">
               <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/></svg>
-              删除
+              <span data-i18n="editor.delete">删除</span>
             </button>
             <button id="save-btn" class="px-3 py-1.5 text-xs bg-blue-600 hover:bg-blue-700 rounded-md transition-colors flex items-center gap-1 hidden">
               <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v11a2 2 0 01-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
-              保存
+              <span data-i18n="editor.save">保存</span>
             </button>
-            <button id="cancel-edit-btn" class="px-3 py-1.5 text-xs bg-gray-800 hover:bg-gray-700 rounded-md transition-colors hidden">
+            <button id="cancel-edit-btn" class="px-3 py-1.5 text-xs bg-gray-800 hover:bg-gray-700 rounded-md transition-colors hidden" data-i18n="editor.cancel">
               取消
             </button>
-            <button id="visibility-btn" class="px-2 py-1.5 text-xs bg-gray-800 hover:bg-gray-700 rounded-md transition-colors hidden" title="切换可见性">
+            <button id="visibility-btn" class="px-2 py-1.5 text-xs bg-gray-800 hover:bg-gray-700 rounded-md transition-colors hidden" data-i18n="[title]editor.toggleVisibility" title="切换可见性">
               <svg id="visibility-icon-lock" class="w-3.5 h-3.5 text-yellow-500" fill="currentColor" viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1s3.1 1.39 3.1 3.1v2z"/></svg>
               <svg id="visibility-icon-globe" class="w-3.5 h-3.5 text-gray-400 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
             </button>
             <a id="gist-link" href="#" target="_blank" class="px-3 py-1.5 text-xs text-gray-400 hover:text-gray-200 transition-colors flex items-center gap-1">
               <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-              GitHub
+              <span data-i18n="editor.github">GitHub</span>
             </a>
           </div>
         </div>
@@ -182,7 +190,7 @@
         <!-- Comments Section -->
         <div id="comments-section" class="border-t border-gray-800 bg-gray-900 shrink-0" style="max-height: 40%;">
           <div class="flex items-center justify-between px-4 py-2 border-b border-gray-800">
-            <span class="text-xs font-semibold text-gray-300">评论 (<span id="comment-count">0</span>)</span>
+            <span class="text-xs font-semibold text-gray-300"><span data-i18n="comments.title">评论</span> (<span id="comment-count">0</span>)</span>
             <button id="toggle-comments-btn" class="text-xs text-gray-400 hover:text-gray-200">
               <svg id="comments-chevron" class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
             </button>
@@ -190,11 +198,11 @@
           <div id="comments-body" class="overflow-y-auto" style="max-height: 300px;">
             <div id="comments-list" class="divide-y divide-gray-800"></div>
             <div class="p-3 border-t border-gray-800">
-              <textarea id="comment-input" rows="2" placeholder="写评论..."
+              <textarea id="comment-input" rows="2" data-i18n="[placeholder]comments.placeholder" placeholder="写评论..."
                 class="w-full px-3 py-2 bg-gray-800 border border-gray-700 rounded-md text-xs resize-none focus:outline-none focus:ring-1 focus:ring-blue-500"></textarea>
               <div class="flex justify-center mt-2">
                 <button id="post-comment-btn" class="px-3 py-1.5 text-xs bg-green-700 hover:bg-green-600 rounded-md transition-colors">
-                  提交评论
+                  <span data-i18n="comments.submit">提交评论</span>
                 </button>
               </div>
             </div>
@@ -209,6 +217,27 @@
 </div>
 
 <script>
+/* ── I18N ──────────────────────────────────── */
+var I18N={lang:"zh-CN",resources:null,
+init:function(l,r){this.lang=l;this.resources=r;},
+t:function(k,v){var p=k.split("."),a=this.resources[this.lang];
+for(var i=0;a&&i<p.length;i++)a=a[p[i]];
+if(typeof a!=="string")return k;
+if(v)for(var x in v)a=a.split("{{"+x+"}}").join(v[x]);
+return a;},
+changeLanguage:function(l,cb){this.lang=l;if(cb)cb();}};
+var RES={"zh-CN":{"app":{"title":"GitHub Gist Manager"},"auth":{"desc":"输入你的 GitHub Token 以开始","switchAccount":"使用其他账号","tokenLabel":"Personal Access Token","tokenPlaceholder":"ghp_xxxxxxxxxxxxxxxxxxxx","tokenHint":"需要 <code>gist</code> 权限。去 <a>GitHub Settings</a> 创建 token","confirm":"确认","loginAs":"以 {{login}} 身份登录","confirmLogin":"确认登录","verifying":"验证中...","enterToken":"请输入 Token","tokenInvalid":"Token 无效: {{message}}"},"nav":{"appName":"Gist Manager","refresh":"刷新","changeToken":"更换Token"},"sidebar":{"searchPlaceholder":"搜索 Gist...","new":"新建","loading":"加载中...","notFound":"没有找到 Gist"},"emptyState":{"hint":"选择左侧的 Gist 查看内容","loadFailed":"加载失败: {{message}}"},"editor":{"edit":"编辑","delete":"删除","save":"保存","saving":"保存中...","cancel":"取消","toggleVisibility":"切换可见性","github":"GitHub"},"gistMeta":{"descPlaceholder":"Gist 描述","unsaved":"未保存的 Gist","created":"创建于","updated":"更新于","noDesc":"(无描述)","newGist":"(新建 Gist)","unsavedBadge":"未保存"},"files":{"deleteFile":"删除文件","addFile":"添加文件"},"viewer":{"truncated":"⚠ 此文件内容被截断，编辑并保存可能丢失数据","lines":"行"},"overlay":{"saving":"正在保存...","loading":"正在加载..."},"comments":{"title":"评论","placeholder":"写评论...","submit":"提交评论","saveFirst":"保存后才可以评论","noComments":"暂无评论","enterContent":"请输入评论内容","posted":"评论已提交","postFailed":"评论失败: {{message}}"},"toast":{"loadFailed":"加载 Gist 失败: {{message}}","filenameEmpty":"文件名不能为空","fileContentEmpty":"文件 \"{{name}}\" 内容不能为空","gistCreated":"Gist 已创建","gistSaved":"Gist 已保存","saveFailed":"保存失败: {{message}}"},"delete":{"confirmTitle":"确认删除此gist？","confirmText":"确认","cancelText":"取消","deleting":"删除中...","deleteFailed":"删除失败: {{message}}"},"lang":{"zh-CN":"中文","en":"English","ja":"日本語"}},"en":{"app":{"title":"GitHub Gist Manager"},"auth":{"desc":"Enter your GitHub Token to get started","switchAccount":"Use another account","tokenLabel":"Personal Access Token","tokenPlaceholder":"ghp_xxxxxxxxxxxxxxxxxxxx","tokenHint":"Requires <code>gist</code> scope. Create a token at <a>GitHub Settings</a>","confirm":"Confirm","loginAs":"Login as {{login}}","confirmLogin":"Confirm Login","verifying":"Verifying...","enterToken":"Please enter a Token","tokenInvalid":"Invalid Token: {{message}}"},"nav":{"appName":"Gist Manager","refresh":"Refresh","changeToken":"Change Token"},"sidebar":{"searchPlaceholder":"Search Gists...","new":"New","loading":"Loading...","notFound":"No Gists found"},"emptyState":{"hint":"Select a Gist from the left to view","loadFailed":"Load failed: {{message}}"},"editor":{"edit":"Edit","delete":"Delete","save":"Save","saving":"Saving...","cancel":"Cancel","toggleVisibility":"Toggle visibility","github":"GitHub"},"gistMeta":{"descPlaceholder":"Gist description","unsaved":"Unsaved Gist","created":"Created","updated":"Updated","noDesc":"(no description)","newGist":"(New Gist)","unsavedBadge":"Unsaved"},"files":{"deleteFile":"Delete file","addFile":"Add file"},"viewer":{"truncated":"⚠ File content is truncated. Editing and saving may lose data.","lines":"lines"},"overlay":{"saving":"Saving...","loading":"Loading..."},"comments":{"title":"Comments","placeholder":"Write a comment...","submit":"Submit Comment","saveFirst":"Save before commenting","noComments":"No comments yet","enterContent":"Please enter a comment","posted":"Comment posted","postFailed":"Comment failed: {{message}}"},"toast":{"loadFailed":"Failed to load Gist: {{message}}","filenameEmpty":"Filename cannot be empty","fileContentEmpty":"File \"{{name}}\" content cannot be empty","gistCreated":"Gist created","gistSaved":"Gist saved","saveFailed":"Save failed: {{message}}"},"delete":{"confirmTitle":"Confirm delete this gist?","confirmText":"Confirm","cancelText":"Cancel","deleting":"Deleting...","deleteFailed":"Delete failed: {{message}}"},"lang":{"zh-CN":"中文","en":"English","ja":"日本語"}},"ja":{"app":{"title":"GitHub Gist Manager"},"auth":{"desc":"GitHubトークンを入力して開始","switchAccount":"別のアカウントを使用","tokenLabel":"Personal Access Token","tokenPlaceholder":"ghp_xxxxxxxxxxxxxxxxxxxx","tokenHint":"<code>gist</code> スコープが必要です。<a>GitHub Settings</a> でトークンを作成してください","confirm":"確認","loginAs":"{{login}} としてログイン","confirmLogin":"ログイン確認","verifying":"検証中...","enterToken":"トークンを入力してください","tokenInvalid":"無効なトークン: {{message}}"},"nav":{"appName":"Gist Manager","refresh":"更新","changeToken":"トークン変更"},"sidebar":{"searchPlaceholder":"Gistを検索...","new":"新規","loading":"読み込み中...","notFound":"Gistが見つかりません"},"emptyState":{"hint":"左側からGistを選択して表示","loadFailed":"読み込み失敗: {{message}}"},"editor":{"edit":"編集","delete":"削除","save":"保存","saving":"保存中...","cancel":"キャンセル","toggleVisibility":"公開設定切り替え","github":"GitHub"},"gistMeta":{"descPlaceholder":"Gistの説明","unsaved":"未保存のGist","created":"作成日","updated":"更新日","noDesc":"(説明なし)","newGist":"(新規Gist)","unsavedBadge":"未保存"},"files":{"deleteFile":"ファイルを削除","addFile":"ファイルを追加"},"viewer":{"truncated":"⚠ ファイルの内容が切り詰められています。編集して保存するとデータが失われる可能性があります","lines":"行"},"overlay":{"saving":"保存中...","loading":"読み込み中..."},"comments":{"title":"コメント","placeholder":"コメントを書く...","submit":"コメントを送信","saveFirst":"保存後にコメントできます","noComments":"まだコメントはありません","enterContent":"コメントを入力してください","posted":"コメントを投稿しました","postFailed":"コメント失敗: {{message}}"},"toast":{"loadFailed":"Gistの読み込みに失敗: {{message}}","filenameEmpty":"ファイル名を空にすることはできません","fileContentEmpty":"ファイル \"{{name}}\" の内容を空にすることはできません","gistCreated":"Gistを作成しました","gistSaved":"Gistを保存しました","saveFailed":"保存失敗: {{message}}"},"delete":{"confirmTitle":"このGistを削除しますか？","confirmText":"確認","cancelText":"キャンセル","deleting":"削除中...","deleteFailed":"削除失敗: {{message}}"},"lang":{"zh-CN":"中文","en":"English","ja":"日本語"}}};
+(function(){var s=localStorage.getItem("gist_manager_lang");
+var n=(navigator.language||"zh-CN").split("-")[0];
+var l=s&&RES[s]?s:(n==="zh"?"zh-CN":n==="ja"?"ja":n==="en"?"en":"zh-CN");
+I18N.init(l,RES);
+window.applyTranslations=function(){document.querySelectorAll("[data-i18n]").forEach(function(el){var k=el.getAttribute("data-i18n"),r=k,p=k.indexOf("[placeholder]")===0,t=k.indexOf("[title]")===0,h=k.indexOf("[html]")===0;
+if(p)r=k.slice("[placeholder]".length);else if(t)r=k.slice("[title]".length);else if(h)r=k.slice("[html]".length);
+var v=I18N.t(r);if(p)el.setAttribute("placeholder",v);else if(t)el.setAttribute("title",v);else if(h)el.innerHTML=v;else el.textContent=v;});};
+applyTranslations();
+(function(){var btns=document.querySelectorAll("#lang-toggle .lang-btn");btns.forEach(function(b){if(b.getAttribute("data-lang")===I18N.lang)b.classList.add("active");b.addEventListener("click",function(){var ln=b.getAttribute("data-lang");if(ln===I18N.lang)return;btns.forEach(function(x){x.classList.remove("active")});b.classList.add("active");localStorage.setItem("gist_manager_lang",ln);I18N.changeLanguage(ln,function(){applyTranslations();if(typeof window._rerender==="function")window._rerender();});});});})();
+})();
+
 (function() {
   const tokenKey = 'github_gist_token';
 
@@ -282,14 +311,14 @@
   function setSaving(active) {
     if (active) {
       saveBtn.disabled = true;
-      saveBtn.innerHTML = '<svg class="spinner w-3.5 h-3.5" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"/></svg> 保存中...';
+      saveBtn.innerHTML = '<svg class="spinner w-3.5 h-3.5" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"/></svg> ' + I18N.t('editor.saving');
       saveBtn.classList.add('opacity-70', 'cursor-not-allowed');
       cancelEditBtn.disabled = true;
       cancelEditBtn.classList.add('opacity-50', 'cursor-not-allowed');
       savingOverlay.classList.remove('hidden');
     } else {
       saveBtn.disabled = false;
-      saveBtn.innerHTML = '<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v11a2 2 0 01-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg> 保存';
+      saveBtn.innerHTML = '<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v11a2 2 0 01-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg> ' + I18N.t('editor.save');
       saveBtn.classList.remove('opacity-70', 'cursor-not-allowed');
       cancelEditBtn.disabled = false;
       cancelEditBtn.classList.remove('opacity-50', 'cursor-not-allowed');
@@ -337,10 +366,10 @@
       if (userData) {
         try {
           rememberedUserData = JSON.parse(userData);
-          tokenModalDesc.textContent = `以 ${rememberedUserData.login} 身份登录`;
+          tokenModalDesc.textContent = I18N.t('auth.loginAs', { login: rememberedUserData.login });
           rememberedUser.classList.remove('hidden');
           tokenInputGroup.classList.add('hidden');
-          tokenBtnText.textContent = '确认登录';
+          tokenBtnText.textContent = I18N.t('auth.confirmLogin');
         } catch (_) {
           showFreshLogin();
         }
@@ -354,10 +383,10 @@
     rememberedUserData = null;
     token = '';
     tokenInput.value = '';
-    tokenModalDesc.textContent = '输入你的 GitHub Token 以开始';
+    tokenModalDesc.textContent = I18N.t('auth.desc');
     rememberedUser.classList.add('hidden');
     tokenInputGroup.classList.remove('hidden');
-    tokenBtnText.textContent = '确认';
+    tokenBtnText.textContent = I18N.t('auth.confirm');
     tokenError.classList.add('hidden');
   }
 
@@ -373,12 +402,12 @@
       localStorage.removeItem(tokenKey);
       localStorage.removeItem('github_gist_user');
       token = '';
-      tokenError.textContent = 'Token 无效: ' + e.message;
+      tokenError.textContent = I18N.t('auth.tokenInvalid', { message: e.message });
       tokenError.classList.remove('hidden');
       showFreshLogin();
     } finally {
       tokenSaveBtn.disabled = false;
-      tokenBtnText.textContent = rememberedUserData?.login ? '确认登录' : '确认';
+      tokenBtnText.textContent = rememberedUserData?.login ? I18N.t('auth.confirmLogin') : I18N.t('auth.confirm');
       tokenBtnSpinner.classList.add('hidden');
     }
   }
@@ -387,16 +416,16 @@
     if (rememberedUserData) {
       tokenError.classList.add('hidden');
       tokenSaveBtn.disabled = true;
-      tokenBtnText.textContent = '验证中...';
+      tokenBtnText.textContent = I18N.t('auth.verifying');
       tokenBtnSpinner.classList.remove('hidden');
       verifyAndStart();
       return;
     }
     const val = tokenInput.value.trim();
-    if (!val) { tokenError.textContent = '请输入 Token'; tokenError.classList.remove('hidden'); return; }
+    if (!val) { tokenError.textContent = I18N.t('auth.enterToken'); tokenError.classList.remove('hidden'); return; }
     tokenError.classList.add('hidden');
     tokenSaveBtn.disabled = true;
-    tokenBtnText.textContent = '验证中...';
+    tokenBtnText.textContent = I18N.t('auth.verifying');
     tokenBtnSpinner.classList.remove('hidden');
     token = val;
     localStorage.setItem(tokenKey, token);
@@ -433,7 +462,7 @@
 
   // ── Gist List ──────────────────────────────────
   async function loadGists() {
-    gistList.innerHTML = '<div class="flex items-center justify-center py-12 text-gray-500 text-sm">加载中...</div>';
+    gistList.innerHTML = '<div class="flex items-center justify-center py-12 text-gray-500 text-sm">' + I18N.t('sidebar.loading') + '</div>';
     try {
       allGists = await api('/gists?per_page=100');
       gists = allGists;
@@ -445,19 +474,19 @@
 
   function renderGistList() {
     if (gists.length === 0) {
-      gistList.innerHTML = '<div class="flex items-center justify-center py-12 text-gray-500 text-sm">没有找到 Gist</div>';
+      gistList.innerHTML = '<div class="flex items-center justify-center py-12 text-gray-500 text-sm">' + I18N.t('sidebar.notFound') + '</div>';
       return;
     }
     const selectedId = selectedGistDetail?.id;
     gistList.innerHTML = gists.map(g => {
-      const desc = g.description || (g.isNew ? '(新建 Gist)' : '(无描述)');
+      const desc = g.description || (g.isNew ? I18N.t('gistMeta.newGist') : I18N.t('gistMeta.noDesc'));
       const filename = Object.keys(g.files)[0] || '?';
       const active = g.id === selectedId ? ' active' : '';
       const lockIcon = (!g.public && !g.isNew)
         ? '<svg class="w-3 h-3 text-yellow-500 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1s3.1 1.39 3.1 3.1v2z"/></svg>'
         : '';
       const badge = g.isNew
-        ? '<span class="text-[10px] text-blue-400">未保存</span>'
+        ? '<span class="text-[10px] text-blue-400">' + I18N.t('gistMeta.unsavedBadge') + '</span>'
         : '';
       return `
         <div class="gist-item px-3 py-2.5 cursor-pointer border-b border-gray-800/50${active}" data-id="${g.id}">
@@ -524,7 +553,7 @@
     visibilityBtn.classList.remove('hidden');
     updateVisibilityIcon();
     renderContent();
-    commentsList.innerHTML = '<div class="p-4 text-xs text-gray-500 text-center">保存后才可以评论</div>';
+    commentsList.innerHTML = '<div class="p-4 text-xs text-gray-500 text-center">' + I18N.t('comments.saveFirst') + '</div>';
     commentCount.textContent = '0';
   });
 
@@ -553,7 +582,7 @@
       visibilityBtn.classList.remove('hidden');
       updateVisibilityIcon();
       renderContent();
-      commentsList.innerHTML = '<div class="p-4 text-xs text-gray-500 text-center">保存后才可以评论</div>';
+      commentsList.innerHTML = '<div class="p-4 text-xs text-gray-500 text-center">' + I18N.t('comments.saveFirst') + '</div>';
       commentCount.textContent = '0';
       return;
     }
@@ -579,8 +608,8 @@
       loadingOverlay.classList.add('hidden');
       gistContent.classList.add('hidden');
       emptyState.classList.remove('hidden');
-      emptyState.innerHTML = `<div class="text-center text-red-400"><p class="text-sm">加载失败: ${e.message}</p></div>`;
-      showToast('加载 Gist 失败: ' + e.message, 'error');
+      emptyState.innerHTML = '<div class="text-center text-red-400"><p class="text-sm">' + I18N.t('emptyState.loadFailed', { message: e.message }) + '</p></div>';
+      showToast(I18N.t('toast.loadFailed', { message: e.message }), 'error');
     }
   }
 
@@ -591,18 +620,19 @@
     emptyState.classList.add('hidden');
     gistContent.classList.remove('hidden');
 
-    const desc = g.description || (g.isNew ? '(新建 Gist)' : '(无描述)');
+    const desc = g.description || (g.isNew ? I18N.t('gistMeta.newGist') : I18N.t('gistMeta.noDesc'));
     if (isEditing) {
-      gistTitle.innerHTML = `<input id="desc-input" class="w-full bg-gray-800 border border-gray-700 rounded px-2 py-1 text-sm font-semibold text-gray-200 focus:outline-none focus:ring-1 focus:ring-blue-500" value="${escAttr(g.description || '')}" placeholder="Gist 描述">`;
+      gistTitle.innerHTML = '<input id="desc-input" class="w-full bg-gray-800 border border-gray-700 rounded px-2 py-1 text-sm font-semibold text-gray-200 focus:outline-none focus:ring-1 focus:ring-blue-500" value="' + escAttr(g.description || '') + '" placeholder="' + I18N.t('gistMeta.descPlaceholder') + '">';
     } else {
       gistTitle.textContent = desc;
     }
     if (g.isNew) {
-      gistMeta.textContent = '未保存的 Gist';
+      gistMeta.textContent = I18N.t('gistMeta.unsaved');
       gistLink.href = '#';
       gistLink.classList.add('hidden');
     } else {
-      gistMeta.textContent = `创建于 ${new Date(g.created_at).toLocaleString('zh-CN')} · 更新于 ${new Date(g.updated_at).toLocaleString('zh-CN')}`;
+      var locale = I18N.lang || 'zh-CN';
+      gistMeta.textContent = I18N.t('gistMeta.created') + ' ' + new Date(g.created_at).toLocaleString(locale) + ' · ' + I18N.t('gistMeta.updated') + ' ' + new Date(g.updated_at).toLocaleString(locale);
       gistLink.href = g.html_url;
       gistLink.classList.remove('hidden');
     }
@@ -616,9 +646,9 @@
         const active = i === 0 ? 'border-blue-500 text-blue-400' : 'border-transparent text-gray-400';
         return `<div class="flex items-center gap-0.5 shrink-0 border-b-2 ${active} transition-colors" data-file="${escAttr(name)}">
           <input class="file-name-input bg-transparent text-xs mono px-2 py-1.5 outline-none text-gray-200 w-28" value="${escAttr(name)}" data-file="${escAttr(name)}" spellcheck="false">
-          ${fileNames.length > 1 ? `<button class="delete-file-btn text-gray-500 hover:text-red-400 px-1" data-file="${escAttr(name)}" title="删除文件">&times;</button>` : ''}
+          ${fileNames.length > 1 ? '<button class="delete-file-btn text-gray-500 hover:text-red-400 px-1" data-file="' + escAttr(name) + '" title="' + I18N.t('files.deleteFile') + '">&times;</button>' : ''}
         </div>`;
-      }).join('') + `<button id="add-file-btn" class="shrink-0 px-2 py-1.5 text-xs text-gray-400 hover:text-gray-200 border-b-2 border-transparent" title="添加文件">+</button>`;
+      }).join('') + '<button id="add-file-btn" class="shrink-0 px-2 py-1.5 text-xs text-gray-400 hover:text-gray-200 border-b-2 border-transparent" title="' + I18N.t('files.addFile') + '">+</button>';
     } else {
       fileTabs.innerHTML = fileNames.map((name, i) => {
         const active = i === 0 ? 'border-blue-500 text-blue-400' : 'border-transparent text-gray-400 hover:text-gray-200';
@@ -676,14 +706,14 @@
     if (isEditing) {
       editorArea.innerHTML = `
         <textarea class="code-editor w-full flex-1 p-4 bg-gray-900 text-gray-200 text-sm resize-none focus:outline-none border-none" style="flex:1;" data-file="${escAttr(name)}">${escHtml(content)}</textarea>
-        ${truncated ? '<p class="text-xs text-yellow-400 px-4 pb-2">⚠ 此文件内容被截断，编辑并保存可能丢失数据</p>' : ''}
+        ${truncated ? '<p class="text-xs text-yellow-400 px-4 pb-2">' + I18N.t('viewer.truncated') + '</p>' : ''}
       `;
     } else {
       const lang = (file.language || 'plaintext').toLowerCase();
       editorArea.innerHTML = `
         <div class="flex items-center justify-between px-4 py-1.5 bg-gray-900 shrink-0">
           <span class="text-[10px] text-gray-500 uppercase">${lang}</span>
-          <span class="text-[10px] text-gray-600">${content.split('\n').length} 行</span>
+          <span class="text-[10px] text-gray-600">${content.split('\n').length + ' ' + I18N.t('viewer.lines')}</span>
         </div>
         <div class="flex-1 overflow-auto">
           <pre class="p-4 text-sm mono text-gray-300 leading-relaxed">${escHtml(content)}</pre>
@@ -720,7 +750,7 @@
   function closeDeleteModal() {
     deleteModal.classList.add('hidden');
     deleteConfirmBtn.disabled = false;
-    deleteConfirmText.textContent = '确认';
+    deleteConfirmText.textContent = I18N.t('delete.confirmText');
     deleteSpinner.classList.add('hidden');
   }
 
@@ -734,7 +764,7 @@
     const g = selectedGistDetail;
     if (!g || g.isNew) return;
     deleteConfirmBtn.disabled = true;
-    deleteConfirmText.textContent = '删除中...';
+    deleteConfirmText.textContent = I18N.t('delete.deleting');
     deleteSpinner.classList.remove('hidden');
     deleteError.classList.add('hidden');
     try {
@@ -748,11 +778,11 @@
       resetContent();
       renderGistList();
     } catch (e) {
-      deleteError.textContent = '删除失败: ' + e.message;
+      deleteError.textContent = I18N.t('delete.deleteFailed', { message: e.message });
       deleteError.classList.remove('hidden');
     } finally {
       deleteConfirmBtn.disabled = false;
-      deleteConfirmText.textContent = '确认';
+      deleteConfirmText.textContent = I18N.t('delete.confirmText');
       deleteSpinner.classList.add('hidden');
     }
   });
@@ -819,8 +849,8 @@
     }
 
     for (const name of editFileNames) {
-      if (!name.trim()) { showToast('文件名不能为空', 'error'); return; }
-      if (!(editContent[name] ?? '').trim()) { showToast(`文件 "${name}" 内容不能为空`, 'error'); return; }
+      if (!name.trim()) { showToast(I18N.t('toast.filenameEmpty'), 'error'); return; }
+      if (!(editContent[name] ?? '').trim()) { showToast(I18N.t('toast.fileContentEmpty', { name: name }), 'error'); return; }
     }
 
     const files = {};
@@ -872,7 +902,7 @@
         renderGistList();
         renderContent();
         loadComments();
-        showToast('Gist 已创建', 'success');
+        showToast(I18N.t('toast.gistCreated'), 'success');
       } else {
         const updated = await api(`/gists/${g.id}`, {
           method: 'PATCH',
@@ -896,11 +926,11 @@
         setSaving(false);
         renderContent();
         loadGists();
-        showToast('Gist 已保存', 'success');
+        showToast(I18N.t('toast.gistSaved'), 'success');
       }
     } catch (e) {
       setSaving(false);
-      showToast('保存失败: ' + e.message, 'error');
+      showToast(I18N.t('toast.saveFailed', { message: e.message }), 'error');
     }
   });
 
@@ -1023,26 +1053,20 @@
   function renderComments(comments) {
     commentCount.textContent = comments.length;
     if (comments.length === 0) {
-      commentsList.innerHTML = '<div class="p-4 text-xs text-gray-500 text-center">暂无评论</div>';
+      commentsList.innerHTML = '<div class="p-4 text-xs text-gray-500 text-center">' + I18N.t('comments.noComments') + '</div>';
       return;
     }
-    commentsList.innerHTML = comments.map(c => `
-      <div class="px-4 py-3">
-        <div class="flex items-center gap-2 mb-1.5">
-          <img src="${escAttr(c.user?.avatar_url || '')}" class="w-5 h-5 rounded-full" alt="">
-          <span class="text-xs font-medium text-gray-300">${escHtml(c.user?.login || '?')}</span>
-          <span class="text-[10px] text-gray-600">${new Date(c.created_at).toLocaleString('zh-CN')}</span>
-        </div>
-        <div class="text-xs text-gray-400 leading-relaxed ml-7">${escHtml(c.body)}</div>
-      </div>
-    `).join('');
+    var locale = I18N.lang || 'zh-CN';
+    commentsList.innerHTML = comments.map(function(c) {
+      return '<div class="px-4 py-3"><div class="flex items-center gap-2 mb-1.5"><img src="' + escAttr(c.user ? c.user.avatar_url : '') + '" class="w-5 h-5 rounded-full" alt=""><span class="text-xs font-medium text-gray-300">' + escHtml(c.user ? c.user.login : '?') + '</span><span class="text-[10px] text-gray-600">' + new Date(c.created_at).toLocaleString(locale) + '</span></div><div class="text-xs text-gray-400 leading-relaxed ml-7">' + escHtml(c.body) + '</div></div>';
+    }).join('');
   }
 
   postCommentBtn.addEventListener('click', async () => {
     const g = selectedGistDetail;
     if (!g) return;
     const body = commentInput.value.trim();
-    if (!body) { showToast('请输入评论内容', 'error'); return; }
+    if (!body) { showToast(I18N.t('comments.enterContent'), 'error'); return; }
 
     try {
       await api(`/gists/${g.id}/comments`, {
@@ -1050,10 +1074,10 @@
         body: JSON.stringify({ body }),
       });
       commentInput.value = '';
-      showToast('评论已提交', 'success');
+      showToast(I18N.t('comments.posted'), 'success');
       loadComments();
     } catch (e) {
-      showToast('评论失败: ' + e.message, 'error');
+      showToast(I18N.t('comments.postFailed', { message: e.message }), 'error');
     }
   });
 
@@ -1079,6 +1103,13 @@
   }
 
   // ── Init ──────────────────────────────────
+  window._rerender = function() {
+    if (selectedGistDetail) {
+      renderContent();
+      renderGistList();
+      loadComments();
+    }
+  };
   initAuth();
 })();
 </script>

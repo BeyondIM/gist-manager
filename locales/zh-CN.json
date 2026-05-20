@@ -1,0 +1,93 @@
+{
+  "app": {
+    "title": "GitHub Gist Manager"
+  },
+  "auth": {
+    "desc": "输入你的 GitHub Token 以开始",
+    "switchAccount": "使用其他账号",
+    "tokenLabel": "Personal Access Token",
+    "tokenPlaceholder": "ghp_xxxxxxxxxxxxxxxxxxxx",
+    "tokenHint": "需要 <code>gist</code> 权限。去 <a>GitHub Settings</a> 创建 token",
+    "confirm": "确认",
+    "loginAs": "以 {{login}} 身份登录",
+    "confirmLogin": "确认登录",
+    "verifying": "验证中...",
+    "enterToken": "请输入 Token",
+    "tokenInvalid": "Token 无效: {{message}}"
+  },
+  "nav": {
+    "appName": "Gist Manager",
+    "refresh": "刷新",
+    "changeToken": "更换Token"
+  },
+  "sidebar": {
+    "searchPlaceholder": "搜索 Gist...",
+    "new": "新建",
+    "loading": "加载中...",
+    "notFound": "没有找到 Gist"
+  },
+  "emptyState": {
+    "hint": "选择左侧的 Gist 查看内容",
+    "loadFailed": "加载失败: {{message}}"
+  },
+  "editor": {
+    "edit": "编辑",
+    "delete": "删除",
+    "save": "保存",
+    "saving": "保存中...",
+    "cancel": "取消",
+    "toggleVisibility": "切换可见性",
+    "github": "GitHub"
+  },
+  "gistMeta": {
+    "descPlaceholder": "Gist 描述",
+    "unsaved": "未保存的 Gist",
+    "created": "创建于",
+    "updated": "更新于",
+    "noDesc": "(无描述)",
+    "newGist": "(新建 Gist)",
+    "unsavedBadge": "未保存"
+  },
+  "files": {
+    "deleteFile": "删除文件",
+    "addFile": "添加文件"
+  },
+  "viewer": {
+    "truncated": "⚠ 此文件内容被截断，编辑并保存可能丢失数据",
+    "lines": "行"
+  },
+  "overlay": {
+    "saving": "正在保存...",
+    "loading": "正在加载..."
+  },
+  "comments": {
+    "title": "评论",
+    "placeholder": "写评论...",
+    "submit": "提交评论",
+    "saveFirst": "保存后才可以评论",
+    "noComments": "暂无评论",
+    "enterContent": "请输入评论内容",
+    "posted": "评论已提交",
+    "postFailed": "评论失败: {{message}}"
+  },
+  "toast": {
+    "loadFailed": "加载 Gist 失败: {{message}}",
+    "filenameEmpty": "文件名不能为空",
+    "fileContentEmpty": "文件 \"{{name}}\" 内容不能为空",
+    "gistCreated": "Gist 已创建",
+    "gistSaved": "Gist 已保存",
+    "saveFailed": "保存失败: {{message}}"
+  },
+  "delete": {
+    "confirmTitle": "确认删除此gist？",
+    "confirmText": "确认",
+    "cancelText": "取消",
+    "deleting": "删除中...",
+    "deleteFailed": "删除失败: {{message}}"
+  },
+  "lang": {
+    "zh-CN": "中文",
+    "en": "English",
+    "ja": "日本語"
+  }
+}
