@@ -268,7 +268,7 @@ const HTML = `<!DOCTYPE html>
             <div class="p-3 border-t border-gray-800">
               <textarea id="comment-input" rows="2" placeholder="写评论..."
                 class="w-full px-3 py-2 bg-gray-800 border border-gray-700 rounded-md text-xs resize-none focus:outline-none focus:ring-1 focus:ring-blue-500"></textarea>
-              <div class="flex justify-end mt-2">
+              <div class="flex justify-center mt-2">
                 <button id="post-comment-btn" class="px-3 py-1.5 text-xs bg-green-700 hover:bg-green-600 rounded-md transition-colors">
                   提交评论
                 </button>
