@@ -186,8 +186,8 @@ const HTML = `<!DOCTYPE html>
   /* 强制 Mono 等宽字体规则 */
   .mono, pre, pre code, textarea.code-editor {
     font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace !important;
-    font-feature-settings: "liga" 1, "calt" 1;
-    font-variant-ligatures: normal;
+    font-feature-settings: "liga" 0;
+    font-variant-ligatures: none;
   }
 
   pre code.hljs {
@@ -196,9 +196,51 @@ const HTML = `<!DOCTYPE html>
     font-size: inherit !important;
   }
 
-  textarea.code-editor {
-    tab-size: 2;
+  /* ── 实时高亮编辑器容器样式 ─────────────────────── */
+  .editor-wrapper {
+    position: relative;
+    width: 100%;
+    flex: 1;
+    overflow: hidden;
     background-color: var(--editor-bg);
+  }
+
+  .editor-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    margin: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    white-space: pre-wrap;
+    word-break: break-word;
+    tab-size: 2;
+    overflow-y: auto;
+  }
+
+  /* 顶层透明交互 Textarea */
+  textarea.code-editor {
+    z-index: 2;
+    background: transparent;
+    color: transparent;
+    caret-color: var(--text-primary);
+    resize: none;
+  }
+
+  /* 避免由于拼写检测下划线导致偏移 */
+  textarea.code-editor::selection {
+    background: rgba(59, 130, 246, 0.35);
+    color: transparent;
+  }
+
+  /* 底层语法高亮显示层 */
+  .code-backdrop {
+    z-index: 1;
+    pointer-events: none;
     color: var(--text-primary);
   }
 
@@ -264,7 +306,6 @@ const HTML = `<!DOCTYPE html>
     font-weight: 600;
   }
 
-  /* 编辑模式下的 tab 容器 */
   .file-tab-edit-item {
     border-top: 2px solid transparent;
     border-right: 1px solid var(--border-color);
@@ -358,7 +399,7 @@ const HTML = `<!DOCTYPE html>
         <button class="pill-btn" data-lang="ja">日本語</button>
       </span>
 
-      <!-- 深色 / 浅色 模式切换按钮 (正圆且完美居中) -->
+      <!-- 深色 / 浅色 模式切换按钮 (正圆且居中) -->
       <button id="theme-toggle-btn" class="w-7 h-7 rounded-full theme-bg-input theme-text-secondary hover:theme-text-primary transition-colors flex items-center justify-center shrink-0" title="切换深色/浅色模式">
         <svg id="theme-icon-sun" class="w-4 h-4 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
         <svg id="theme-icon-moon" class="w-4 h-4 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
@@ -637,16 +678,12 @@ applyTranslations();
     localStorage.setItem('gist_font_size', currentFontSize);
     if (fontSizeVal) fontSizeVal.textContent = currentFontSize;
 
-    const pre = editorArea.querySelector('pre');
-    if (pre) {
-      pre.style.fontSize = currentFontSize + 'px';
-      pre.style.lineHeight = (currentFontSize * 1.55) + 'px';
-    }
-    const ta = editorArea.querySelector('textarea.code-editor');
-    if (ta) {
-      ta.style.fontSize = currentFontSize + 'px';
-      ta.style.lineHeight = (currentFontSize * 1.55) + 'px';
-    }
+    // 同步更新所有代码展示层与编辑层样式
+    const els = editorArea.querySelectorAll('pre, textarea.code-editor, .code-backdrop code');
+    els.forEach(el => {
+      el.style.fontSize = currentFontSize + 'px';
+      el.style.lineHeight = (currentFontSize * 1.55) + 'px';
+    });
   }
 
   fontDecreaseBtn.addEventListener('click', () => updateFontSize(currentFontSize - 1));
@@ -708,6 +745,21 @@ applyTranslations();
       return detected;
     }
     return '';
+  }
+
+  // 高亮一段文本并返回 HTML
+  function getHighlightedCodeHtml(text, lang) {
+    if (!window.hljs) return escHtml(text);
+    if (lang && hljs.getLanguage(lang)) {
+      try {
+        return hljs.highlight(text, { language: lang, ignoreIllegals: true }).value;
+      } catch (e) {}
+    }
+    try {
+      return hljs.highlightAuto(text).value;
+    } catch (e) {
+      return escHtml(text);
+    }
   }
 
   function setSaving(active) {
@@ -1032,38 +1084,76 @@ applyTranslations();
     highlightActiveTab(name);
   }
 
+  /* ── 核心：渲染代码编辑器/查看器 (支持编辑模式实时语法高亮) ── */
   function renderFileViewer(name, file) {
     var content = isEditing ? (editContent[name] !== undefined ? editContent[name] : file.content) : file.content;
     var truncated = file.truncated;
     var fontStyle = 'font-size: ' + currentFontSize + 'px; line-height: ' + (currentFontSize * 1.55) + 'px;';
+    var hlLang = detectHljsLanguage(name, file.language);
+    var langClass = hlLang ? 'language-' + hlLang : '';
+    var displayLang = file.language || (hlLang ? hlLang.toUpperCase() : 'PLAINTEXT');
 
     if (isEditing) {
-      editorArea.innerHTML = '<textarea class="code-editor w-full flex-1 p-4 mono resize-none focus:outline-none border-none" style="flex:1; ' + fontStyle + '" data-file="' + escAttr(name) + '">' + escHtml(content) + '</textarea>' + (truncated ? '<p class="text-xs text-yellow-500 px-4 pb-2">' + I18N.t('viewer.truncated') + '</p>' : '');
-    } else {
-      var linesCount = content ? content.split('\\n').length : 0;
-      var langClass = '';
-      var hlLang = detectHljsLanguage(name, file.language);
-      if (hlLang) {
-        langClass = 'language-' + hlLang;
-      }
-      
-      var displayLang = file.language || (hlLang ? hlLang.toUpperCase() : 'PLAINTEXT');
+      // 编辑模式：双层覆盖同步架构
+      editorArea.innerHTML = 
+        '<div class="flex items-center justify-between px-4 py-1.5 theme-bg-surface border-b theme-border shrink-0">' +
+          '<span class="text-[10px] theme-text-muted uppercase">' + escHtml(displayLang) + '</span>' +
+          '<span class="text-[10px] text-blue-500 font-medium">Editing</span>' +
+        '</div>' +
+        '<div class="editor-wrapper">' +
+          '<pre class="editor-layer code-backdrop mono leading-relaxed" style="' + fontStyle + '"><code id="editor-highlight-code" class="mono ' + langClass + '"></code></pre>' +
+          '<textarea id="active-code-editor" class="editor-layer code-editor mono leading-relaxed" spellcheck="false" autocomplete="off" autocapitalize="off" style="' + fontStyle + '" data-file="' + escAttr(name) + '">' + escHtml(content) + '</textarea>' +
+        '</div>' + 
+        (truncated ? '<p class="text-xs text-yellow-500 px-4 py-1 theme-bg-surface border-t theme-border">' + I18N.t('viewer.truncated') + '</p>' : '');
 
-      editorArea.innerHTML = '<div class="flex items-center justify-between px-4 py-1.5 theme-bg-surface border-b theme-border shrink-0"><span class="text-[10px] theme-text-muted uppercase">' + escHtml(displayLang) + '</span><span class="text-[10px] theme-text-muted">' + linesCount + ' ' + I18N.t('viewer.lines') + '</span></div><div class="flex-1 overflow-auto theme-bg-page"><pre class="p-4 mono theme-text-primary leading-relaxed" style="' + fontStyle + '"><code id="code-viewer" class="mono ' + langClass + '">' + escHtml(content) + '</code></pre></div>';
-      
-      if (typeof hljs !== 'undefined') {
-        var codeEl = document.getElementById('code-viewer');
-        if (codeEl) {
-          if (hlLang) {
-            hljs.highlightElement(codeEl);
-          } else {
-            try {
-              var result = hljs.highlightAuto(content);
-              codeEl.innerHTML = result.value;
-            } catch (err) {}
-          }
-        }
+      var ta = document.getElementById('active-code-editor');
+      var code = document.getElementById('editor-highlight-code');
+
+      function syncHighlight() {
+        var val = ta.value;
+        // 末尾换行补足避免两层光标与文本高度不同步
+        if (val[val.length - 1] === '\\n') val += ' ';
+        code.innerHTML = getHighlightedCodeHtml(val, hlLang);
       }
+
+      function syncScroll() {
+        code.parentElement.scrollTop = ta.scrollTop;
+        code.parentElement.scrollLeft = ta.scrollLeft;
+      }
+
+      ta.addEventListener('input', function() {
+        editContent[name] = ta.value;
+        syncHighlight();
+      });
+
+      ta.addEventListener('scroll', syncScroll);
+
+      // 友好支持 Tab 键缩进 2 空格
+      ta.addEventListener('keydown', function(e) {
+        if (e.key === 'Tab') {
+          e.preventDefault();
+          var start = ta.selectionStart;
+          var end = ta.selectionEnd;
+          ta.value = ta.value.substring(0, start) + '  ' + ta.value.substring(end);
+          ta.selectionStart = ta.selectionEnd = start + 2;
+          editContent[name] = ta.value;
+          syncHighlight();
+        }
+      });
+
+      syncHighlight();
+      syncScroll();
+    } else {
+      // 查看模式
+      var linesCount = content ? content.split('\\n').length : 0;
+      editorArea.innerHTML = 
+        '<div class="flex items-center justify-between px-4 py-1.5 theme-bg-surface border-b theme-border shrink-0">' +
+          '<span class="text-[10px] theme-text-muted uppercase">' + escHtml(displayLang) + '</span>' +
+          '<span class="text-[10px] theme-text-muted">' + linesCount + ' ' + I18N.t('viewer.lines') + '</span>' +
+        '</div>' +
+        '<div class="flex-1 overflow-auto theme-bg-page">' +
+          '<pre class="p-4 mono theme-text-primary leading-relaxed" style="' + fontStyle + '"><code id="code-viewer" class="mono ' + langClass + '">' + getHighlightedCodeHtml(content, hlLang) + '</code></pre>' +
+        '</div>';
     }
   }
 
@@ -1154,8 +1244,10 @@ applyTranslations();
   saveBtn.addEventListener('click', async function() {
     var g = selectedGistDetail;
     if (!g || saveBtn.disabled) return;
-    var textareas = editorArea.querySelectorAll('textarea');
-    textareas.forEach(function(ta) { editContent[ta.dataset.file] = ta.value; });
+    var ta = editorArea.querySelector('textarea.code-editor');
+    if (ta && ta.dataset.file) {
+      editContent[ta.dataset.file] = ta.value;
+    }
     if (isEditing) { collectFileNames(); }
     for (var i = 0; i < editFileNames.length; i++) {
       var fn = editFileNames[i];
@@ -1210,8 +1302,8 @@ applyTranslations();
       var base = 'new-file', newName = base + '.txt', n = 1;
       while (editFileNames.indexOf(newName) !== -1) { newName = base + '-' + n + '.txt'; n++; }
       editFileNames.push(newName); editContent[newName] = '';
-      var ta = editorArea.querySelector('textarea');
-      if (ta) editContent[ta.dataset.file] = ta.value;
+      var curTa = editorArea.querySelector('textarea.code-editor');
+      if (curTa) editContent[curTa.dataset.file] = curTa.value;
       renderContent();
       renderFileViewer(newName, { content: '', language: 'Text', truncated: false });
       highlightActiveTab(newName);
@@ -1222,8 +1314,8 @@ applyTranslations();
       var name = delBtn.dataset.file;
       editFileNames = editFileNames.filter(function(f) { return f !== name; });
       delete editContent[name];
-      var ta2 = editorArea.querySelector('textarea');
-      if (ta2) editContent[ta2.dataset.file] = ta2.value;
+      var curTa2 = editorArea.querySelector('textarea.code-editor');
+      if (curTa2 && curTa2.dataset.file !== name) editContent[curTa2.dataset.file] = curTa2.value;
       renderContent();
       var first = editFileNames[0];
       if (first) { renderFileViewer(first, { content: editContent[first] || '', language: 'Text', truncated: false }); highlightActiveTab(first); }
@@ -1233,8 +1325,8 @@ applyTranslations();
       var wrapper = e.target.closest('.file-tab-edit-item');
       if (!wrapper || e.target.tagName === 'INPUT' || e.target.closest('button')) return;
       var fname = wrapper.dataset.file;
-      var ta3 = editorArea.querySelector('textarea');
-      if (ta3) editContent[ta3.dataset.file] = ta3.value;
+      var curTa3 = editorArea.querySelector('textarea.code-editor');
+      if (curTa3) editContent[curTa3.dataset.file] = curTa3.value;
       renderFileViewer(fname, { content: editContent[fname] || '', language: 'Text', truncated: false });
       highlightActiveTab(fname);
     } else {
@@ -1253,8 +1345,8 @@ applyTranslations();
       editFileNames[idx] = newName;
       e.target.dataset.file = newName;
       if (editContent[oldName] !== undefined) { editContent[newName] = editContent[oldName]; delete editContent[oldName]; }
-      var ta = editorArea.querySelector('textarea');
-      if (ta && ta.dataset.file === oldName) { ta.dataset.file = newName; }
+      var curTa = editorArea.querySelector('textarea.code-editor');
+      if (curTa && curTa.dataset.file === oldName) { curTa.dataset.file = newName; }
       var wrapper = e.target.closest('[data-file]');
       if (wrapper) wrapper.dataset.file = newName;
       var delBtn = wrapper ? wrapper.querySelector('.delete-file-btn') : null;
