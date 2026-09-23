@@ -118,7 +118,7 @@ const HTML = `<!DOCTYPE html>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/properties.min.js"><\/script>
 <style>
 /*! tailwindcss v4.2.4 | MIT License | https://tailwindcss.com */
-@layer properties{@supports (((-webkit-hyphens:none)) and (not (margin-trim:inline))) or ((-moz-orient:inline) and (not (color:rgb(from red r g b)))){*,:before,:after,::backdrop{--tw-translate-x:0;--tw-translate-y:0;--tw-translate-z:0;--tw-rotate-x:initial;--tw-rotate-y:initial;--tw-rotate-z:initial;--tw-skew-x:initial;--tw-skew-y:initial;--tw-space-y-reverse:0;--tw-divide-y-reverse:0;--tw-border-style:solid;--tw-leading:initial;--tw-font-weight:initial;--tw-shadow:0 0 #0000;--tw-shadow-color:initial;--tw-shadow-alpha:100%;--tw-inset-shadow:0 0 #0000;--tw-inset-shadow-color:initial;--tw-inset-shadow-alpha:100%;--tw-ring-color:initial;--tw-ring-shadow:0 0 #0000;--tw-inset-ring-color:initial;--tw-inset-ring-shadow:0 0 #0000;--tw-ring-inset:initial;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-offset-shadow:0 0 #0000;--tw-duration:initial}}}@layer theme{:root,:host{--font-sans:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";--font-mono:'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;--color-red-400:oklch(70.4% .191 22.216);--color-red-600:oklch(57.7% .245 27.325);--color-red-700:oklch(50.5% .213 27.518);--color-yellow-400:oklch(85.2% .199 91.936);--color-yellow-500:oklch(79.5% .184 86.047);--color-green-600:oklch(62.7% .194 149.214);--color-green-700:oklch(52.7% .154 150.069);--color-blue-400:oklch(70.7% .165 254.624);--color-blue-500:oklch(62.3% .214 259.815);--color-blue-600:oklch(54.6% .245 262.881);--color-blue-700:oklch(48.8% .243 264.376);--color-black:#000;--color-white:#fff;--spacing:.25rem;--container-sm:24rem;--container-md:28rem;--text-xs:.75rem;--text-xs--line-height:calc(1 / .75);--text-sm:.875rem;--text-sm--line-height:calc(1.25 / .875);--text-xl:1.25rem;--text-xl--line-height:calc(1.75 / 1.25);--font-weight-medium:500;--font-weight-semibold:600;--leading-relaxed:1.625;--radius-md:.375rem;--radius-lg:.5rem;--radius-xl:.75rem;--animate-spin:spin 1s linear infinite;--default-transition-duration:.15s;--default-transition-timing-function:cubic-bezier(.4, 0, .2, 1);--default-font-family:var(--font-sans);--default-mono-font-family:var(--font-mono)}}@layer base{*,:after,:before,::backdrop{box-sizing:border-box;border:0 solid;margin:0;padding:0}::file-selector-button{box-sizing:border-box;border:0 solid;margin:0;padding:0}html,:host{-webkit-text-size-adjust:100%;tab-size:4;line-height:1.5;font-family:var(--default-font-family,ui-sans-serif, system-ui, sans-serif);font-feature-settings:var(--default-font-feature-settings,normal);font-variation-settings:var(--default-font-variation-settings,normal);-webkit-tap-highlight-color:transparent}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;-webkit-text-decoration:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,samp,pre{font-family:var(--default-mono-font-family,'JetBrains Mono',monospace);font-feature-settings:var(--default-mono-font-feature-settings,normal);font-variation-settings:var(--default-mono-font-variation-settings,normal);font-size:1em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,select,optgroup,textarea{font:inherit;letter-spacing:inherit;color:inherit;background-color:#0000;border-radius:0}textarea{resize:vertical}[hidden]:where(:not([hidden=until-found])){display:none!important}}@layer utilities{.pointer-events-none{pointer-events:none}.absolute{position:absolute}.fixed{position:fixed}.relative{position:relative}.inset-0{inset:0}.right-4{right:1rem}.bottom-4{bottom:1rem}.z-20{z-index:20}.z-50{z-index:50}.mx-4{margin-inline:1rem}.mx-auto{margin-inline:auto}.mt-0\\.5{margin-top:.125rem}.mt-1{margin-top:.25rem}.mt-1\\.5{margin-top:.375rem}.mt-2{margin-top:.5rem}.mb-1{margin-bottom:.25rem}.mb-1\\.5{margin-bottom:.375rem}.mb-3{margin-bottom:.75rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.ml-7{margin-left:1.75rem}.flex{display:flex}.hidden{display:none}.h-3{height:.75rem}.h-3\\.5{height:.875rem}.h-4{height:1rem}.h-5{height:1.25rem}.h-8{height:2rem}.h-12{height:3rem}.h-16{height:4rem}.h-full{height:100%}.w-3{width:.75rem}.w-3\\.5{width:.875rem}.w-4{width:1rem}.w-5{width:1.25rem}.w-8{width:2rem}.w-12{width:3rem}.w-16{width:4rem}.w-28{width:7rem}.w-72{width:18rem}.w-full{width:100%}.max-w-md{max-width:28rem}.max-w-sm{max-width:24rem}.flex-1{flex:1}.shrink-0{flex-shrink:0}.translate-y-20{transform:translateY(5rem)}.animate-spin{animation:spin 1s linear infinite}.cursor-not-allowed{cursor:not-allowed}.cursor-pointer{cursor:pointer}.resize-none{resize:none}.flex-col{flex-direction:column}.items-center{align-items:center}.justify-between{justify-content:space-between}.justify-center{justify-content:center}.gap-0\\.5{gap:.125rem}.gap-1{gap:.25rem}.gap-1\\.5{gap:.375rem}.gap-2{gap:.5rem}.gap-3{gap:.75rem}.truncate{text-overflow:ellipsis;white-space:nowrap;overflow:hidden}.overflow-auto{overflow:auto}.overflow-hidden{overflow:hidden}.overflow-x-auto{overflow-x:auto}.overflow-y-auto{overflow-y:auto}.rounded{border-radius:.25rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:.5rem}.rounded-md{border-radius:.375rem}.rounded-xl{border-radius:.75rem}.border{border-width:1px}.border-t{border-top-width:1px}.border-r{border-right-width:1px}.border-b{border-bottom-width:1px}.border-b-2{border-bottom-width:2px}.p-3{padding:.75rem}.p-4{padding:1rem}.p-6{padding:1.5rem}.px-1{padding-inline:.25rem}.px-2{padding-inline:.5rem}.px-3{padding-inline:.75rem}.px-4{padding-inline:1rem}.py-1{padding-block:.25rem}.py-1\\.5{padding-block:.375rem}.py-2{padding-block:.5rem}.py-2\\.5{padding-block:.625rem}.py-12{padding-block:3rem}.pb-2{padding-bottom:.5rem}.text-center{text-align:center}.text-sm{font-size:.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:.75rem;line-height:1rem}.text-\\[10px\\]{font-size:10px}.leading-relaxed{line-height:1.625}.font-medium{font-weight:500}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.opacity-0{opacity:0}.opacity-25{opacity:.25}.opacity-50{opacity:.5}.opacity-70{opacity:.7}.opacity-75{opacity:.75}.shadow-2xl{box-shadow:0 25px 50px -12px rgba(0,0,0,0.25)}.shadow-lg{box-shadow:0 10px 15px -3px rgba(0,0,0,0.1)}.transition-colors{transition:background-color .15s, border-color .15s, color .15s}.transition-all{transition:all .3s ease}.outline-none{outline:none}@keyframes spin{to{transform:rotate(360deg)}}}
+@layer properties{@supports (((-webkit-hyphens:none)) and (not (margin-trim:inline))) or ((-moz-orient:inline) and (not (color:rgb(from red r g b)))){*,:before,:after,::backdrop{--tw-translate-x:0;--tw-translate-y:0;--tw-translate-z:0;--tw-rotate-x:initial;--tw-rotate-y:initial;--tw-rotate-z:initial;--tw-skew-x:initial;--tw-skew-y:initial;--tw-space-y-reverse:0;--tw-divide-y-reverse:0;--tw-border-style:solid;--tw-leading:initial;--tw-font-weight:initial;--tw-shadow:0 0 #0000;--tw-shadow-color:initial;--tw-shadow-alpha:100%;--tw-inset-shadow:0 0 #0000;--tw-inset-shadow-color:initial;--tw-inset-shadow-alpha:100%;--tw-ring-color:initial;--tw-ring-shadow:0 0 #0000;--tw-inset-ring-color:initial;--tw-inset-ring-shadow:0 0 #0000;--tw-ring-inset:initial;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-offset-shadow:0 0 #0000;--tw-duration:initial}}}@layer theme{:root,:host{--font-sans:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";--font-mono:'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;--color-red-400:oklch(70.4% .191 22.216);--color-red-600:oklch(57.7% .245 27.325);--color-red-700:oklch(50.5% .213 27.518);--color-yellow-400:oklch(85.2% .199 91.936);--color-yellow-500:oklch(79.5% .184 86.047);--color-green-600:oklch(62.7% .194 149.214);--color-green-700:oklch(52.7% .154 150.069);--color-blue-400:oklch(70.7% .165 254.624);--color-blue-500:oklch(62.3% .214 259.815);--color-blue-600:oklch(54.6% .245 262.881);--color-blue-700:oklch(48.8% .243 264.376);--color-black:#000;--color-white:#fff;--spacing:.25rem;--container-sm:24rem;--container-md:28rem;--text-xs:.75rem;--text-xs--line-height:calc(1 / .75);--text-sm:.875rem;--text-sm--line-height:calc(1.25 / .875);--text-xl:1.25rem;--text-xl--line-height:calc(1.75 / 1.25);--font-weight-medium:500;--font-weight-semibold:600;--leading-relaxed:1.625;--radius-md:.375rem;--radius-lg:.5rem;--radius-xl:.75rem;--animate-spin:spin 1s linear infinite;--default-transition-duration:.15s;--default-transition-timing-function:cubic-bezier(.4, 0, .2, 1);--default-font-family:var(--font-sans);--default-mono-font-family:var(--font-mono)}}@layer base{*,:after,:before,::backdrop{box-sizing:border-box;border:0 solid;margin:0;padding:0}::file-selector-button{box-sizing:border-box;border:0 solid;margin:0;padding:0}html,:host{-webkit-text-size-adjust:100%;tab-size:4;line-height:1.5;font-family:var(--default-font-family,ui-sans-serif, system-ui, sans-serif);font-feature-settings:var(--default-font-feature-settings,normal);font-variation-settings:var(--default-font-variation-settings,normal);-webkit-tap-highlight-color:transparent}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;-webkit-text-decoration:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,samp,pre{font-family:var(--default-mono-font-family,'JetBrains Mono',monospace);font-feature-settings:var(--default-mono-font-feature-settings,normal);font-variation-settings:var(--default-mono-font-variation-settings,normal);font-size:1em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,select,optgroup,textarea{font:inherit;letter-spacing:inherit;color:inherit;background-color:#0000;border-radius:0}textarea{resize:vertical}[hidden]:where(:not([hidden=until-found])){display:none!important}}@layer utilities{.pointer-events-none{pointer-events:none}.absolute{position:absolute}.fixed{position:fixed}.relative{position:relative}.inset-0{inset:0}.right-4{right:1rem}.bottom-4{bottom:1rem}.z-20{z-index:20}.z-50{z-index:50}.mx-4{margin-inline:1rem}.mx-auto{margin-inline:auto}.mt-0\\.5{margin-top:.125rem}.mt-1{margin-top:.25rem}.mt-1\\.5{margin-top:.375rem}.mt-2{margin-top:.5rem}.mb-1{margin-bottom:.25rem}.mb-1\\.5{margin-bottom:.375rem}.mb-3{margin-bottom:.75rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.ml-7{margin-left:1.75rem}.flex{display:flex}.hidden{display:none}.h-3{height:.75rem}.h-3\\.5{height:.875rem}.h-4{height:1rem}.h-5{height:1.25rem}.h-7{height:1.75rem}.h-8{height:2rem}.h-12{height:3rem}.h-16{height:4rem}.h-full{height:100%}.w-3{width:.75rem}.w-3\\.5{width:.875rem}.w-4{width:1rem}.w-5{width:1.25rem}.w-7{width:1.75rem}.w-8{width:2rem}.w-12{width:3rem}.w-16{width:4rem}.w-28{width:7rem}.w-72{width:18rem}.w-full{width:100%}.max-w-md{max-width:28rem}.max-w-sm{max-width:24rem}.flex-1{flex:1}.shrink-0{flex-shrink:0}.translate-y-20{transform:translateY(5rem)}.animate-spin{animation:spin 1s linear infinite}.cursor-not-allowed{cursor:not-allowed}.cursor-pointer{cursor:pointer}.resize-none{resize:none}.flex-col{flex-direction:column}.items-center{align-items:center}.justify-between{justify-content:space-between}.justify-center{justify-content:center}.gap-0\\.5{gap:.125rem}.gap-1{gap:.25rem}.gap-1\\.5{gap:.375rem}.gap-2{gap:.5rem}.gap-3{gap:.75rem}.truncate{text-overflow:ellipsis;white-space:nowrap;overflow:hidden}.overflow-auto{overflow:auto}.overflow-hidden{overflow:hidden}.overflow-x-auto{overflow-x:auto}.overflow-y-auto{overflow-y:auto}.rounded{border-radius:.25rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:.5rem}.rounded-md{border-radius:.375rem}.rounded-xl{border-radius:.75rem}.border{border-width:1px}.border-t{border-top-width:1px}.border-r{border-right-width:1px}.border-b{border-bottom-width:1px}.border-b-2{border-bottom-width:2px}.p-3{padding:.75rem}.p-4{padding:1rem}.p-6{padding:1.5rem}.px-1{padding-inline:.25rem}.px-2{padding-inline:.5rem}.px-3{padding-inline:.75rem}.px-4{padding-inline:1rem}.py-1{padding-block:.25rem}.py-1\\.5{padding-block:.375rem}.py-2{padding-block:.5rem}.py-2\\.5{padding-block:.625rem}.py-12{padding-block:3rem}.pb-2{padding-bottom:.5rem}.text-center{text-align:center}.text-sm{font-size:.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:.75rem;line-height:1rem}.text-\\[10px\\]{font-size:10px}.leading-relaxed{line-height:1.625}.font-medium{font-weight:500}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.opacity-0{opacity:0}.opacity-25{opacity:.25}.opacity-50{opacity:.5}.opacity-70{opacity:.7}.opacity-75{opacity:.75}.shadow-2xl{box-shadow:0 25px 50px -12px rgba(0,0,0,0.25)}.shadow-lg{box-shadow:0 10px 15px -3px rgba(0,0,0,0.1)}.transition-colors{transition:background-color .15s, border-color .15s, color .15s}.transition-all{transition:all .3s ease}.outline-none{outline:none}@keyframes spin{to{transform:rotate(360deg)}}}
 
   /* ── 浅色 / 深色 主题色彩系统 ────────────────────────── */
   :root {
@@ -137,6 +137,11 @@ const HTML = `<!DOCTYPE html>
     --pill-bg: #e2e8f0;
     --pill-btn-hover: #cbd5e1;
     --modal-mask: rgba(0, 0, 0, 0.45);
+    
+    /* 选项卡色彩 */
+    --tab-bar-bg: #e2e8f0;
+    --tab-active-bg: #ffffff;
+    --tab-inactive-hover: #cbd5e1;
   }
 
   html.dark {
@@ -155,6 +160,11 @@ const HTML = `<!DOCTYPE html>
     --pill-bg: #1e293b;
     --pill-btn-hover: #334155;
     --modal-mask: rgba(0, 0, 0, 0.75);
+
+    /* 选项卡色彩 */
+    --tab-bar-bg: #090d16;
+    --tab-active-bg: #111827;
+    --tab-inactive-hover: #1f2937;
   }
 
   body {
@@ -163,7 +173,6 @@ const HTML = `<!DOCTYPE html>
     color: var(--text-primary);
   }
 
-  /* 基础结构颜色自适应 */
   .theme-bg-page { background-color: var(--bg-page); }
   .theme-bg-surface { background-color: var(--bg-surface); }
   .theme-bg-sidebar { background-color: var(--bg-sidebar); }
@@ -228,6 +237,53 @@ const HTML = `<!DOCTYPE html>
   .pill-btn.active {
     background-color: #3b82f6 !important;
     color: #ffffff !important;
+  }
+
+  /* ── 现代化文件选项卡样式 ────────────────────────── */
+  #file-tabs {
+    background-color: var(--tab-bar-bg);
+  }
+
+  .file-tab-btn {
+    border-top: 2px solid transparent;
+    border-right: 1px solid var(--border-color);
+    background: transparent;
+    color: var(--text-muted);
+    transition: all 0.15s ease;
+  }
+
+  .file-tab-btn:hover {
+    background-color: var(--tab-inactive-hover);
+    color: var(--text-primary);
+  }
+
+  .file-tab-btn.tab-active {
+    background-color: var(--tab-active-bg) !important;
+    color: #3b82f6 !important;
+    border-top-color: #3b82f6 !important;
+    font-weight: 600;
+  }
+
+  /* 编辑模式下的 tab 容器 */
+  .file-tab-edit-item {
+    border-top: 2px solid transparent;
+    border-right: 1px solid var(--border-color);
+    background: transparent;
+    transition: all 0.15s ease;
+  }
+
+  .file-tab-edit-item:hover {
+    background-color: var(--tab-inactive-hover);
+  }
+
+  .file-tab-edit-item.tab-active {
+    background-color: var(--tab-active-bg) !important;
+    border-top-color: #3b82f6 !important;
+  }
+
+  .file-tab-edit-item.tab-active input {
+    color: #3b82f6 !important;
+    font-weight: 600;
   }
 
   /* 滚动条美化 */
@@ -302,11 +358,9 @@ const HTML = `<!DOCTYPE html>
         <button class="pill-btn" data-lang="ja">日本語</button>
       </span>
 
-      <!-- 深色 / 浅色 模式切换按钮 -->
-      <button id="theme-toggle-btn" class="p-1.5 rounded-full theme-bg-input theme-text-secondary hover:theme-text-primary transition-colors" title="切换深色/浅色模式">
-        <!-- 太阳图标 (浅色激活状态显示) -->
+      <!-- 深色 / 浅色 模式切换按钮 (正圆且完美居中) -->
+      <button id="theme-toggle-btn" class="w-7 h-7 rounded-full theme-bg-input theme-text-secondary hover:theme-text-primary transition-colors flex items-center justify-center shrink-0" title="切换深色/浅色模式">
         <svg id="theme-icon-sun" class="w-4 h-4 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
-        <!-- 月亮图标 (深色激活状态显示) -->
         <svg id="theme-icon-moon" class="w-4 h-4 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
       </button>
 
@@ -396,7 +450,8 @@ const HTML = `<!DOCTYPE html>
           </div>
         </div>
 
-        <div id="file-tabs" class="flex gap-0 px-4 theme-bg-surface border-b theme-border shrink-0 overflow-x-auto"></div>
+        <!-- 选项卡展示区 -->
+        <div id="file-tabs" class="flex gap-0 px-2 border-b theme-border shrink-0 overflow-x-auto"></div>
         <div id="editor-area" class="flex-1 overflow-hidden flex flex-col"></div>
 
         <div id="comments-section" class="border-t theme-border theme-bg-surface shrink-0" style="max-height: 40%;">
@@ -927,18 +982,21 @@ applyTranslations();
     }
     var files = g.files;
     var fileNames = isEditing ? editFileNames : Object.keys(files);
+    var renderName = (activeFileName && fileNames.indexOf(activeFileName) !== -1) ? activeFileName : fileNames[0];
+
+    // 渲染选项卡结构
     if (isEditing) {
-      fileTabs.innerHTML = fileNames.map(function(name, i) {
-        var active = i === 0 ? 'border-blue-500 text-blue-500' : 'border-transparent theme-text-muted';
-        return '<div class="flex items-center gap-0.5 shrink-0 border-b-2 ' + active + ' transition-colors" data-file="' + escAttr(name) + '"><input class="file-name-input bg-transparent text-xs mono px-2 py-1.5 outline-none theme-text-primary w-28" value="' + escAttr(name) + '" data-file="' + escAttr(name) + '" spellcheck="false">' + (fileNames.length > 1 ? '<button class="delete-file-btn theme-text-muted hover:text-red-500 px-1" data-file="' + escAttr(name) + '" title="' + I18N.t('files.deleteFile') + '">&times;</button>' : '') + '</div>';
-      }).join('') + '<button id="add-file-btn" class="shrink-0 px-2 py-1.5 text-xs theme-text-muted hover:theme-text-primary border-b-2 border-transparent" title="' + I18N.t('files.addFile') + '">+</button>';
+      fileTabs.innerHTML = fileNames.map(function(name) {
+        var active = name === renderName ? ' tab-active' : '';
+        return '<div class="file-tab-edit-item flex items-center gap-1 shrink-0 px-2 py-1 text-xs mono cursor-pointer' + active + '" data-file="' + escAttr(name) + '"><input class="file-name-input bg-transparent text-xs mono px-1 py-1 outline-none theme-text-primary w-28" value="' + escAttr(name) + '" data-file="' + escAttr(name) + '" spellcheck="false">' + (fileNames.length > 1 ? '<button class="delete-file-btn theme-text-muted hover:text-red-500 px-1" data-file="' + escAttr(name) + '" title="' + I18N.t('files.deleteFile') + '">&times;</button>' : '') + '</div>';
+      }).join('') + '<button id="add-file-btn" class="shrink-0 px-3 py-1.5 text-xs font-semibold theme-text-muted hover:theme-text-primary transition-colors" title="' + I18N.t('files.addFile') + '">+</button>';
     } else {
-      fileTabs.innerHTML = fileNames.map(function(name, i) {
-        var active = i === 0 ? 'border-blue-500 text-blue-500' : 'border-transparent theme-text-muted hover:theme-text-primary';
-        return '<button class="file-tab px-3 py-1.5 text-xs border-b-2 ' + active + ' transition-colors shrink-0" data-file="' + escAttr(name) + '">' + escHtml(name) + '</button>';
+      fileTabs.innerHTML = fileNames.map(function(name) {
+        var active = name === renderName ? ' tab-active' : '';
+        return '<button class="file-tab-btn px-4 py-2 text-xs mono transition-colors shrink-0' + active + '" data-file="' + escAttr(name) + '">' + escHtml(name) + '</button>';
       }).join('');
     }
-    var renderName = (activeFileName && fileNames.indexOf(activeFileName) !== -1) ? activeFileName : fileNames[0];
+
     var fileData = g.files[renderName] || { content: '', language: 'Text', truncated: false };
     renderFileViewer(renderName, fileData);
     highlightActiveTab(renderName);
@@ -947,14 +1005,20 @@ applyTranslations();
   function highlightActiveTab(name) {
     activeFileName = name;
     if (isEditing) {
-      fileTabs.querySelectorAll('[data-file]').forEach(function(el) {
-        if (el.dataset.file === name) { el.classList.add('border-blue-500', 'text-blue-500'); el.classList.remove('border-transparent', 'theme-text-muted'); }
-        else { el.classList.remove('border-blue-500', 'text-blue-500'); el.classList.add('border-transparent', 'theme-text-muted'); }
+      fileTabs.querySelectorAll('.file-tab-edit-item').forEach(function(el) {
+        if (el.dataset.file === name) {
+          el.classList.add('tab-active');
+        } else {
+          el.classList.remove('tab-active');
+        }
       });
     } else {
-      fileTabs.querySelectorAll('.file-tab').forEach(function(t) {
-        if (t.dataset.file === name) { t.classList.add('border-blue-500', 'text-blue-500'); t.classList.remove('border-transparent', 'theme-text-muted', 'hover:theme-text-primary'); }
-        else { t.classList.remove('border-blue-500', 'text-blue-500'); t.classList.add('border-transparent', 'theme-text-muted', 'hover:theme-text-primary'); }
+      fileTabs.querySelectorAll('.file-tab-btn').forEach(function(t) {
+        if (t.dataset.file === name) {
+          t.classList.add('tab-active');
+        } else {
+          t.classList.remove('tab-active');
+        }
       });
     }
   }
@@ -1166,7 +1230,7 @@ applyTranslations();
       return;
     }
     if (isEditing) {
-      var wrapper = e.target.closest('[data-file]');
+      var wrapper = e.target.closest('.file-tab-edit-item');
       if (!wrapper || e.target.tagName === 'INPUT' || e.target.closest('button')) return;
       var fname = wrapper.dataset.file;
       var ta3 = editorArea.querySelector('textarea');
@@ -1174,7 +1238,7 @@ applyTranslations();
       renderFileViewer(fname, { content: editContent[fname] || '', language: 'Text', truncated: false });
       highlightActiveTab(fname);
     } else {
-      var tab = e.target.closest('.file-tab');
+      var tab = e.target.closest('.file-tab-btn');
       if (!tab) return;
       switchFile(tab.dataset.file);
     }
