@@ -110,7 +110,7 @@ const HTML = `<!DOCTYPE html>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
 <!-- Highlight.js 核心库 (自带 JS/TS/HTML/CSS/JSON 等常见语言) -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"><\/script>
-<!-- 额外语言支持: Bash、Rust、Golang、INI/Properties、Nginx (支持 .conf 系列配置) -->
+<!-- 额外语言支持: Bash、Rust、Golang、INI/Properties、Nginx -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/bash.min.js"><\/script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/rust.min.js"><\/script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"><\/script>
@@ -127,7 +127,7 @@ const HTML = `<!DOCTYPE html>
   .gist-item:hover { background-color: rgba(255,255,255,0.05); }
   .gist-item.active { background-color: rgba(59,130,246,0.15); border-left: 3px solid #3b82f6; }
   pre { white-space: pre-wrap; word-break: break-word; }
-  pre code.hljs { background: transparent !important; padding: 0 !important; font-family: 'JetBrains Mono', monospace; }
+  pre code.hljs { background: transparent !important; padding: 0 !important; font-family: 'JetBrains Mono', monospace; font-size: inherit !important; }
   textarea.code-editor { font-family: 'JetBrains Mono', monospace; tab-size: 2; }
   .spinner { animation: spin 0.8s linear infinite; }
   @keyframes spin { to { transform: rotate(360deg); } }
@@ -257,6 +257,13 @@ const HTML = `<!DOCTYPE html>
             <p id="gist-meta" class="text-xs text-gray-500 mt-0.5"></p>
           </div>
           <div class="flex items-center gap-2">
+            <!-- 字号调节器 -->
+            <div class="flex items-center bg-gray-800 rounded-md border border-gray-700/60 p-0.5 mr-1">
+              <button id="font-decrease-btn" class="px-2 py-1 text-xs text-gray-400 hover:text-gray-100 hover:bg-gray-700 rounded transition-colors font-mono" data-i18n="[title]fontSize.decrease" title="减小字号">A-</button>
+              <button id="font-reset-btn" class="px-1.5 py-1 text-[11px] text-gray-400 hover:text-blue-400 hover:bg-gray-700 rounded transition-colors font-mono" data-i18n="[title]fontSize.reset" title="重置字号"><span id="font-size-val">14</span>px</button>
+              <button id="font-increase-btn" class="px-2 py-1 text-xs text-gray-400 hover:text-gray-100 hover:bg-gray-700 rounded transition-colors font-mono" data-i18n="[title]fontSize.increase" title="增大字号">A+</button>
+            </div>
+
             <button id="edit-btn" class="px-3 py-1.5 text-xs bg-gray-800 hover:bg-gray-700 rounded-md transition-colors flex items-center gap-1">
               <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
               <span data-i18n="editor.edit">编辑</span>
@@ -323,7 +330,59 @@ if(typeof a!=="string")return k;
 if(v)for(var x in v)a=a.split("{{"+x+"}}").join(v[x]);
 return a;},
 changeLanguage:function(l,cb){this.lang=l;if(cb)cb();}};
-var RES={"zh-CN":{"app":{"title":"GitHub Gist Manager"},"auth":{"desc":"输入你的 GitHub Token 以开始","switchAccount":"使用其他账号","tokenLabel":"Personal Access Token","tokenPlaceholder":"ghp_xxxxxxxxxxxxxxxxxxxx","tokenHint":"需要 <code>gist</code> 权限。去 <a>GitHub Settings</a> 创建 token","confirm":"确认","loginAs":"以 {{login}} 身份登录","confirmLogin":"确认登录","verifying":"验证中...","enterToken":"请输入 Token","tokenInvalid":"Token 无效: {{message}}"},"nav":{"appName":"Gist Manager","refresh":"刷新","changeToken":"更换Token"},"sidebar":{"searchPlaceholder":"搜索 Gist...","new":"新建","loading":"加载中...","notFound":"没有找到 Gist"},"emptyState":{"hint":"选择左侧的 Gist 查看内容","loadFailed":"加载失败: {{message}}"},"editor":{"edit":"编辑","delete":"删除","save":"保存","saving":"保存中...","cancel":"取消","toggleVisibility":"切换可见性","github":"GitHub"},"gistMeta":{"descPlaceholder":"Gist 描述","unsaved":"未保存的 Gist","created":"创建于","updated":"更新于","noDesc":"(无描述)","newGist":"(新建 Gist)","unsavedBadge":"未保存"},"files":{"deleteFile":"删除文件","addFile":"添加文件"},"viewer":{"truncated":"⚠ 此文件内容被截断，编辑并保存可能丢失数据","lines":"行"},"overlay":{"saving":"正在保存...","loading":"正在加载..."},"comments":{"title":"评论","placeholder":"写评论...","submit":"提交评论","saveFirst":"保存后才可以评论","noComments":"暂无评论","enterContent":"请输入评论内容","posted":"评论已提交","postFailed":"评论失败: {{message}}"},"toast":{"loadFailed":"加载 Gist 失败: {{message}}","filenameEmpty":"文件名不能为空","fileContentEmpty":"文件 \\\"{{name}}\\\" 内容不能为空","gistCreated":"Gist 已创建","gistSaved":"Gist 已保存","saveFailed":"保存失败: {{message}}"},"delete":{"confirmTitle":"确认删除此gist？","confirmText":"确认","cancelText":"取消","deleting":"删除中...","deleteFailed":"删除失败: {{message}}"},"lang":{"zh-CN":"中文","en":"English","ja":"日本語"}},"en":{"app":{"title":"GitHub Gist Manager"},"auth":{"desc":"Enter your GitHub Token to get started","switchAccount":"Use another account","tokenLabel":"Personal Access Token","tokenPlaceholder":"ghp_xxxxxxxxxxxxxxxxxxxx","tokenHint":"Requires <code>gist</code> scope. Create a token at <a>GitHub Settings</a>","confirm":"Confirm","loginAs":"Login as {{login}}","confirmLogin":"Confirm Login","verifying":"Verifying...","enterToken":"Please enter a Token","tokenInvalid":"Invalid Token: {{message}}"},"nav":{"appName":"Gist Manager","refresh":"Refresh","changeToken":"Change Token"},"sidebar":{"searchPlaceholder":"Search Gists...","new":"New","loading":"Loading...","notFound":"No Gists found"},"emptyState":{"hint":"Select a Gist from the left to view","loadFailed":"Load failed: {{message}}"},"editor":{"edit":"Edit","delete":"Delete","save":"Save","saving":"Saving...","cancel":"Cancel","toggleVisibility":"Toggle visibility","github":"GitHub"},"gistMeta":{"descPlaceholder":"Gist description","unsaved":"Unsaved Gist","created":"Created","updated":"Updated","noDesc":"(no description)","newGist":"(New Gist)","unsavedBadge":"Unsaved"},"files":{"deleteFile":"Delete file","addFile":"Add file"},"viewer":{"truncated":"⚠ File content is truncated. Editing and saving may lose data.","lines":"lines"},"overlay":{"saving":"Saving...","loading":"Loading..."},"comments":{"title":"Comments","placeholder":"Write a comment...","submit":"Submit Comment","saveFirst":"Save before commenting","noComments":"No comments yet","enterContent":"Please enter a comment","posted":"Comment posted","postFailed":"Comment failed: {{message}}"},"toast":{"loadFailed":"Failed to load Gist: {{message}}","filenameEmpty":"Filename cannot be empty","fileContentEmpty":"File \\\"{{name}}\\\" content cannot be empty","gistCreated":"Gist created","gistSaved":"Gist saved","saveFailed":"Save failed: {{message}}"},"delete":{"confirmTitle":"Confirm delete this gist?","confirmText":"Confirm","cancelText":"Cancel","deleting":"Deleting...","deleteFailed":"Delete failed: {{message}}"},"lang":{"zh-CN":"中文","en":"English","ja":"日本語"}},"ja":{"app":{"title":"GitHub Gist Manager"},"auth":{"desc":"GitHubトークンを入力して開始","switchAccount":"別のアカウントを使用","tokenLabel":"Personal Access Token","tokenPlaceholder":"ghp_xxxxxxxxxxxxxxxxxxxx","tokenHint":"<code>gist</code> スコープが必要です。<a>GitHub Settings</a> でトークンを作成してください","confirm":"確認","loginAs":"{{login}} 作为登录","confirmLogin":"ログイン確認","verifying":"検証中...","enterToken":"トークンを入力してください","tokenInvalid":"無効なトークン: {{message}}"},"nav":{"appName":"Gist Manager","refresh":"更新","changeToken":"トークン変更"},"sidebar":{"searchPlaceholder":"Gistを検索...","new":"新規","loading":"読み込み中...","notFound":"Gistが見つかりません"},"emptyState":{"hint":"左側からGistを選択して表示","loadFailed":"読み込み失敗: {{message}}"},"editor":{"edit":"編集","delete":"削除","save":"保存","saving":"保存中...","cancel":"キャンセル","toggleVisibility":"公開設定切り替え","github":"GitHub"},"gistMeta":{"descPlaceholder":"Gistの説明","unsaved":"未保存のGist","created":"作成日","updated":"更新日","noDesc":"(説明なし)","newGist":"(新規Gist)","unsavedBadge":"未保存"},"files":{"deleteFile":"ファイルを削除","addFile":"ファイルを追加"},"viewer":{"truncated":"⚠ ファイルの内容が切り詰められています。編集して保存するとデータが失われる可能性があります","lines":"行"},"overlay":{"saving":"保存中...","loading":"読み込み中..."},"comments":{"title":"コメント","placeholder":"コメントを書く...","submit":"コメントを送信","saveFirst":"保存後にコメントできます","noComments":"まだコメントはありません","enterContent":"コメントを入力してください","posted":"コメントを投稿しました","postFailed":"コメント失敗: {{message}}"},"toast":{"loadFailed":"Gistの読み込みに失敗: {{message}}","filenameEmpty":"ファイル名を空にすることはできません","fileContentEmpty":"ファイル \\\"{{name}}\\\" の内容を空にすることはできません","gistCreated":"Gistを作成しました","gistSaved":"Gistを保存しました","saveFailed":"保存失敗: {{message}}"},"delete":{"confirmTitle":"このGistを削除しますか？","confirmText":"確認","cancelText":"キャンセル","deleting":"削除中...","deleteFailed":"削除失敗: {{message}}"},"lang":{"zh-CN":"中文","en":"English","ja":"日本語"}}};
+var RES={
+  "zh-CN":{
+    "app":{"title":"GitHub Gist Manager"},
+    "auth":{"desc":"输入你的 GitHub Token 以开始","switchAccount":"使用其他账号","tokenLabel":"Personal Access Token","tokenPlaceholder":"ghp_xxxxxxxxxxxxxxxxxxxx","tokenHint":"需要 <code>gist</code> 权限。去 <a>GitHub Settings</a> 创建 token","confirm":"确认","loginAs":"以 {{login}} 身份登录","confirmLogin":"确认登录","verifying":"验证中...","enterToken":"请输入 Token","tokenInvalid":"Token 无效: {{message}}"},
+    "nav":{"appName":"Gist Manager","refresh":"刷新","changeToken":"更换Token"},
+    "sidebar":{"searchPlaceholder":"搜索 Gist...","new":"新建","loading":"加载中...","notFound":"没有找到 Gist"},
+    "emptyState":{"hint":"选择左侧的 Gist 查看内容","loadFailed":"加载失败: {{message}}"},
+    "editor":{"edit":"编辑","delete":"删除","save":"保存","saving":"保存中...","cancel":"取消","toggleVisibility":"切换可见性","github":"GitHub"},
+    "fontSize":{"decrease":"减小字号","increase":"增大字号","reset":"重置字号 (14px)"},
+    "gistMeta":{"descPlaceholder":"Gist 描述","unsaved":"未保存的 Gist","created":"创建于","updated":"更新于","noDesc":"(无描述)","newGist":"(新建 Gist)","unsavedBadge":"未保存"},
+    "files":{"deleteFile":"删除文件","addFile":"添加文件"},
+    "viewer":{"truncated":"⚠ 此文件内容被截断，编辑并保存可能丢失数据","lines":"行"},
+    "overlay":{"saving":"正在保存...","loading":"正在加载..."},
+    "comments":{"title":"评论","placeholder":"写评论...","submit":"提交评论","saveFirst":"保存后才可以评论","noComments":"暂无评论","enterContent":"请输入评论内容","posted":"评论已提交","postFailed":"评论失败: {{message}}"},
+    "toast":{"loadFailed":"加载 Gist 失败: {{message}}","filenameEmpty":"文件名不能为空","fileContentEmpty":"文件 \\\"{{name}}\\\" 内容不能为空","gistCreated":"Gist 已创建","gistSaved":"Gist 已保存","saveFailed":"保存失败: {{message}}"},
+    "delete":{"confirmTitle":"确认删除此gist？","confirmText":"确认","cancelText":"取消","deleting":"删除中...","deleteFailed":"删除失败: {{message}}"},
+    "lang":{"zh-CN":"中文","en":"English","ja":"日本語"}
+  },
+  "en":{
+    "app":{"title":"GitHub Gist Manager"},
+    "auth":{"desc":"Enter your GitHub Token to get started","switchAccount":"Use another account","tokenLabel":"Personal Access Token","tokenPlaceholder":"ghp_xxxxxxxxxxxxxxxxxxxx","tokenHint":"Requires <code>gist</code> scope. Create a token at <a>GitHub Settings</a>","confirm":"Confirm","loginAs":"Login as {{login}}","confirmLogin":"Confirm Login","verifying":"Verifying...","enterToken":"Please enter a Token","tokenInvalid":"Invalid Token: {{message}}"},
+    "nav":{"appName":"Gist Manager","refresh":"Refresh","changeToken":"Change Token"},
+    "sidebar":{"searchPlaceholder":"Search Gists...","new":"New","loading":"Loading...","notFound":"No Gists found"},
+    "emptyState":{"hint":"Select a Gist from the left to view","loadFailed":"Load failed: {{message}}"},
+    "editor":{"edit":"Edit","delete":"Delete","save":"Save","saving":"Saving...","cancel":"Cancel","toggleVisibility":"Toggle visibility","github":"GitHub"},
+    "fontSize":{"decrease":"Decrease font size","increase":"Increase font size","reset":"Reset font size (14px)"},
+    "gistMeta":{"descPlaceholder":"Gist description","unsaved":"Unsaved Gist","created":"Created","updated":"Updated","noDesc":"(no description)","newGist":"(New Gist)","unsavedBadge":"Unsaved"},
+    "files":{"deleteFile":"Delete file","addFile":"Add file"},
+    "viewer":{"truncated":"⚠ File content is truncated. Editing and saving may lose data.","lines":"lines"},
+    "overlay":{"saving":"Saving...","loading":"Loading..."},
+    "comments":{"title":"Comments","placeholder":"Write a comment...","submit":"Submit Comment","saveFirst":"Save before commenting","noComments":"No comments yet","enterContent":"Please enter a comment","posted":"Comment posted","postFailed":"Comment failed: {{message}}"},
+    "toast":{"loadFailed":"Failed to load Gist: {{message}}","filenameEmpty":"Filename cannot be empty","fileContentEmpty":"File \\\"{{name}}\\\" content cannot be empty","gistCreated":"Gist created","gistSaved":"Gist saved","saveFailed":"Save failed: {{message}}"},
+    "delete":{"confirmTitle":"Confirm delete this gist?","confirmText":"Confirm","cancelText":"Cancel","deleting":"Deleting...","deleteFailed":"Delete failed: {{message}}"},
+    "lang":{"zh-CN":"中文","en":"English","ja":"日本語"}
+  },
+  "ja":{
+    "app":{"title":"GitHub Gist Manager"},
+    "auth":{"desc":"GitHubトークンを入力して開始","switchAccount":"別のアカウントを使用","tokenLabel":"Personal Access Token","tokenPlaceholder":"ghp_xxxxxxxxxxxxxxxxxxxx","tokenHint":"<code>gist</code> スコープが必要です。<a>GitHub Settings</a> でトークンを作成してください","confirm":"確認","loginAs":"{{login}} としてログイン","confirmLogin":"ログイン確認","verifying":"検証中...","enterToken":"トークンを入力してください","tokenInvalid":"無効なトークン: {{message}}"},
+    "nav":{"appName":"Gist Manager","refresh":"更新","changeToken":"トークン変更"},
+    "sidebar":{"searchPlaceholder":"Gistを検索...","new":"新規","loading":"読み込み中...","notFound":"Gistが見つかりません"},
+    "emptyState":{"hint":"左側からGistを選択して表示","loadFailed":"読み込み失敗: {{message}}"},
+    "editor":{"edit":"編集","delete":"削除","save":"保存","saving":"保存中...","cancel":"キャンセル","toggleVisibility":"公開設定切り替え","github":"GitHub"},
+    "fontSize":{"decrease":"文字サイズ縮小","increase":"文字サイズ拡大","reset":"文字サイズ初期化 (14px)"},
+    "gistMeta":{"descPlaceholder":"Gistの説明","unsaved":"未保存のGist","created":"作成日","updated":"更新日","noDesc":"(説明なし)","newGist":"(新規Gist)","unsavedBadge":"未保存"},
+    "files":{"deleteFile":"ファイルを削除","addFile":"ファイルを追加"},
+    "viewer":{"truncated":"⚠ ファイルの内容が切り詰められています。編集して保存するとデータが失われる可能性があります","lines":"行"},
+    "overlay":{"saving":"保存中...","loading":"読み込み中..."},
+    "comments":{"title":"コメント","placeholder":"コメントを書く...","submit":"コメントを送信","saveFirst":"保存後にコメントできます","noComments":"まだコメントはありません","enterContent":"コメントを入力してください","posted":"コメントを投稿しました","postFailed":"コメント失敗: {{message}}"},
+    "toast":{"loadFailed":"Gistの読み込みに失敗: {{message}}","filenameEmpty":"ファイル名を空にすることはできません","fileContentEmpty":"ファイル \\\"{{name}}\\\" の内容を空にすることはできません","gistCreated":"Gistを作成しました","gistSaved":"Gistを保存しました","saveFailed":"保存失敗: {{message}}"},
+    "delete":{"confirmTitle":"このGistを削除しますか？","confirmText":"確認","cancelText":"キャンセル","deleting":"削除中...","deleteFailed":"削除失敗: {{message}}"},
+    "lang":{"zh-CN":"中文","en":"English","ja":"日本語"}
+  }
+};
 (function(){var s=localStorage.getItem("gist_manager_lang");
 var n=(navigator.language||"zh-CN").split("-")[0];
 var l=s&&RES[s]?s:(n==="zh"?"zh-CN":n==="ja"?"ja":n==="en"?"en":"zh-CN");
@@ -388,6 +447,12 @@ applyTranslations();
   const commentsBody = $('#comments-body');
   const toast = $('#toast');
 
+  // 字号调节元素
+  const fontDecreaseBtn = $('#font-decrease-btn');
+  const fontIncreaseBtn = $('#font-increase-btn');
+  const fontResetBtn = $('#font-reset-btn');
+  const fontSizeVal = $('#font-size-val');
+
   let gists = [];
   let selectedGist = null;
   let selectedGistDetail = null;
@@ -399,7 +464,31 @@ applyTranslations();
   let allGists = [];
   let rememberedUserData = null;
 
-  // 映射文件名后缀或语言名称到 hljs 支持的语法名称
+  // 字号状态管理（默认 14px，区间 11px - 26px）
+  let currentFontSize = parseInt(localStorage.getItem('gist_font_size'), 10) || 14;
+
+  function updateFontSize(newSize) {
+    currentFontSize = Math.min(26, Math.max(11, newSize));
+    localStorage.setItem('gist_font_size', currentFontSize);
+    if (fontSizeVal) fontSizeVal.textContent = currentFontSize;
+
+    // 应用到当前查看器及编辑器
+    const pre = editorArea.querySelector('pre');
+    if (pre) {
+      pre.style.fontSize = currentFontSize + 'px';
+      pre.style.lineHeight = (currentFontSize * 1.5) + 'px';
+    }
+    const ta = editorArea.querySelector('textarea.code-editor');
+    if (ta) {
+      ta.style.fontSize = currentFontSize + 'px';
+      ta.style.lineHeight = (currentFontSize * 1.5) + 'px';
+    }
+  }
+
+  fontDecreaseBtn.addEventListener('click', () => updateFontSize(currentFontSize - 1));
+  fontIncreaseBtn.addEventListener('click', () => updateFontSize(currentFontSize + 1));
+  fontResetBtn.addEventListener('click', () => updateFontSize(14));
+
   function detectHljsLanguage(filename, rawLang) {
     if (!window.hljs) return '';
     var l = (rawLang || '').toLowerCase().trim();
@@ -409,26 +498,18 @@ applyTranslations();
       ext = filename.slice(dotIdx + 1).toLowerCase().trim();
     }
 
-    // 后缀与别名规则
     var extMap = {
-      // Bash / Shell
       'sh': 'bash', 'bash': 'bash', 'zsh': 'bash', 'shell': 'bash',
-      // Rust
       'rs': 'rust', 'rust': 'rust',
-      // Golang
       'go': 'go', 'golang': 'go',
-      // JavaScript / TypeScript
       'js': 'javascript', 'javascript': 'javascript', 'mjs': 'javascript', 'cjs': 'javascript',
       'ts': 'typescript', 'typescript': 'typescript', 'tsx': 'typescript', 'jsx': 'javascript',
-      // Config / INI / Nginx / Properties
       'conf': 'ini', 'ini': 'ini', 'cfg': 'ini', 'properties': 'properties',
       'env': 'bash', 'nginx': 'nginx', 'nginxconf': 'nginx',
-      // 其他常见支持
       'json': 'json', 'yaml': 'yaml', 'yml': 'yaml', 'toml': 'ini', 'md': 'markdown',
       'py': 'python', 'python': 'python', 'sql': 'sql', 'html': 'xml', 'xml': 'xml', 'css': 'css'
     };
 
-    // 特殊文件处理 (例如 nginx.conf, .bashrc)
     if (filename.toLowerCase().indexOf('nginx') !== -1) return 'nginx';
     if (filename.toLowerCase() === '.bashrc' || filename.toLowerCase() === '.zshrc') return 'bash';
 
@@ -755,8 +836,10 @@ applyTranslations();
   function renderFileViewer(name, file) {
     var content = isEditing ? (editContent[name] !== undefined ? editContent[name] : file.content) : file.content;
     var truncated = file.truncated;
+    var fontStyle = 'font-size: ' + currentFontSize + 'px; line-height: ' + (currentFontSize * 1.5) + 'px;';
+
     if (isEditing) {
-      editorArea.innerHTML = '<textarea class="code-editor w-full flex-1 p-4 bg-gray-900 text-gray-200 text-sm resize-none focus:outline-none border-none" style="flex:1;" data-file="' + escAttr(name) + '">' + escHtml(content) + '</textarea>' + (truncated ? '<p class="text-xs text-yellow-400 px-4 pb-2">' + I18N.t('viewer.truncated') + '</p>' : '');
+      editorArea.innerHTML = '<textarea class="code-editor w-full flex-1 p-4 bg-gray-900 text-gray-200 resize-none focus:outline-none border-none" style="flex:1; ' + fontStyle + '" data-file="' + escAttr(name) + '">' + escHtml(content) + '</textarea>' + (truncated ? '<p class="text-xs text-yellow-400 px-4 pb-2">' + I18N.t('viewer.truncated') + '</p>' : '');
     } else {
       var linesCount = content ? content.split('\\n').length : 0;
       var langClass = '';
@@ -767,7 +850,7 @@ applyTranslations();
       
       var displayLang = file.language || (hlLang ? hlLang.toUpperCase() : 'PLAINTEXT');
 
-      editorArea.innerHTML = '<div class="flex items-center justify-between px-4 py-1.5 bg-gray-900 shrink-0"><span class="text-[10px] text-gray-500 uppercase">' + escHtml(displayLang) + '</span><span class="text-[10px] text-gray-600">' + linesCount + ' ' + I18N.t('viewer.lines') + '</span></div><div class="flex-1 overflow-auto"><pre class="p-4 text-sm mono text-gray-300 leading-relaxed"><code id="code-viewer" class="' + langClass + '">' + escHtml(content) + '</code></pre></div>';
+      editorArea.innerHTML = '<div class="flex items-center justify-between px-4 py-1.5 bg-gray-900 shrink-0"><span class="text-[10px] text-gray-500 uppercase">' + escHtml(displayLang) + '</span><span class="text-[10px] text-gray-600">' + linesCount + ' ' + I18N.t('viewer.lines') + '</span></div><div class="flex-1 overflow-auto"><pre class="p-4 mono text-gray-300 leading-relaxed" style="' + fontStyle + '"><code id="code-viewer" class="' + langClass + '">' + escHtml(content) + '</code></pre></div>';
       
       if (typeof hljs !== 'undefined') {
         var codeEl = document.getElementById('code-viewer');
@@ -775,13 +858,10 @@ applyTranslations();
           if (hlLang) {
             hljs.highlightElement(codeEl);
           } else {
-            // 没有明确语言时自动分析高亮
             try {
               var result = hljs.highlightAuto(content);
               codeEl.innerHTML = result.value;
-            } catch (err) {
-              // 自动检测失败时保留纯文本
-            }
+            } catch (err) {}
           }
         }
       }
@@ -1055,6 +1135,10 @@ applyTranslations();
       loadComments();
     }
   };
+
+  // 初始化字号数字展示
+  if (fontSizeVal) fontSizeVal.textContent = currentFontSize;
+
   initAuth();
 })();
 <\/script>
