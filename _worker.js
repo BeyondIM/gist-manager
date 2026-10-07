@@ -118,7 +118,7 @@ const HTML = `<!DOCTYPE html>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/properties.min.js"><\/script>
 <style>
 /*! tailwindcss v4.2.4 | MIT License | https://tailwindcss.com */
-@layer properties{@supports (((-webkit-hyphens:none)) and (not (margin-trim:inline))) or ((-moz-orient:inline) and (not (color:rgb(from red r g b)))){*,:before,:after,::backdrop{--tw-translate-x:0;--tw-translate-y:0;--tw-translate-z:0;--tw-rotate-x:initial;--tw-rotate-y:initial;--tw-rotate-z:initial;--tw-skew-x:initial;--tw-skew-y:initial;--tw-space-y-reverse:0;--tw-divide-y-reverse:0;--tw-border-style:solid;--tw-leading:initial;--tw-font-weight:initial;--tw-shadow:0 0 #0000;--tw-shadow-color:initial;--tw-shadow-alpha:100%;--tw-inset-shadow:0 0 #0000;--tw-inset-shadow-color:initial;--tw-inset-shadow-alpha:100%;--tw-ring-color:initial;--tw-ring-shadow:0 0 #0000;--tw-inset-ring-color:initial;--tw-inset-ring-shadow:0 0 #0000;--tw-ring-inset:initial;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-offset-shadow:0 0 #0000;--tw-duration:initial}}}@layer theme{:root,:host{--font-sans:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";--font-mono:'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;--color-red-400:oklch(70.4% .191 22.216);--color-red-600:oklch(57.7% .245 27.325);--color-red-700:oklch(50.5% .213 27.518);--color-yellow-400:oklch(85.2% .199 91.936);--color-yellow-500:oklch(79.5% .184 86.047);--color-green-600:oklch(62.7% .194 149.214);--color-green-700:oklch(52.7% .154 150.069);--color-blue-400:oklch(70.7% .165 254.624);--color-blue-500:oklch(62.3% .214 259.815);--color-blue-600:oklch(54.6% .245 262.881);--color-blue-700:oklch(48.8% .243 264.376);--color-black:#000;--color-white:#fff;--spacing:.25rem;--container-sm:24rem;--container-md:28rem;--text-xs:.75rem;--text-xs--line-height:calc(1 / .75);--text-sm:.875rem;--text-sm--line-height:calc(1.25 / .875);--text-xl:1.25rem;--text-xl--line-height:calc(1.75 / 1.25);--font-weight-medium:500;--font-weight-semibold:600;--leading-relaxed:1.625;--radius-md:.375rem;--radius-lg:.5rem;--radius-xl:.75rem;--animate-spin:spin 1s linear infinite;--default-transition-duration:.15s;--default-transition-timing-function:cubic-bezier(.4, 0, .2, 1);--default-font-family:var(--font-sans);--default-mono-font-family:var(--font-mono)}}@layer base{*,:after,:before,::backdrop{box-sizing:border-box;border:0 solid;margin:0;padding:0}::file-selector-button{box-sizing:border-box;border:0 solid;margin:0;padding:0}html,:host{-webkit-text-size-adjust:100%;tab-size:4;line-height:1.5;font-family:var(--default-font-family,ui-sans-serif, system-ui, sans-serif);font-feature-settings:var(--default-font-feature-settings,normal);font-variation-settings:var(--default-font-variation-settings,normal);-webkit-tap-highlight-color:transparent}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;-webkit-text-decoration:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,samp,pre{font-family:var(--default-mono-font-family,'JetBrains Mono',monospace);font-feature-settings:var(--default-mono-font-feature-settings,normal);font-variation-settings:var(--default-mono-font-variation-settings,normal);font-size:1em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,select,optgroup,textarea{font:inherit;letter-spacing:inherit;color:inherit;background-color:#0000;border-radius:0}textarea{resize:vertical}[hidden]:where(:not([hidden=until-found])){display:none!important}}@layer utilities{.pointer-events-none{pointer-events:none}.absolute{position:absolute}.fixed{position:fixed}.relative{position:relative}.inset-0{inset:0}.right-4{right:1rem}.bottom-4{bottom:1rem}.z-20{z-index:20}.z-50{z-index:50}.mx-4{margin-inline:1rem}.mx-auto{margin-inline:auto}.mt-0\\.5{margin-top:.125rem}.mt-1{margin-top:.25rem}.mt-1\\.5{margin-top:.375rem}.mt-2{margin-top:.5rem}.mb-1{margin-bottom:.25rem}.mb-1\\.5{margin-bottom:.375rem}.mb-3{margin-bottom:.75rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.ml-7{margin-left:1.75rem}.flex{display:flex}.hidden{display:none}.h-3{height:.75rem}.h-3\\.5{height:.875rem}.h-4{height:1rem}.h-5{height:1.25rem}.h-7{height:1.75rem}.h-8{height:2rem}.h-12{height:3rem}.h-16{height:4rem}.h-full{height:100%}.w-3{width:.75rem}.w-3\\.5{width:.875rem}.w-4{width:1rem}.w-5{width:1.25rem}.w-7{width:1.75rem}.w-8{width:2rem}.w-12{width:3rem}.w-16{width:4rem}.w-28{width:7rem}.w-72{width:18rem}.w-full{width:100%}.max-w-md{max-width:28rem}.max-w-sm{max-width:24rem}.flex-1{flex:1}.shrink-0{flex-shrink:0}.translate-y-20{transform:translateY(5rem)}.animate-spin{animation:spin 1s linear infinite}.cursor-not-allowed{cursor:not-allowed}.cursor-pointer{cursor:pointer}.resize-none{resize:none}.flex-col{flex-direction:column}.items-center{align-items:center}.justify-between{justify-content:space-between}.justify-center{justify-content:center}.gap-0\\.5{gap:.125rem}.gap-1{gap:.25rem}.gap-1\\.5{gap:.375rem}.gap-2{gap:.5rem}.gap-3{gap:.75rem}.truncate{text-overflow:ellipsis;white-space:nowrap;overflow:hidden}.overflow-auto{overflow:auto}.overflow-hidden{overflow:hidden}.overflow-x-auto{overflow-x:auto}.overflow-y-auto{overflow-y:auto}.rounded{border-radius:.25rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:.5rem}.rounded-md{border-radius:.375rem}.rounded-xl{border-radius:.75rem}.border{border-width:1px}.border-t{border-top-width:1px}.border-r{border-right-width:1px}.border-b{border-bottom-width:1px}.border-b-2{border-bottom-width:2px}.p-3{padding:.75rem}.p-4{padding:1rem}.p-6{padding:1.5rem}.px-1{padding-inline:.25rem}.px-2{padding-inline:.5rem}.px-3{padding-inline:.75rem}.px-4{padding-inline:1rem}.py-1{padding-block:.25rem}.py-1\\.5{padding-block:.375rem}.py-2{padding-block:.5rem}.py-2\\.5{padding-block:.625rem}.py-12{padding-block:3rem}.pb-2{padding-bottom:.5rem}.text-center{text-align:center}.text-sm{font-size:.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:.75rem;line-height:1rem}.text-\\[10px\\]{font-size:10px}.leading-relaxed{line-height:1.625}.font-medium{font-weight:500}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.opacity-0{opacity:0}.opacity-25{opacity:.25}.opacity-50{opacity:.5}.opacity-70{opacity:.7}.opacity-75{opacity:.75}.shadow-2xl{box-shadow:0 25px 50px -12px rgba(0,0,0,0.25)}.shadow-lg{box-shadow:0 10px 15px -3px rgba(0,0,0,0.1)}.transition-colors{transition:background-color .15s, border-color .15s, color .15s}.transition-all{transition:all .3s ease}.outline-none{outline:none}@keyframes spin{to{transform:rotate(360deg)}}}
+@layer properties{@supports (((-webkit-hyphens:none)) and (not (margin-trim:inline))) or ((-moz-orient:inline) and (not (color:rgb(from red r g b)))){*,:before,:after,::backdrop{--tw-translate-x:0;--tw-translate-y:0;--tw-translate-z:0;--tw-rotate-x:initial;--tw-rotate-y:initial;--tw-rotate-z:initial;--tw-skew-x:initial;--tw-skew-y:initial;--tw-space-y-reverse:0;--tw-divide-y-reverse:0;--tw-border-style:solid;--tw-leading:initial;--tw-font-weight:initial;--tw-shadow:0 0 #0000;--tw-shadow-color:initial;--tw-shadow-alpha:100%;--tw-inset-shadow:0 0 #0000;--tw-inset-shadow-color:initial;--tw-inset-shadow-alpha:100%;--tw-ring-color:initial;--tw-ring-shadow:0 0 #0000;--tw-inset-ring-color:initial;--tw-inset-ring-shadow:0 0 #0000;--tw-ring-inset:initial;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-offset-shadow:0 0 #0000;--tw-duration:initial}}}@layer theme{:root,:host{--font-sans:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";--font-mono:'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;--color-red-400:oklch(70.4% .191 22.216);--color-red-600:oklch(57.7% .245 27.325);--color-red-700:oklch(50.5% .213 27.518);--color-yellow-400:oklch(85.2% .199 91.936);--color-yellow-500:oklch(79.5% .184 86.047);--color-green-600:oklch(62.7% .194 149.214);--color-green-700:oklch(52.7% .154 150.069);--color-blue-400:oklch(70.7% .165 254.624);--color-blue-500:oklch(62.3% .214 259.815);--color-blue-600:oklch(54.6% .245 262.881);--color-blue-700:oklch(48.8% .243 264.376);--color-black:#000;--color-white:#fff;--spacing:.25rem;--container-sm:24rem;--container-md:28rem;--text-xs:.75rem;--text-xs--line-height:calc(1 / .75);--text-sm:.875rem;--text-sm--line-height:calc(1.25 / .875);--text-xl:1.25rem;--text-xl--line-height:calc(1.75 / 1.25);--font-weight-medium:500;--font-weight-semibold:600;--leading-relaxed:1.625;--radius-md:.375rem;--radius-lg:.5rem;--radius-xl:.75rem;--animate-spin:spin 1s linear infinite;--default-transition-duration:.15s;--default-transition-timing-function:cubic-bezier(.4, 0, .2, 1);--default-font-family:var(--font-sans);--default-mono-font-family:var(--font-mono)}}@layer base{*,:after,:before,::backdrop{box-sizing:border-box;border:0 solid;margin:0;padding:0}::file-selector-button{box-sizing:border-box;border:0 solid;margin:0;padding:0}html,:host{-webkit-text-size-adjust:100%;tab-size:4;line-height:1.5;font-family:var(--default-font-family,ui-sans-serif, system-ui, sans-serif);font-feature-settings:var(--default-font-feature-settings,normal);font-variation-settings:var(--default-font-variation-settings,normal);-webkit-tap-highlight-color:transparent}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;-webkit-text-decoration:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,samp,pre{font-family:var(--default-mono-font-family,'JetBrains Mono',monospace);font-feature-settings:var(--default-mono-font-feature-settings,normal);font-variation-settings:var(--default-mono-font-variation-settings,normal);font-size:1em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,select,optgroup,textarea{font:inherit;letter-spacing:inherit;color:inherit;background-color:#0000;border-radius:0}textarea{resize:vertical}[hidden]:where(:not([hidden=until-found])){display:none!important}}@layer utilities{.pointer-events-none{pointer-events:none}.absolute{position:absolute}.fixed{position:fixed}.relative{position:relative}.inset-0{inset:0}.right-4{right:1rem}.bottom-4{bottom:1rem}.z-20{z-index:20}.z-50{z-index:50}.mx-4{margin-inline:1rem}.mx-auto{margin-inline:auto}.mt-0\\.5{margin-top:.125rem}.mt-1{margin-top:.25rem}.mt-1\\.5{margin-top:.375rem}.mt-2{margin-top:.5rem}.mb-1{margin-bottom:.25rem}.mb-1\\.5{margin-bottom:.375rem}.mb-3{margin-bottom:.75rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.ml-7{margin-left:1.75rem}.flex{display:flex}.inline-block{display:inline-block}.hidden{display:none}.h-2{height:.5rem}.h-3{height:.75rem}.h-3\\.5{height:.875rem}.h-4{height:1rem}.h-5{height:1.25rem}.h-7{height:1.75rem}.h-8{height:2rem}.h-12{height:3rem}.h-16{height:4rem}.h-full{height:100%}.w-2{width:.5rem}.w-3{width:.75rem}.w-3\\.5{width:.875rem}.w-4{width:1rem}.w-5{width:1.25rem}.w-7{width:1.75rem}.w-8{width:2rem}.w-12{width:3rem}.w-16{width:4rem}.w-28{width:7rem}.w-72{width:18rem}.w-full{width:100%}.max-w-md{max-width:28rem}.max-w-sm{max-width:24rem}.flex-1{flex:1}.shrink-0{flex-shrink:0}.translate-y-20{transform:translateY(5rem)}.animate-spin{animation:spin 1s linear infinite}.cursor-not-allowed{cursor:not-allowed}.cursor-pointer{cursor:pointer}.resize-none{resize:none}.flex-col{flex-direction:column}.items-center{align-items:center}.justify-between{justify-content:space-between}.justify-center{justify-content:center}.gap-0\\.5{gap:.125rem}.gap-1{gap:.25rem}.gap-1\\.5{gap:.375rem}.gap-2{gap:.5rem}.gap-3{gap:.75rem}.truncate{text-overflow:ellipsis;white-space:nowrap;overflow:hidden}.overflow-auto{overflow:auto}.overflow-hidden{overflow:hidden}.overflow-x-auto{overflow-x:auto}.overflow-y-auto{overflow-y:auto}.rounded{border-radius:.25rem}.rounded-\\[2px\\]{border-radius:2px}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:.5rem}.rounded-md{border-radius:.375rem}.rounded-xl{border-radius:.75rem}.border{border-width:1px}.border-t{border-top-width:1px}.border-r{border-right-width:1px}.border-b{border-bottom-width:1px}.border-b-2{border-bottom-width:2px}.p-3{padding:.75rem}.p-4{padding:1rem}.p-6{padding:1.5rem}.px-1{padding-inline:.25rem}.px-2{padding-inline:.5rem}.px-3{padding-inline:.75rem}.px-4{padding-inline:1rem}.py-1{padding-block:.25rem}.py-1\\.5{padding-block:.375rem}.py-2{padding-block:.5rem}.py-2\\.5{padding-block:.625rem}.py-12{padding-block:3rem}.pb-2{padding-bottom:.5rem}.pl-2{padding-left:.5rem}.pr-1{padding-right:.25rem}.text-center{text-align:center}.text-sm{font-size:.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:.75rem;line-height:1rem}.text-\\[10px\\]{font-size:10px}.leading-relaxed{line-height:1.625}.font-medium{font-weight:500}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.opacity-0{opacity:0}.opacity-25{opacity:.25}.opacity-50{opacity:.5}.opacity-70{opacity:.7}.opacity-75{opacity:.75}.shadow-2xl{box-shadow:0 25px 50px -12px rgba(0,0,0,0.25)}.shadow-lg{box-shadow:0 10px 15px -3px rgba(0,0,0,0.1)}.bg-gray-400{background-color:#9ca3af}.bg-blue-500{background-color:#3b82f6}.transition-colors{transition:background-color .15s, border-color .15s, color .15s}.transition-all{transition:all .3s ease}.outline-none{outline:none}@keyframes spin{to{transform:rotate(360deg)}}}
 
   /* ── 浅色 / 深色 主题色彩系统 ────────────────────────── */
   :root {
@@ -327,26 +327,6 @@ const HTML = `<!DOCTYPE html>
     font-weight: 600;
   }
 
-  /* 状态指示符样式 */
-  .status-indicator {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 10px;
-    width: 14px;
-    height: 14px;
-    user-select: none;
-    line-height: 1;
-  }
-  .status-indicator.dirty {
-    color: #f59e0b; /* 琥珀色圆点 */
-    font-size: 11px;
-  }
-  .status-indicator.pristine {
-    color: #3b82f6; /* 蓝色方点 */
-    font-size: 9px;
-  }
-
   /* 滚动条美化 */
   ::-webkit-scrollbar { width: 6px; height: 6px; }
   ::-webkit-scrollbar-track { background: transparent; }
@@ -461,13 +441,13 @@ const HTML = `<!DOCTYPE html>
       <div id="gist-content" class="flex-1 flex flex-col overflow-hidden hidden relative">
         <div id="saving-overlay" class="absolute inset-0 z-20 flex items-center justify-center hidden" style="background-color: var(--modal-mask);">
           <div class="flex flex-col items-center gap-3">
-            <svg class="spinner w-8 h-8 text-blue-400 animate-spin" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"/></svg>
+            <svg class="spinner w-8 h-8 text-blue-400" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"/></svg>
             <span class="text-sm text-gray-200" data-i18n="overlay.saving">正在保存...</span>
           </div>
         </div>
         <div id="loading-overlay" class="absolute inset-0 z-20 flex items-center justify-center hidden" style="background-color: var(--modal-mask);">
           <div class="flex flex-col items-center gap-3">
-            <svg class="spinner w-8 h-8 text-blue-400 animate-spin" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"/></svg>
+            <svg class="spinner w-8 h-8 text-blue-400" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"/></svg>
             <span class="text-sm text-gray-200" data-i18n="overlay.loading">正在加载...</span>
           </div>
         </div>
@@ -478,7 +458,6 @@ const HTML = `<!DOCTYPE html>
             <p id="gist-meta" class="text-xs theme-text-muted mt-0.5"></p>
           </div>
           <div class="flex items-center gap-2">
-            <!-- 胶囊样式字号调节器 -->
             <div class="pill-group mr-1">
               <button id="font-decrease-btn" class="pill-btn mono font-medium" data-i18n="[title]fontSize.decrease" title="减小字号">A-</button>
               <button id="font-reset-btn" class="pill-btn mono font-medium" data-i18n="[title]fontSize.reset" title="重置字号"><span id="font-size-val">14</span>px</button>
@@ -684,7 +663,6 @@ applyTranslations();
   let selectedGistDetail = null;
   let isEditing = false;
   let editContent = {};
-  let originalFileContents = {}; // 记录初始内容以便检测未保存修改
   let editFileNames = [];
   let editPublic = false;
   let activeFileName = null;
@@ -699,6 +677,7 @@ applyTranslations();
     localStorage.setItem('gist_font_size', currentFontSize);
     if (fontSizeVal) fontSizeVal.textContent = currentFontSize;
 
+    // 同步更新所有代码展示层与编辑层样式
     const els = editorArea.querySelectorAll('pre, textarea.code-editor, .code-backdrop code');
     els.forEach(el => {
       el.style.fontSize = currentFontSize + 'px';
@@ -735,17 +714,6 @@ applyTranslations();
 
   applyTheme(currentTheme);
 
-  /* ── 判断文件是否被修改 ── */
-  function isFileModified(name) {
-    if (!isEditing) return false;
-    var current = editContent[name] !== undefined ? editContent[name] : '';
-    // 如果原先不存在该文件（新增文件）且有输入，或者内容与初始快照不一致
-    if (originalFileContents[name] === undefined) {
-      return current.length > 0;
-    }
-    return current !== originalFileContents[name];
-  }
-
   /* ── 语法高亮映射 ── */
   function detectHljsLanguage(filename, rawLang) {
     if (!window.hljs) return '';
@@ -778,6 +746,7 @@ applyTranslations();
     return '';
   }
 
+  // 高亮一段文本并返回 HTML
   function getHighlightedCodeHtml(text, lang) {
     if (!window.hljs) return escHtml(text);
     if (lang && hljs.getLanguage(lang)) {
@@ -795,7 +764,7 @@ applyTranslations();
   function setSaving(active) {
     if (active) {
       saveBtn.disabled = true;
-      saveBtn.innerHTML = '<svg class="spinner w-3.5 h-3.5 animate-spin" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"/><\/svg> ' + I18N.t('editor.saving');
+      saveBtn.innerHTML = '<svg class="spinner w-3.5 h-3.5" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"/><\/svg> ' + I18N.t('editor.saving');
       saveBtn.classList.add('opacity-70', 'cursor-not-allowed');
       cancelEditBtn.disabled = true;
       cancelEditBtn.classList.add('opacity-50', 'cursor-not-allowed');
@@ -995,13 +964,9 @@ applyTranslations();
     selectedGist = draft;
     isEditing = true;
     editContent = {};
-    originalFileContents = {};
     editFileNames = Object.keys(draft.files);
     editPublic = false;
-    for (var name in draft.files) {
-      editContent[name] = draft.files[name].content;
-      originalFileContents[name] = draft.files[name].content;
-    }
+    for (var name in draft.files) { editContent[name] = draft.files[name].content; }
     allGists.unshift(draft);
     if (searchInput.value.trim()) { gists.unshift(draft); } else { gists = allGists; }
     renderGistList();
@@ -1022,11 +987,8 @@ applyTranslations();
     var draft = allGists.find(function(g) { return g.id === id && g.isNew; });
     if (draft) {
       selectedGistDetail = draft; selectedGist = draft;
-      isEditing = true; editContent = {}; originalFileContents = {}; editFileNames = Object.keys(draft.files); editPublic = false;
-      for (var name in draft.files) {
-        editContent[name] = draft.files[name].content;
-        originalFileContents[name] = draft.files[name].content;
-      }
+      isEditing = true; editContent = {}; editFileNames = Object.keys(draft.files); editPublic = false;
+      for (var name in draft.files) { editContent[name] = draft.files[name].content; }
       editBtn.classList.add('hidden'); deleteBtn.classList.add('hidden'); saveBtn.classList.remove('hidden'); cancelEditBtn.classList.remove('hidden');
       visibilityBtn.classList.remove('hidden'); updateVisibilityIcon(); renderContent();
       commentsList.innerHTML = '<div class="p-4 text-xs theme-text-muted text-center">' + I18N.t('comments.saveFirst') + '</div>';
@@ -1038,11 +1000,6 @@ applyTranslations();
       selectedGistDetail = await api('/gists/' + id);
       selectedGist = selectedGistDetail;
       isEditing = false;
-      editContent = {};
-      originalFileContents = {};
-      for (var fname in selectedGistDetail.files) {
-        originalFileContents[fname] = selectedGistDetail.files[fname].content;
-      }
       editBtn.classList.remove('hidden'); deleteBtn.classList.remove('hidden'); saveBtn.classList.add('hidden'); cancelEditBtn.classList.add('hidden');
       visibilityBtn.classList.add('hidden');
       renderContent();
@@ -1057,37 +1014,28 @@ applyTranslations();
     }
   }
 
-  /* 刷新缓存当前正在编辑的文件内容与文件名 */
-  function flushCurrentEditorContent() {
-    var ta = editorArea.querySelector('textarea.code-editor');
-    if (ta && ta.dataset.file) {
-      editContent[ta.dataset.file] = ta.value;
-    }
-    if (isEditing) {
-      collectFileNames();
-    }
-  }
-
-  /* 生成 Tab 上的状态指示点 HTML */
-  function getTabStatusHtml(fileName) {
-    if (!isEditing) return '';
-    if (isFileModified(fileName)) {
-      return '<span class="status-indicator dirty" title="已修改未保存">●</span>';
-    } else {
-      return '<span class="status-indicator pristine" title="处于编辑模式（未改动）">■</span>';
-    }
-  }
-
-  /* 批量刷新 Tab 上的状态指示器 */
-  function updateAllTabStatusIndicators() {
-    if (!isEditing) return;
-    fileTabs.querySelectorAll('.file-tab-edit-item').forEach(function(el) {
-      var name = el.dataset.file;
-      var statusContainer = el.querySelector('.tab-status-slot');
-      if (statusContainer) {
-        statusContainer.innerHTML = getTabStatusHtml(name);
+  function updateTabIndicator(name) {
+    if (!isEditing || !selectedGistDetail) return;
+    var tabs = fileTabs.querySelectorAll('.file-tab-edit-item');
+    for (var i = 0; i < tabs.length; i++) {
+      if (tabs[i].dataset.file === name) {
+        var dot = tabs[i].querySelector('.indicator-dot');
+        if (dot) {
+          var isModified = false;
+          if (selectedGistDetail.isNew || !selectedGistDetail.files[name]) {
+            isModified = true;
+          } else {
+            isModified = editContent[name] !== selectedGistDetail.files[name].content;
+          }
+          if (isModified) {
+            dot.className = 'indicator-dot inline-block w-2 h-2 rounded-full bg-blue-500 shrink-0 transition-all';
+          } else {
+            dot.className = 'indicator-dot inline-block w-2 h-2 rounded-[2px] bg-gray-400 shrink-0 transition-all';
+          }
+        }
+        break;
       }
-    });
+    }
   }
 
   function renderContent() {
@@ -1115,11 +1063,18 @@ applyTranslations();
     if (isEditing) {
       fileTabs.innerHTML = fileNames.map(function(name) {
         var active = name === renderName ? ' tab-active' : '';
-        return '<div class="file-tab-edit-item flex items-center gap-1 shrink-0 px-2 py-1 text-xs mono cursor-pointer' + active + '" data-file="' + escAttr(name) + '">' +
-                 '<span class="tab-status-slot">' + getTabStatusHtml(name) + '</span>' +
-                 '<input class="file-name-input bg-transparent text-xs mono px-1 py-1 outline-none theme-text-primary w-28" value="' + escAttr(name) + '" data-file="' + escAttr(name) + '" spellcheck="false">' +
-                 (fileNames.length > 1 ? '<button class="delete-file-btn theme-text-muted hover:text-red-500 px-1" data-file="' + escAttr(name) + '" title="' + I18N.t('files.deleteFile') + '">&times;</button>' : '') +
-               '</div>';
+        var isModified = false;
+        if (g.isNew || !g.files[name]) isModified = true;
+        else isModified = editContent[name] !== g.files[name].content;
+        
+        var indicatorClass = isModified ? 'rounded-full bg-blue-500' : 'rounded-[2px] bg-gray-400';
+        var indicator = '<span class="indicator-dot inline-block w-2 h-2 shrink-0 transition-all ' + indicatorClass + '"></span>';
+
+        return '<div class="file-tab-edit-item flex items-center gap-1.5 shrink-0 pl-2 pr-1 py-1 text-xs mono cursor-pointer' + active + '" data-file="' + escAttr(name) + '">' +
+          indicator +
+          '<input class="file-name-input bg-transparent text-xs mono px-1 py-1 outline-none theme-text-primary w-28" value="' + escAttr(name) + '" data-file="' + escAttr(name) + '" spellcheck="false">' +
+          (fileNames.length > 1 ? '<button class="delete-file-btn theme-text-muted hover:text-red-500 px-1" data-file="' + escAttr(name) + '" title="' + I18N.t('files.deleteFile') + '">&times;</button>' : '') +
+          '</div>';
       }).join('') + '<button id="add-file-btn" class="shrink-0 px-3 py-1.5 text-xs font-semibold theme-text-muted hover:theme-text-primary transition-colors" title="' + I18N.t('files.addFile') + '">+</button>';
     } else {
       fileTabs.innerHTML = fileNames.map(function(name) {
@@ -1128,7 +1083,7 @@ applyTranslations();
       }).join('');
     }
 
-    var fileData = (g.files && g.files[renderName]) ? g.files[renderName] : { content: '', language: 'Text', truncated: false };
+    var fileData = g.files[renderName] || { content: '', language: 'Text', truncated: false };
     renderFileViewer(renderName, fileData);
     highlightActiveTab(renderName);
   }
@@ -1157,22 +1112,23 @@ applyTranslations();
   function switchFile(name) {
     var g = selectedGistDetail;
     if (!g) return;
-    flushCurrentEditorContent();
-    var file = (g.files && g.files[name]) ? g.files[name] : { content: editContent[name] || '', language: 'Text', truncated: false };
+    var file = g.files[name];
+    if (!file) return;
     renderFileViewer(name, file);
     highlightActiveTab(name);
   }
 
-  /* ── 核心：渲染代码编辑器/查看器 ── */
+  /* ── 核心：渲染代码编辑器/查看器 (支持编辑模式实时语法高亮) ── */
   function renderFileViewer(name, file) {
-    var content = isEditing ? (editContent[name] !== undefined ? editContent[name] : (file ? file.content : '')) : (file ? file.content : '');
-    var truncated = file ? file.truncated : false;
+    var content = isEditing ? (editContent[name] !== undefined ? editContent[name] : file.content) : file.content;
+    var truncated = file.truncated;
     var fontStyle = 'font-size: ' + currentFontSize + 'px; line-height: ' + (currentFontSize * 1.55) + 'px;';
-    var hlLang = detectHljsLanguage(name, file ? file.language : '');
+    var hlLang = detectHljsLanguage(name, file.language);
     var langClass = hlLang ? 'language-' + hlLang : '';
-    var displayLang = (file && file.language) ? file.language : (hlLang ? hlLang.toUpperCase() : 'PLAINTEXT');
+    var displayLang = file.language || (hlLang ? hlLang.toUpperCase() : 'PLAINTEXT');
 
     if (isEditing) {
+      // 编辑模式：双层覆盖同步架构
       editorArea.innerHTML = 
         '<div class="flex items-center justify-between px-4 py-1.5 theme-bg-surface border-b theme-border shrink-0">' +
           '<span class="text-[10px] theme-text-muted uppercase">' + escHtml(displayLang) + '</span>' +
@@ -1189,7 +1145,8 @@ applyTranslations();
 
       function syncHighlight() {
         var val = ta.value;
-        if (val[val.length - 1] === '\n') val += ' ';
+        // 末尾换行补足避免两层光标与文本高度不同步
+        if (val[val.length - 1] === '\\n') val += ' ';
         code.innerHTML = getHighlightedCodeHtml(val, hlLang);
       }
 
@@ -1201,11 +1158,12 @@ applyTranslations();
       ta.addEventListener('input', function() {
         editContent[name] = ta.value;
         syncHighlight();
-        updateAllTabStatusIndicators();
+        updateTabIndicator(name);
       });
 
       ta.addEventListener('scroll', syncScroll);
 
+      // 友好支持 Tab 键缩进 2 空格
       ta.addEventListener('keydown', function(e) {
         if (e.key === 'Tab') {
           e.preventDefault();
@@ -1215,14 +1173,15 @@ applyTranslations();
           ta.selectionStart = ta.selectionEnd = start + 2;
           editContent[name] = ta.value;
           syncHighlight();
-          updateAllTabStatusIndicators();
+          updateTabIndicator(name);
         }
       });
 
       syncHighlight();
       syncScroll();
     } else {
-      var linesCount = content ? content.split('\n').length : 0;
+      // 查看模式
+      var linesCount = content ? content.split('\\n').length : 0;
       editorArea.innerHTML = 
         '<div class="flex items-center justify-between px-4 py-1.5 theme-bg-surface border-b theme-border shrink-0">' +
           '<span class="text-[10px] theme-text-muted uppercase">' + escHtml(displayLang) + '</span>' +
@@ -1237,15 +1196,11 @@ applyTranslations();
   editBtn.addEventListener('click', function() {
     isEditing = true;
     editContent = {};
-    originalFileContents = {};
     var g = selectedGistDetail;
     if (!g) return;
     editFileNames = Object.keys(g.files);
     editPublic = g.public;
-    for (var name in g.files) {
-      editContent[name] = g.files[name].content;
-      originalFileContents[name] = g.files[name].content;
-    }
+    for (var name in g.files) { editContent[name] = g.files[name].content; }
     editBtn.classList.add('hidden'); deleteBtn.classList.add('hidden'); saveBtn.classList.remove('hidden'); cancelEditBtn.classList.remove('hidden');
     visibilityBtn.classList.remove('hidden'); updateVisibilityIcon(); renderContent();
   });
@@ -1302,12 +1257,12 @@ applyTranslations();
       gists = gists.filter(function(x) { return x.id !== '__new__'; });
       if (!searchInput.value.trim()) gists = allGists;
       selectedGistDetail = null; selectedGist = null;
-      isEditing = false; editContent = {}; originalFileContents = {};
+      isEditing = false; editContent = {};
       editBtn.classList.remove('hidden'); deleteBtn.classList.remove('hidden'); saveBtn.classList.add('hidden'); cancelEditBtn.classList.add('hidden');
       visibilityBtn.classList.add('hidden'); renderGistList(); resetContent();
       return;
     }
-    isEditing = false; editContent = {}; originalFileContents = {}; editFileNames = [];
+    isEditing = false; editContent = {}; editFileNames = [];
     editBtn.classList.remove('hidden'); deleteBtn.classList.remove('hidden'); saveBtn.classList.add('hidden'); cancelEditBtn.classList.add('hidden');
     visibilityBtn.classList.add('hidden'); renderContent();
   });
@@ -1325,7 +1280,11 @@ applyTranslations();
   saveBtn.addEventListener('click', async function() {
     var g = selectedGistDetail;
     if (!g || saveBtn.disabled) return;
-    flushCurrentEditorContent();
+    var ta = editorArea.querySelector('textarea.code-editor');
+    if (ta && ta.dataset.file) {
+      editContent[ta.dataset.file] = ta.value;
+    }
+    if (isEditing) { collectFileNames(); }
     for (var i = 0; i < editFileNames.length; i++) {
       var fn = editFileNames[i];
       if (!fn.trim()) { showToast(I18N.t('toast.filenameEmpty'), 'error'); return; }
@@ -1352,7 +1311,7 @@ applyTranslations();
         allGists.unshift(created);
         if (searchInput.value.trim()) { gists.unshift(created); } else { gists = allGists; }
         selectedGistDetail = created; selectedGist = created;
-        isEditing = false; editContent = {}; originalFileContents = {}; editFileNames = []; editPublic = false;
+        isEditing = false; editContent = {}; editFileNames = []; editPublic = false;
         editBtn.classList.remove('hidden'); deleteBtn.classList.remove('hidden'); saveBtn.classList.add('hidden'); cancelEditBtn.classList.add('hidden');
         visibilityBtn.classList.add('hidden'); setSaving(false);
         renderGistList(); renderContent(); loadComments();
@@ -1360,7 +1319,7 @@ applyTranslations();
       } else {
         var updated = await api('/gists/' + g.id, { method: 'PATCH', body: JSON.stringify({ description: description, public: editPublic, files: files }) });
         selectedGistDetail = updated; selectedGist = updated;
-        isEditing = false; editContent = {}; originalFileContents = {}; editFileNames = []; editPublic = false;
+        isEditing = false; editContent = {}; editFileNames = []; editPublic = false;
         editBtn.classList.remove('hidden'); deleteBtn.classList.remove('hidden'); saveBtn.classList.add('hidden'); cancelEditBtn.classList.add('hidden');
         visibilityBtn.classList.add('hidden'); setSaving(false);
         renderContent(); loadGists();
@@ -1375,39 +1334,48 @@ applyTranslations();
   fileTabs.addEventListener('click', function(e) {
     var g = selectedGistDetail;
     if (!g) return;
-
-    // 点击添加文件按钮
     if (e.target.closest('#add-file-btn')) {
-      flushCurrentEditorContent();
       var base = 'new-file', newName = base + '.txt', n = 1;
       while (editFileNames.indexOf(newName) !== -1) { newName = base + '-' + n + '.txt'; n++; }
-      editFileNames.push(newName);
-      editContent[newName] = '';
-      activeFileName = newName;
+      editFileNames.push(newName); editContent[newName] = '';
+      var curTa = editorArea.querySelector('textarea.code-editor');
+      if (curTa) {
+        editContent[curTa.dataset.file] = curTa.value;
+        updateTabIndicator(curTa.dataset.file);
+      }
       renderContent();
+      renderFileViewer(newName, { content: '', language: 'Text', truncated: false });
+      highlightActiveTab(newName);
       return;
     }
-
-    // 点击删除文件按钮
     var delBtn = e.target.closest('.delete-file-btn');
     if (delBtn) {
-      flushCurrentEditorContent();
       var name = delBtn.dataset.file;
       editFileNames = editFileNames.filter(function(f) { return f !== name; });
       delete editContent[name];
-      if (activeFileName === name) {
-        activeFileName = editFileNames[0] || null;
+      var curTa2 = editorArea.querySelector('textarea.code-editor');
+      if (curTa2 && curTa2.dataset.file !== name) {
+        editContent[curTa2.dataset.file] = curTa2.value;
+        updateTabIndicator(curTa2.dataset.file);
       }
       renderContent();
+      var first = editFileNames[0];
+      if (first) { renderFileViewer(first, { content: editContent[first] || '', language: 'Text', truncated: false }); highlightActiveTab(first); }
       return;
     }
-
-    // 编辑模式或查看模式下的 Tab 点击切换
     if (isEditing) {
       var wrapper = e.target.closest('.file-tab-edit-item');
-      if (!wrapper || e.target.tagName === 'INPUT' || e.target.closest('button')) return;
+      if (!wrapper || e.target.closest('button')) return; // 移除 `e.target.tagName === 'INPUT'` 条件，以便点击输入框也能触发切换
       var fname = wrapper.dataset.file;
-      switchFile(fname);
+      var curTa3 = editorArea.querySelector('textarea.code-editor');
+      if (curTa3) {
+        editContent[curTa3.dataset.file] = curTa3.value;
+        updateTabIndicator(curTa3.dataset.file); // 暂存并更新即将离开 tab 的修改状态
+      }
+      if (activeFileName !== fname) {
+        renderFileViewer(fname, { content: editContent[fname] || '', language: 'Text', truncated: false });
+        highlightActiveTab(fname);
+      }
     } else {
       var tab = e.target.closest('.file-tab-btn');
       if (!tab) return;
@@ -1423,26 +1391,18 @@ applyTranslations();
     if (idx !== -1) {
       editFileNames[idx] = newName;
       e.target.dataset.file = newName;
-      if (editContent[oldName] !== undefined) {
-        editContent[newName] = editContent[oldName];
-        delete editContent[oldName];
-      }
-      if (originalFileContents[oldName] !== undefined) {
-        originalFileContents[newName] = originalFileContents[oldName];
-        delete originalFileContents[oldName];
-      }
+      if (editContent[oldName] !== undefined) { editContent[newName] = editContent[oldName]; delete editContent[oldName]; }
       var curTa = editorArea.querySelector('textarea.code-editor');
-      if (curTa && curTa.dataset.file === oldName) {
-        curTa.dataset.file = newName;
-      }
-      if (activeFileName === oldName) {
-        activeFileName = newName;
-      }
+      if (curTa && curTa.dataset.file === oldName) { curTa.dataset.file = newName; }
       var wrapper = e.target.closest('[data-file]');
       if (wrapper) wrapper.dataset.file = newName;
       var delBtn = wrapper ? wrapper.querySelector('.delete-file-btn') : null;
       if (delBtn) delBtn.dataset.file = newName;
-      updateAllTabStatusIndicators();
+      
+      updateTabIndicator(newName);
+      if (activeFileName === oldName) {
+        activeFileName = newName;
+      }
     }
   });
 
@@ -1453,17 +1413,7 @@ applyTranslations();
       if (oldName !== newName) {
         var idx = editFileNames.indexOf(oldName);
         if (idx !== -1) editFileNames[idx] = newName;
-        if (editContent[oldName] !== undefined) {
-          editContent[newName] = editContent[oldName];
-          delete editContent[oldName];
-        }
-        if (originalFileContents[oldName] !== undefined) {
-          originalFileContents[newName] = originalFileContents[oldName];
-          delete originalFileContents[oldName];
-        }
-        if (activeFileName === oldName) {
-          activeFileName = newName;
-        }
+        if (editContent[oldName] !== undefined) { editContent[newName] = editContent[oldName]; delete editContent[oldName]; }
         inp.dataset.file = newName;
       }
     });
