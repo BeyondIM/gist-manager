@@ -661,7 +661,8 @@ applyTranslations();
   let gists = [];
   let selectedGist = null;
   let selectedGistDetail = null;
-  let isEditing = false;
+  let isDraftMode = false; // 是否处于草稿（编辑整体 Gist）状态
+  let editingFiles = new Set(); // 独立追踪每个文件是否处于编辑模式
   let editContent = {};
   let editFileNames = [];
   let editPublic = false;
@@ -901,7 +902,8 @@ applyTranslations();
     allGists = [];
     selectedGist = null;
     selectedGistDetail = null;
-    isEditing = false;
+    isDraftMode = false;
+    editingFiles.clear();
     tokenModal.classList.remove('hidden');
     app.classList.add('hidden');
     tokenInput.value = '';
@@ -962,19 +964,15 @@ applyTranslations();
     };
     selectedGistDetail = draft;
     selectedGist = draft;
-    isEditing = true;
+    isDraftMode = true;
     editContent = {};
     editFileNames = Object.keys(draft.files);
     editPublic = false;
+    editingFiles = new Set(editFileNames); // 新建 Gist 默认让所有初始文件变为编辑状态
     for (var name in draft.files) { editContent[name] = draft.files[name].content; }
     allGists.unshift(draft);
     if (searchInput.value.trim()) { gists.unshift(draft); } else { gists = allGists; }
     renderGistList();
-    editBtn.classList.add('hidden'); deleteBtn.classList.add('hidden');
-    saveBtn.classList.remove('hidden');
-    cancelEditBtn.classList.remove('hidden');
-    visibilityBtn.classList.remove('hidden');
-    updateVisibilityIcon();
     renderContent();
     commentsList.innerHTML = '<div class="p-4 text-xs theme-text-muted text-center">' + I18N.t('comments.saveFirst') + '</div>';
     commentCount.textContent = '0';
@@ -987,10 +985,10 @@ applyTranslations();
     var draft = allGists.find(function(g) { return g.id === id && g.isNew; });
     if (draft) {
       selectedGistDetail = draft; selectedGist = draft;
-      isEditing = true; editContent = {}; editFileNames = Object.keys(draft.files); editPublic = false;
+      isDraftMode = true; editContent = {}; editFileNames = Object.keys(draft.files); editPublic = false;
+      editingFiles = new Set(editFileNames);
       for (var name in draft.files) { editContent[name] = draft.files[name].content; }
-      editBtn.classList.add('hidden'); deleteBtn.classList.add('hidden'); saveBtn.classList.remove('hidden'); cancelEditBtn.classList.remove('hidden');
-      visibilityBtn.classList.remove('hidden'); updateVisibilityIcon(); renderContent();
+      renderContent();
       commentsList.innerHTML = '<div class="p-4 text-xs theme-text-muted text-center">' + I18N.t('comments.saveFirst') + '</div>';
       commentCount.textContent = '0';
       return;
@@ -999,9 +997,8 @@ applyTranslations();
     try {
       selectedGistDetail = await api('/gists/' + id);
       selectedGist = selectedGistDetail;
-      isEditing = false;
-      editBtn.classList.remove('hidden'); deleteBtn.classList.remove('hidden'); saveBtn.classList.add('hidden'); cancelEditBtn.classList.add('hidden');
-      visibilityBtn.classList.add('hidden');
+      isDraftMode = false;
+      editingFiles.clear();
       renderContent();
       loadComments();
       loadingOverlay.classList.add('hidden');
@@ -1015,7 +1012,7 @@ applyTranslations();
   }
 
   function updateTabIndicator(name) {
-    if (!isEditing || !selectedGistDetail) return;
+    if (!isDraftMode || !selectedGistDetail) return;
     var tabs = fileTabs.querySelectorAll('.file-tab-edit-item');
     for (var i = 0; i < tabs.length; i++) {
       if (tabs[i].dataset.file === name) {
@@ -1043,11 +1040,15 @@ applyTranslations();
     if (!g) return;
     emptyState.classList.add('hidden'); gistContent.classList.remove('hidden');
     var desc = g.description || (g.isNew ? I18N.t('gistMeta.newGist') : I18N.t('gistMeta.noDesc'));
-    if (isEditing) {
-      gistTitle.innerHTML = '<input id="desc-input" class="w-full theme-bg-input border theme-border rounded px-2 py-1 text-sm font-semibold theme-text-primary focus:outline-none focus:ring-1 focus:ring-blue-500" value="' + escAttr(g.description || '') + '" placeholder="' + I18N.t('gistMeta.descPlaceholder') + '">';
+    
+    if (isDraftMode) {
+      if (!gistTitle.querySelector('input')) {
+        gistTitle.innerHTML = '<input id="desc-input" class="w-full theme-bg-input border theme-border rounded px-2 py-1 text-sm font-semibold theme-text-primary focus:outline-none focus:ring-1 focus:ring-blue-500" value="' + escAttr(g.description || '') + '" placeholder="' + I18N.t('gistMeta.descPlaceholder') + '">';
+      }
     } else {
       gistTitle.textContent = desc;
     }
+    
     if (g.isNew) {
       gistMeta.textContent = I18N.t('gistMeta.unsaved'); gistLink.href = '#'; gistLink.classList.add('hidden');
     } else {
@@ -1055,26 +1056,31 @@ applyTranslations();
       gistMeta.textContent = I18N.t('gistMeta.created') + ' ' + new Date(g.created_at).toLocaleString(locale) + ' · ' + I18N.t('gistMeta.updated') + ' ' + new Date(g.updated_at).toLocaleString(locale);
       gistLink.href = g.html_url; gistLink.classList.remove('hidden');
     }
-    var files = g.files;
-    var fileNames = isEditing ? editFileNames : Object.keys(files);
-    var renderName = (activeFileName && fileNames.indexOf(activeFileName) !== -1) ? activeFileName : fileNames[0];
 
-    // 渲染选项卡结构
-    if (isEditing) {
+    var fileNames = isDraftMode ? editFileNames : Object.keys(g.files);
+    var renderName = (activeFileName && fileNames.indexOf(activeFileName) !== -1) ? activeFileName : fileNames[0];
+    activeFileName = renderName;
+
+    // 渲染选项卡结构：只有进入 editingFiles 的 Tab 才是编辑外观
+    if (isDraftMode) {
       fileTabs.innerHTML = fileNames.map(function(name) {
         var active = name === renderName ? ' tab-active' : '';
-        var isModified = false;
-        if (g.isNew || !g.files[name]) isModified = true;
-        else isModified = editContent[name] !== g.files[name].content;
-        
-        var indicatorClass = isModified ? 'rounded-full bg-blue-500' : 'rounded-[2px] bg-gray-400';
-        var indicator = '<span class="indicator-dot inline-block w-2 h-2 shrink-0 transition-all ' + indicatorClass + '"></span>';
+        if (editingFiles.has(name)) {
+          var isModified = false;
+          if (g.isNew || !g.files[name]) isModified = true;
+          else isModified = editContent[name] !== g.files[name].content;
+          
+          var indicatorClass = isModified ? 'rounded-full bg-blue-500' : 'rounded-[2px] bg-gray-400';
+          var indicator = '<span class="indicator-dot inline-block w-2 h-2 shrink-0 transition-all ' + indicatorClass + '"></span>';
 
-        return '<div class="file-tab-edit-item flex items-center gap-1.5 shrink-0 pl-2 pr-1 py-1 text-xs mono cursor-pointer' + active + '" data-file="' + escAttr(name) + '">' +
-          indicator +
-          '<input class="file-name-input bg-transparent text-xs mono px-1 py-1 outline-none theme-text-primary w-28" value="' + escAttr(name) + '" data-file="' + escAttr(name) + '" spellcheck="false">' +
-          (fileNames.length > 1 ? '<button class="delete-file-btn theme-text-muted hover:text-red-500 px-1" data-file="' + escAttr(name) + '" title="' + I18N.t('files.deleteFile') + '">&times;</button>' : '') +
-          '</div>';
+          return '<div class="file-tab-edit-item flex items-center gap-1.5 shrink-0 pl-2 pr-1 py-1 text-xs mono cursor-pointer' + active + '" data-file="' + escAttr(name) + '">' +
+            indicator +
+            '<input class="file-name-input bg-transparent text-xs mono px-1 py-1 outline-none theme-text-primary w-28" value="' + escAttr(name) + '" data-file="' + escAttr(name) + '" spellcheck="false">' +
+            (fileNames.length > 1 ? '<button class="delete-file-btn theme-text-muted hover:text-red-500 px-1" data-file="' + escAttr(name) + '" title="' + I18N.t('files.deleteFile') + '">&times;</button>' : '') +
+            '</div>';
+        } else {
+          return '<button class="file-tab-btn px-4 py-2 text-xs mono transition-colors shrink-0' + active + '" data-file="' + escAttr(name) + '">' + escHtml(name) + '</button>';
+        }
       }).join('') + '<button id="add-file-btn" class="shrink-0 px-3 py-1.5 text-xs font-semibold theme-text-muted hover:theme-text-primary transition-colors" title="' + I18N.t('files.addFile') + '">+</button>';
     } else {
       fileTabs.innerHTML = fileNames.map(function(name) {
@@ -1086,48 +1092,56 @@ applyTranslations();
     var fileData = g.files[renderName] || { content: '', language: 'Text', truncated: false };
     renderFileViewer(renderName, fileData);
     highlightActiveTab(renderName);
+
+    // 头部按钮渲染控制
+    if (isDraftMode) {
+      saveBtn.classList.remove('hidden');
+      cancelEditBtn.classList.remove('hidden');
+      visibilityBtn.classList.remove('hidden');
+      updateVisibilityIcon();
+      deleteBtn.classList.add('hidden'); // 草稿状态下先隐藏全局删除
+      
+      // 根据当前聚焦的文件状态决定是否显示“编辑”按钮
+      if (editingFiles.has(renderName)) {
+        editBtn.classList.add('hidden');
+      } else {
+        editBtn.classList.remove('hidden');
+      }
+    } else {
+      saveBtn.classList.add('hidden');
+      cancelEditBtn.classList.add('hidden');
+      visibilityBtn.classList.add('hidden');
+      deleteBtn.classList.remove('hidden');
+      editBtn.classList.remove('hidden');
+    }
   }
 
   function highlightActiveTab(name) {
     activeFileName = name;
-    if (isEditing) {
-      fileTabs.querySelectorAll('.file-tab-edit-item').forEach(function(el) {
-        if (el.dataset.file === name) {
-          el.classList.add('tab-active');
-        } else {
-          el.classList.remove('tab-active');
-        }
+    if (isDraftMode) {
+      fileTabs.querySelectorAll('.file-tab-edit-item, .file-tab-btn').forEach(function(el) {
+        if (el.dataset.file === name) el.classList.add('tab-active');
+        else el.classList.remove('tab-active');
       });
     } else {
       fileTabs.querySelectorAll('.file-tab-btn').forEach(function(t) {
-        if (t.dataset.file === name) {
-          t.classList.add('tab-active');
-        } else {
-          t.classList.remove('tab-active');
-        }
+        if (t.dataset.file === name) t.classList.add('tab-active');
+        else t.classList.remove('tab-active');
       });
     }
   }
 
-  function switchFile(name) {
-    var g = selectedGistDetail;
-    if (!g) return;
-    var file = g.files[name];
-    if (!file) return;
-    renderFileViewer(name, file);
-    highlightActiveTab(name);
-  }
-
   /* ── 核心：渲染代码编辑器/查看器 (支持编辑模式实时语法高亮) ── */
   function renderFileViewer(name, file) {
-    var content = isEditing ? (editContent[name] !== undefined ? editContent[name] : file.content) : file.content;
+    var isEditingThisFile = isDraftMode && editingFiles.has(name);
+    var content = isDraftMode ? (editContent[name] !== undefined ? editContent[name] : file.content) : file.content;
     var truncated = file.truncated;
     var fontStyle = 'font-size: ' + currentFontSize + 'px; line-height: ' + (currentFontSize * 1.55) + 'px;';
     var hlLang = detectHljsLanguage(name, file.language);
     var langClass = hlLang ? 'language-' + hlLang : '';
     var displayLang = file.language || (hlLang ? hlLang.toUpperCase() : 'PLAINTEXT');
 
-    if (isEditing) {
+    if (isEditingThisFile) {
       // 编辑模式：双层覆盖同步架构
       editorArea.innerHTML = 
         '<div class="flex items-center justify-between px-4 py-1.5 theme-bg-surface border-b theme-border shrink-0">' +
@@ -1194,15 +1208,19 @@ applyTranslations();
   }
 
   editBtn.addEventListener('click', function() {
-    isEditing = true;
-    editContent = {};
     var g = selectedGistDetail;
     if (!g) return;
-    editFileNames = Object.keys(g.files);
-    editPublic = g.public;
-    for (var name in g.files) { editContent[name] = g.files[name].content; }
-    editBtn.classList.add('hidden'); deleteBtn.classList.add('hidden'); saveBtn.classList.remove('hidden'); cancelEditBtn.classList.remove('hidden');
-    visibilityBtn.classList.remove('hidden'); updateVisibilityIcon(); renderContent();
+
+    if (!isDraftMode) {
+      isDraftMode = true;
+      editContent = {};
+      editFileNames = Object.keys(g.files);
+      editPublic = g.public;
+      for (var name in g.files) { editContent[name] = g.files[name].content; }
+    }
+    
+    editingFiles.add(activeFileName); // 仅仅将当前 tab 放入独立编辑状态
+    renderContent();
   });
 
   deleteBtn.addEventListener('click', function() {
@@ -1257,14 +1275,12 @@ applyTranslations();
       gists = gists.filter(function(x) { return x.id !== '__new__'; });
       if (!searchInput.value.trim()) gists = allGists;
       selectedGistDetail = null; selectedGist = null;
-      isEditing = false; editContent = {};
-      editBtn.classList.remove('hidden'); deleteBtn.classList.remove('hidden'); saveBtn.classList.add('hidden'); cancelEditBtn.classList.add('hidden');
-      visibilityBtn.classList.add('hidden'); renderGistList(); resetContent();
+      isDraftMode = false; editContent = {}; editingFiles.clear();
+      renderGistList(); resetContent();
       return;
     }
-    isEditing = false; editContent = {}; editFileNames = [];
-    editBtn.classList.remove('hidden'); deleteBtn.classList.remove('hidden'); saveBtn.classList.add('hidden'); cancelEditBtn.classList.add('hidden');
-    visibilityBtn.classList.add('hidden'); renderContent();
+    isDraftMode = false; editContent = {}; editFileNames = []; editingFiles.clear();
+    renderContent();
   });
 
   function updateVisibilityIcon() {
@@ -1284,7 +1300,7 @@ applyTranslations();
     if (ta && ta.dataset.file) {
       editContent[ta.dataset.file] = ta.value;
     }
-    if (isEditing) { collectFileNames(); }
+    if (isDraftMode) { collectFileNames(); }
     for (var i = 0; i < editFileNames.length; i++) {
       var fn = editFileNames[i];
       if (!fn.trim()) { showToast(I18N.t('toast.filenameEmpty'), 'error'); return; }
@@ -1311,17 +1327,15 @@ applyTranslations();
         allGists.unshift(created);
         if (searchInput.value.trim()) { gists.unshift(created); } else { gists = allGists; }
         selectedGistDetail = created; selectedGist = created;
-        isEditing = false; editContent = {}; editFileNames = []; editPublic = false;
-        editBtn.classList.remove('hidden'); deleteBtn.classList.remove('hidden'); saveBtn.classList.add('hidden'); cancelEditBtn.classList.add('hidden');
-        visibilityBtn.classList.add('hidden'); setSaving(false);
+        isDraftMode = false; editContent = {}; editFileNames = []; editPublic = false; editingFiles.clear();
+        setSaving(false);
         renderGistList(); renderContent(); loadComments();
         showToast(I18N.t('toast.gistCreated'), 'success');
       } else {
         var updated = await api('/gists/' + g.id, { method: 'PATCH', body: JSON.stringify({ description: description, public: editPublic, files: files }) });
         selectedGistDetail = updated; selectedGist = updated;
-        isEditing = false; editContent = {}; editFileNames = []; editPublic = false;
-        editBtn.classList.remove('hidden'); deleteBtn.classList.remove('hidden'); saveBtn.classList.add('hidden'); cancelEditBtn.classList.add('hidden');
-        visibilityBtn.classList.add('hidden'); setSaving(false);
+        isDraftMode = false; editContent = {}; editFileNames = []; editPublic = false; editingFiles.clear();
+        setSaving(false);
         renderContent(); loadGists();
         showToast(I18N.t('toast.gistSaved'), 'success');
       }
@@ -1334,52 +1348,53 @@ applyTranslations();
   fileTabs.addEventListener('click', function(e) {
     var g = selectedGistDetail;
     if (!g) return;
+
     if (e.target.closest('#add-file-btn')) {
       var base = 'new-file', newName = base + '.txt', n = 1;
       while (editFileNames.indexOf(newName) !== -1) { newName = base + '-' + n + '.txt'; n++; }
       editFileNames.push(newName); editContent[newName] = '';
+      editingFiles.add(newName);
       var curTa = editorArea.querySelector('textarea.code-editor');
       if (curTa) {
         editContent[curTa.dataset.file] = curTa.value;
         updateTabIndicator(curTa.dataset.file);
       }
+      activeFileName = newName;
       renderContent();
-      renderFileViewer(newName, { content: '', language: 'Text', truncated: false });
-      highlightActiveTab(newName);
       return;
     }
+
     var delBtn = e.target.closest('.delete-file-btn');
     if (delBtn) {
       var name = delBtn.dataset.file;
       editFileNames = editFileNames.filter(function(f) { return f !== name; });
       delete editContent[name];
+      editingFiles.delete(name);
       var curTa2 = editorArea.querySelector('textarea.code-editor');
       if (curTa2 && curTa2.dataset.file !== name) {
         editContent[curTa2.dataset.file] = curTa2.value;
         updateTabIndicator(curTa2.dataset.file);
       }
+      if (activeFileName === name) {
+        activeFileName = editFileNames[0] || null;
+      }
       renderContent();
-      var first = editFileNames[0];
-      if (first) { renderFileViewer(first, { content: editContent[first] || '', language: 'Text', truncated: false }); highlightActiveTab(first); }
       return;
     }
-    if (isEditing) {
-      var wrapper = e.target.closest('.file-tab-edit-item');
-      if (!wrapper || e.target.closest('button')) return; // 移除 e.target.tagName === 'INPUT' 条件，以便点击输入框也能触发切换
-      var fname = wrapper.dataset.file;
-      var curTa3 = editorArea.querySelector('textarea.code-editor');
-      if (curTa3) {
-        editContent[curTa3.dataset.file] = curTa3.value;
-        updateTabIndicator(curTa3.dataset.file); // 暂存并更新即将离开 tab 的修改状态
-      }
-      if (activeFileName !== fname) {
-        renderFileViewer(fname, { content: editContent[fname] || '', language: 'Text', truncated: false });
-        highlightActiveTab(fname);
-      }
-    } else {
-      var tab = e.target.closest('.file-tab-btn');
-      if (!tab) return;
-      switchFile(tab.dataset.file);
+
+    var wrapper = e.target.closest('.file-tab-edit-item') || e.target.closest('.file-tab-btn');
+    if (!wrapper || e.target.closest('button')) return;
+    var fname = wrapper.dataset.file;
+
+    var curTa3 = editorArea.querySelector('textarea.code-editor');
+    if (curTa3) {
+      editContent[curTa3.dataset.file] = curTa3.value;
+      updateTabIndicator(curTa3.dataset.file);
+    }
+
+    if (activeFileName !== fname) {
+      activeFileName = fname;
+      renderContent();
     }
   });
 
@@ -1392,6 +1407,10 @@ applyTranslations();
       editFileNames[idx] = newName;
       e.target.dataset.file = newName;
       if (editContent[oldName] !== undefined) { editContent[newName] = editContent[oldName]; delete editContent[oldName]; }
+      if (editingFiles.has(oldName)) {
+        editingFiles.delete(oldName);
+        editingFiles.add(newName);
+      }
       var curTa = editorArea.querySelector('textarea.code-editor');
       if (curTa && curTa.dataset.file === oldName) { curTa.dataset.file = newName; }
       var wrapper = e.target.closest('[data-file]');
