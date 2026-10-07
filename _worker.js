@@ -138,6 +138,7 @@ const HTML = `<!DOCTYPE html>
     --pill-btn-hover: #cbd5e1;
     --modal-mask: rgba(0, 0, 0, 0.45);
     
+    /* 选项卡色彩 */
     --tab-bar-bg: #e2e8f0;
     --tab-active-bg: #ffffff;
     --tab-inactive-hover: #cbd5e1;
@@ -160,6 +161,7 @@ const HTML = `<!DOCTYPE html>
     --pill-btn-hover: #334155;
     --modal-mask: rgba(0, 0, 0, 0.75);
 
+    /* 选项卡色彩 */
     --tab-bar-bg: #090d16;
     --tab-active-bg: #111827;
     --tab-inactive-hover: #1f2937;
@@ -181,6 +183,7 @@ const HTML = `<!DOCTYPE html>
   .theme-text-secondary { color: var(--text-secondary); }
   .theme-text-muted { color: var(--text-muted); }
 
+  /* 强制 Mono 等宽字体规则 */
   .mono, pre, pre code, textarea.code-editor {
     font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace !important;
     font-feature-settings: "liga" 0;
@@ -193,6 +196,7 @@ const HTML = `<!DOCTYPE html>
     font-size: inherit !important;
   }
 
+  /* ── 实时高亮编辑器容器样式 ─────────────────────── */
   .editor-wrapper {
     position: relative;
     width: 100%;
@@ -218,6 +222,7 @@ const HTML = `<!DOCTYPE html>
     overflow-y: auto;
   }
 
+  /* 顶层透明交互 Textarea */
   textarea.code-editor {
     z-index: 2;
     background: transparent;
@@ -226,11 +231,13 @@ const HTML = `<!DOCTYPE html>
     resize: none;
   }
 
+  /* 避免由于拼写检测下划线导致偏移 */
   textarea.code-editor::selection {
     background: rgba(59, 130, 246, 0.35);
     color: transparent;
   }
 
+  /* 底层语法高亮显示层 */
   .code-backdrop {
     z-index: 1;
     pointer-events: none;
@@ -244,6 +251,7 @@ const HTML = `<!DOCTYPE html>
     border-left: 3px solid #3b82f6;
   }
 
+  /* 胶囊控件样式 */
   .pill-group {
     display: inline-flex;
     align-items: center;
@@ -273,6 +281,7 @@ const HTML = `<!DOCTYPE html>
     color: #ffffff !important;
   }
 
+  /* ── 现代化文件选项卡样式 ────────────────────────── */
   #file-tabs {
     background-color: var(--tab-bar-bg);
   }
@@ -318,25 +327,27 @@ const HTML = `<!DOCTYPE html>
     font-weight: 600;
   }
 
-  /* 状态指示点 */
-  .dirty-dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 9999px;
-    background-color: #3b82f6;
-    display: inline-block;
-    flex-shrink: 0;
+  /* 状态指示符样式 */
+  .status-indicator {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    width: 14px;
+    height: 14px;
+    user-select: none;
+    line-height: 1;
   }
-  .pristine-square {
-    width: 5px;
-    height: 5px;
-    border-radius: 1px;
-    background-color: #94a3b8;
-    display: inline-block;
-    flex-shrink: 0;
-    opacity: 0.6;
+  .status-indicator.dirty {
+    color: #f59e0b; /* 琥珀色圆点 */
+    font-size: 11px;
+  }
+  .status-indicator.pristine {
+    color: #3b82f6; /* 蓝色方点 */
+    font-size: 9px;
   }
 
+  /* 滚动条美化 */
   ::-webkit-scrollbar { width: 6px; height: 6px; }
   ::-webkit-scrollbar-track { background: transparent; }
   ::-webkit-scrollbar-thumb { background: #64748b66; border-radius: 3px; }
@@ -450,13 +461,13 @@ const HTML = `<!DOCTYPE html>
       <div id="gist-content" class="flex-1 flex flex-col overflow-hidden hidden relative">
         <div id="saving-overlay" class="absolute inset-0 z-20 flex items-center justify-center hidden" style="background-color: var(--modal-mask);">
           <div class="flex flex-col items-center gap-3">
-            <svg class="spinner w-8 h-8 text-blue-400" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"/></svg>
+            <svg class="spinner w-8 h-8 text-blue-400 animate-spin" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"/></svg>
             <span class="text-sm text-gray-200" data-i18n="overlay.saving">正在保存...</span>
           </div>
         </div>
         <div id="loading-overlay" class="absolute inset-0 z-20 flex items-center justify-center hidden" style="background-color: var(--modal-mask);">
           <div class="flex flex-col items-center gap-3">
-            <svg class="spinner w-8 h-8 text-blue-400" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"/></svg>
+            <svg class="spinner w-8 h-8 text-blue-400 animate-spin" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"/></svg>
             <span class="text-sm text-gray-200" data-i18n="overlay.loading">正在加载...</span>
           </div>
         </div>
@@ -658,6 +669,7 @@ applyTranslations();
   const commentsBody = $('#comments-body');
   const toast = $('#toast');
 
+  // 字号与主题相关元素
   const fontDecreaseBtn = $('#font-decrease-btn');
   const fontIncreaseBtn = $('#font-increase-btn');
   const fontResetBtn = $('#font-reset-btn');
@@ -672,6 +684,7 @@ applyTranslations();
   let selectedGistDetail = null;
   let isEditing = false;
   let editContent = {};
+  let originalFileContents = {}; // 记录初始内容以便检测未保存修改
   let editFileNames = [];
   let editPublic = false;
   let activeFileName = null;
@@ -722,6 +735,17 @@ applyTranslations();
 
   applyTheme(currentTheme);
 
+  /* ── 判断文件是否被修改 ── */
+  function isFileModified(name) {
+    if (!isEditing) return false;
+    var current = editContent[name] !== undefined ? editContent[name] : '';
+    // 如果原先不存在该文件（新增文件）且有输入，或者内容与初始快照不一致
+    if (originalFileContents[name] === undefined) {
+      return current.length > 0;
+    }
+    return current !== originalFileContents[name];
+  }
+
   /* ── 语法高亮映射 ── */
   function detectHljsLanguage(filename, rawLang) {
     if (!window.hljs) return '';
@@ -771,7 +795,7 @@ applyTranslations();
   function setSaving(active) {
     if (active) {
       saveBtn.disabled = true;
-      saveBtn.innerHTML = '<svg class="spinner w-3.5 h-3.5" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"/><\/svg> ' + I18N.t('editor.saving');
+      saveBtn.innerHTML = '<svg class="spinner w-3.5 h-3.5 animate-spin" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"/><\/svg> ' + I18N.t('editor.saving');
       saveBtn.classList.add('opacity-70', 'cursor-not-allowed');
       cancelEditBtn.disabled = true;
       cancelEditBtn.classList.add('opacity-50', 'cursor-not-allowed');
@@ -971,10 +995,13 @@ applyTranslations();
     selectedGist = draft;
     isEditing = true;
     editContent = {};
+    originalFileContents = {};
     editFileNames = Object.keys(draft.files);
-    activeFileName = editFileNames[0];
     editPublic = false;
-    for (var name in draft.files) { editContent[name] = draft.files[name].content; }
+    for (var name in draft.files) {
+      editContent[name] = draft.files[name].content;
+      originalFileContents[name] = draft.files[name].content;
+    }
     allGists.unshift(draft);
     if (searchInput.value.trim()) { gists.unshift(draft); } else { gists = allGists; }
     renderGistList();
@@ -995,9 +1022,11 @@ applyTranslations();
     var draft = allGists.find(function(g) { return g.id === id && g.isNew; });
     if (draft) {
       selectedGistDetail = draft; selectedGist = draft;
-      isEditing = true; editContent = {}; editFileNames = Object.keys(draft.files); editPublic = false;
-      activeFileName = editFileNames[0];
-      for (var name in draft.files) { editContent[name] = draft.files[name].content; }
+      isEditing = true; editContent = {}; originalFileContents = {}; editFileNames = Object.keys(draft.files); editPublic = false;
+      for (var name in draft.files) {
+        editContent[name] = draft.files[name].content;
+        originalFileContents[name] = draft.files[name].content;
+      }
       editBtn.classList.add('hidden'); deleteBtn.classList.add('hidden'); saveBtn.classList.remove('hidden'); cancelEditBtn.classList.remove('hidden');
       visibilityBtn.classList.remove('hidden'); updateVisibilityIcon(); renderContent();
       commentsList.innerHTML = '<div class="p-4 text-xs theme-text-muted text-center">' + I18N.t('comments.saveFirst') + '</div>';
@@ -1009,7 +1038,11 @@ applyTranslations();
       selectedGistDetail = await api('/gists/' + id);
       selectedGist = selectedGistDetail;
       isEditing = false;
-      activeFileName = Object.keys(selectedGistDetail.files)[0];
+      editContent = {};
+      originalFileContents = {};
+      for (var fname in selectedGistDetail.files) {
+        originalFileContents[fname] = selectedGistDetail.files[fname].content;
+      }
       editBtn.classList.remove('hidden'); deleteBtn.classList.remove('hidden'); saveBtn.classList.add('hidden'); cancelEditBtn.classList.add('hidden');
       visibilityBtn.classList.add('hidden');
       renderContent();
@@ -1024,35 +1057,37 @@ applyTranslations();
     }
   }
 
-  /* ── 判断单个文件是否已被修改 ── */
-  function isFileDirty(name) {
-    if (!isEditing || !selectedGistDetail) return false;
-    // 新增的文件默认为修改状态
-    if (!selectedGistDetail.files || !selectedGistDetail.files[name]) {
-      return true;
-    }
-    var orig = selectedGistDetail.files[name].content || '';
-    var curr = editContent[name] !== undefined ? editContent[name] : orig;
-    return orig !== curr;
-  }
-
-  /* ── 状态标识生成：脏文件显示小圆点，未修改处于编辑态显示小方点 ── */
-  function renderIndicatorHtml(name) {
-    if (!isEditing) return '';
-    if (isFileDirty(name)) {
-      return '<span class="dirty-dot" title="已修改未保存"></span>';
-    }
-    return '<span class="pristine-square" title="编辑中 (未变动)"></span>';
-  }
-
-  /* ── 捕获当前正在编辑的 Tab 内容和重命名 ── */
-  function syncCurrentEditorToState() {
-    if (!isEditing) return;
+  /* 刷新缓存当前正在编辑的文件内容与文件名 */
+  function flushCurrentEditorContent() {
     var ta = editorArea.querySelector('textarea.code-editor');
     if (ta && ta.dataset.file) {
       editContent[ta.dataset.file] = ta.value;
     }
-    collectFileNames();
+    if (isEditing) {
+      collectFileNames();
+    }
+  }
+
+  /* 生成 Tab 上的状态指示点 HTML */
+  function getTabStatusHtml(fileName) {
+    if (!isEditing) return '';
+    if (isFileModified(fileName)) {
+      return '<span class="status-indicator dirty" title="已修改未保存">●</span>';
+    } else {
+      return '<span class="status-indicator pristine" title="处于编辑模式（未改动）">■</span>';
+    }
+  }
+
+  /* 批量刷新 Tab 上的状态指示器 */
+  function updateAllTabStatusIndicators() {
+    if (!isEditing) return;
+    fileTabs.querySelectorAll('.file-tab-edit-item').forEach(function(el) {
+      var name = el.dataset.file;
+      var statusContainer = el.querySelector('.tab-status-slot');
+      if (statusContainer) {
+        statusContainer.innerHTML = getTabStatusHtml(name);
+      }
+    });
   }
 
   function renderContent() {
@@ -1076,15 +1111,15 @@ applyTranslations();
     var fileNames = isEditing ? editFileNames : Object.keys(files);
     var renderName = (activeFileName && fileNames.indexOf(activeFileName) !== -1) ? activeFileName : fileNames[0];
 
-    // 渲染带有状态区分的小点
+    // 渲染选项卡结构
     if (isEditing) {
       fileTabs.innerHTML = fileNames.map(function(name) {
         var active = name === renderName ? ' tab-active' : '';
-        return '<div class="file-tab-edit-item flex items-center gap-1.5 shrink-0 px-2 py-1 text-xs mono cursor-pointer' + active + '" data-file="' + escAttr(name) + '">' +
-          renderIndicatorHtml(name) +
-          '<input class="file-name-input bg-transparent text-xs mono px-1 py-1 outline-none theme-text-primary w-28" value="' + escAttr(name) + '" data-file="' + escAttr(name) + '" spellcheck="false">' +
-          (fileNames.length > 1 ? '<button class="delete-file-btn theme-text-muted hover:text-red-500 px-1" data-file="' + escAttr(name) + '" title="' + I18N.t('files.deleteFile') + '">&times;</button>' : '') +
-          '</div>';
+        return '<div class="file-tab-edit-item flex items-center gap-1 shrink-0 px-2 py-1 text-xs mono cursor-pointer' + active + '" data-file="' + escAttr(name) + '">' +
+                 '<span class="tab-status-slot">' + getTabStatusHtml(name) + '</span>' +
+                 '<input class="file-name-input bg-transparent text-xs mono px-1 py-1 outline-none theme-text-primary w-28" value="' + escAttr(name) + '" data-file="' + escAttr(name) + '" spellcheck="false">' +
+                 (fileNames.length > 1 ? '<button class="delete-file-btn theme-text-muted hover:text-red-500 px-1" data-file="' + escAttr(name) + '" title="' + I18N.t('files.deleteFile') + '">&times;</button>' : '') +
+               '</div>';
       }).join('') + '<button id="add-file-btn" class="shrink-0 px-3 py-1.5 text-xs font-semibold theme-text-muted hover:theme-text-primary transition-colors" title="' + I18N.t('files.addFile') + '">+</button>';
     } else {
       fileTabs.innerHTML = fileNames.map(function(name) {
@@ -1093,24 +1128,9 @@ applyTranslations();
       }).join('');
     }
 
-    var fileData = g.files[renderName] || { content: '', language: 'Text', truncated: false };
+    var fileData = (g.files && g.files[renderName]) ? g.files[renderName] : { content: '', language: 'Text', truncated: false };
     renderFileViewer(renderName, fileData);
     highlightActiveTab(renderName);
-  }
-
-  /* ── 动态局部刷新各 Tab 上的修改指示器 ── */
-  function refreshTabIndicators() {
-    if (!isEditing) return;
-    fileTabs.querySelectorAll('.file-tab-edit-item').forEach(function(el) {
-      var fname = el.dataset.file;
-      var dotContainer = el.querySelector('.dirty-dot, .pristine-square');
-      var newHtml = renderIndicatorHtml(fname);
-      if (dotContainer) {
-        dotContainer.outerHTML = newHtml;
-      } else {
-        el.insertAdjacentHTML('afterbegin', newHtml);
-      }
-    });
   }
 
   function highlightActiveTab(name) {
@@ -1137,19 +1157,20 @@ applyTranslations();
   function switchFile(name) {
     var g = selectedGistDetail;
     if (!g) return;
-    var file = g.files[name] || { content: editContent[name] || '', language: 'Text', truncated: false };
+    flushCurrentEditorContent();
+    var file = (g.files && g.files[name]) ? g.files[name] : { content: editContent[name] || '', language: 'Text', truncated: false };
     renderFileViewer(name, file);
     highlightActiveTab(name);
   }
 
   /* ── 核心：渲染代码编辑器/查看器 ── */
   function renderFileViewer(name, file) {
-    var content = isEditing ? (editContent[name] !== undefined ? editContent[name] : file.content) : file.content;
-    var truncated = file.truncated;
+    var content = isEditing ? (editContent[name] !== undefined ? editContent[name] : (file ? file.content : '')) : (file ? file.content : '');
+    var truncated = file ? file.truncated : false;
     var fontStyle = 'font-size: ' + currentFontSize + 'px; line-height: ' + (currentFontSize * 1.55) + 'px;';
-    var hlLang = detectHljsLanguage(name, file.language);
+    var hlLang = detectHljsLanguage(name, file ? file.language : '');
     var langClass = hlLang ? 'language-' + hlLang : '';
-    var displayLang = file.language || (hlLang ? hlLang.toUpperCase() : 'PLAINTEXT');
+    var displayLang = (file && file.language) ? file.language : (hlLang ? hlLang.toUpperCase() : 'PLAINTEXT');
 
     if (isEditing) {
       editorArea.innerHTML = 
@@ -1180,7 +1201,7 @@ applyTranslations();
       ta.addEventListener('input', function() {
         editContent[name] = ta.value;
         syncHighlight();
-        refreshTabIndicators();
+        updateAllTabStatusIndicators();
       });
 
       ta.addEventListener('scroll', syncScroll);
@@ -1194,7 +1215,7 @@ applyTranslations();
           ta.selectionStart = ta.selectionEnd = start + 2;
           editContent[name] = ta.value;
           syncHighlight();
-          refreshTabIndicators();
+          updateAllTabStatusIndicators();
         }
       });
 
@@ -1216,11 +1237,15 @@ applyTranslations();
   editBtn.addEventListener('click', function() {
     isEditing = true;
     editContent = {};
+    originalFileContents = {};
     var g = selectedGistDetail;
     if (!g) return;
     editFileNames = Object.keys(g.files);
     editPublic = g.public;
-    for (var name in g.files) { editContent[name] = g.files[name].content; }
+    for (var name in g.files) {
+      editContent[name] = g.files[name].content;
+      originalFileContents[name] = g.files[name].content;
+    }
     editBtn.classList.add('hidden'); deleteBtn.classList.add('hidden'); saveBtn.classList.remove('hidden'); cancelEditBtn.classList.remove('hidden');
     visibilityBtn.classList.remove('hidden'); updateVisibilityIcon(); renderContent();
   });
@@ -1277,12 +1302,12 @@ applyTranslations();
       gists = gists.filter(function(x) { return x.id !== '__new__'; });
       if (!searchInput.value.trim()) gists = allGists;
       selectedGistDetail = null; selectedGist = null;
-      isEditing = false; editContent = {};
+      isEditing = false; editContent = {}; originalFileContents = {};
       editBtn.classList.remove('hidden'); deleteBtn.classList.remove('hidden'); saveBtn.classList.add('hidden'); cancelEditBtn.classList.add('hidden');
       visibilityBtn.classList.add('hidden'); renderGistList(); resetContent();
       return;
     }
-    isEditing = false; editContent = {}; editFileNames = [];
+    isEditing = false; editContent = {}; originalFileContents = {}; editFileNames = [];
     editBtn.classList.remove('hidden'); deleteBtn.classList.remove('hidden'); saveBtn.classList.add('hidden'); cancelEditBtn.classList.add('hidden');
     visibilityBtn.classList.add('hidden'); renderContent();
   });
@@ -1300,8 +1325,7 @@ applyTranslations();
   saveBtn.addEventListener('click', async function() {
     var g = selectedGistDetail;
     if (!g || saveBtn.disabled) return;
-    syncCurrentEditorToState();
-
+    flushCurrentEditorContent();
     for (var i = 0; i < editFileNames.length; i++) {
       var fn = editFileNames[i];
       if (!fn.trim()) { showToast(I18N.t('toast.filenameEmpty'), 'error'); return; }
@@ -1328,7 +1352,7 @@ applyTranslations();
         allGists.unshift(created);
         if (searchInput.value.trim()) { gists.unshift(created); } else { gists = allGists; }
         selectedGistDetail = created; selectedGist = created;
-        isEditing = false; editContent = {}; editFileNames = []; editPublic = false;
+        isEditing = false; editContent = {}; originalFileContents = {}; editFileNames = []; editPublic = false;
         editBtn.classList.remove('hidden'); deleteBtn.classList.remove('hidden'); saveBtn.classList.add('hidden'); cancelEditBtn.classList.add('hidden');
         visibilityBtn.classList.add('hidden'); setSaving(false);
         renderGistList(); renderContent(); loadComments();
@@ -1336,7 +1360,7 @@ applyTranslations();
       } else {
         var updated = await api('/gists/' + g.id, { method: 'PATCH', body: JSON.stringify({ description: description, public: editPublic, files: files }) });
         selectedGistDetail = updated; selectedGist = updated;
-        isEditing = false; editContent = {}; editFileNames = []; editPublic = false;
+        isEditing = false; editContent = {}; originalFileContents = {}; editFileNames = []; editPublic = false;
         editBtn.classList.remove('hidden'); deleteBtn.classList.remove('hidden'); saveBtn.classList.add('hidden'); cancelEditBtn.classList.add('hidden');
         visibilityBtn.classList.add('hidden'); setSaving(false);
         renderContent(); loadGists();
@@ -1352,9 +1376,9 @@ applyTranslations();
     var g = selectedGistDetail;
     if (!g) return;
 
-    // 添加新文件
+    // 点击添加文件按钮
     if (e.target.closest('#add-file-btn')) {
-      syncCurrentEditorToState();
+      flushCurrentEditorContent();
       var base = 'new-file', newName = base + '.txt', n = 1;
       while (editFileNames.indexOf(newName) !== -1) { newName = base + '-' + n + '.txt'; n++; }
       editFileNames.push(newName);
@@ -1364,10 +1388,10 @@ applyTranslations();
       return;
     }
 
-    // 删除文件
+    // 点击删除文件按钮
     var delBtn = e.target.closest('.delete-file-btn');
     if (delBtn) {
-      syncCurrentEditorToState();
+      flushCurrentEditorContent();
       var name = delBtn.dataset.file;
       editFileNames = editFileNames.filter(function(f) { return f !== name; });
       delete editContent[name];
@@ -1378,15 +1402,12 @@ applyTranslations();
       return;
     }
 
-    // Tab 自由切换逻辑（无论是否处于编辑模式）
+    // 编辑模式或查看模式下的 Tab 点击切换
     if (isEditing) {
       var wrapper = e.target.closest('.file-tab-edit-item');
-      if (!wrapper || e.target.closest('button')) return;
-      var targetName = wrapper.dataset.file;
-      if (targetName && targetName !== activeFileName) {
-        syncCurrentEditorToState();
-        switchFile(targetName);
-      }
+      if (!wrapper || e.target.tagName === 'INPUT' || e.target.closest('button')) return;
+      var fname = wrapper.dataset.file;
+      switchFile(fname);
     } else {
       var tab = e.target.closest('.file-tab-btn');
       if (!tab) return;
@@ -1406,18 +1427,22 @@ applyTranslations();
         editContent[newName] = editContent[oldName];
         delete editContent[oldName];
       }
-      if (activeFileName === oldName) {
-        activeFileName = newName;
+      if (originalFileContents[oldName] !== undefined) {
+        originalFileContents[newName] = originalFileContents[oldName];
+        delete originalFileContents[oldName];
       }
       var curTa = editorArea.querySelector('textarea.code-editor');
       if (curTa && curTa.dataset.file === oldName) {
         curTa.dataset.file = newName;
       }
+      if (activeFileName === oldName) {
+        activeFileName = newName;
+      }
       var wrapper = e.target.closest('[data-file]');
       if (wrapper) wrapper.dataset.file = newName;
       var delBtn = wrapper ? wrapper.querySelector('.delete-file-btn') : null;
       if (delBtn) delBtn.dataset.file = newName;
-      refreshTabIndicators();
+      updateAllTabStatusIndicators();
     }
   });
 
@@ -1431,6 +1456,13 @@ applyTranslations();
         if (editContent[oldName] !== undefined) {
           editContent[newName] = editContent[oldName];
           delete editContent[oldName];
+        }
+        if (originalFileContents[oldName] !== undefined) {
+          originalFileContents[newName] = originalFileContents[oldName];
+          delete originalFileContents[oldName];
+        }
+        if (activeFileName === oldName) {
+          activeFileName = newName;
         }
         inp.dataset.file = newName;
       }
