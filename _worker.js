@@ -138,7 +138,6 @@ const HTML = `<!DOCTYPE html>
     --pill-btn-hover: #cbd5e1;
     --modal-mask: rgba(0, 0, 0, 0.45);
     
-    /* 选项卡色彩 */
     --tab-bar-bg: #e2e8f0;
     --tab-active-bg: #ffffff;
     --tab-inactive-hover: #cbd5e1;
@@ -161,7 +160,6 @@ const HTML = `<!DOCTYPE html>
     --pill-btn-hover: #334155;
     --modal-mask: rgba(0, 0, 0, 0.75);
 
-    /* 选项卡色彩 */
     --tab-bar-bg: #090d16;
     --tab-active-bg: #111827;
     --tab-inactive-hover: #1f2937;
@@ -183,7 +181,6 @@ const HTML = `<!DOCTYPE html>
   .theme-text-secondary { color: var(--text-secondary); }
   .theme-text-muted { color: var(--text-muted); }
 
-  /* 强制 Mono 等宽字体规则 */
   .mono, pre, pre code, textarea.code-editor {
     font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace !important;
     font-feature-settings: "liga" 0;
@@ -196,7 +193,6 @@ const HTML = `<!DOCTYPE html>
     font-size: inherit !important;
   }
 
-  /* ── 实时高亮编辑器容器样式 ─────────────────────── */
   .editor-wrapper {
     position: relative;
     width: 100%;
@@ -222,7 +218,6 @@ const HTML = `<!DOCTYPE html>
     overflow-y: auto;
   }
 
-  /* 顶层透明交互 Textarea */
   textarea.code-editor {
     z-index: 2;
     background: transparent;
@@ -231,13 +226,11 @@ const HTML = `<!DOCTYPE html>
     resize: none;
   }
 
-  /* 避免由于拼写检测下划线导致偏移 */
   textarea.code-editor::selection {
     background: rgba(59, 130, 246, 0.35);
     color: transparent;
   }
 
-  /* 底层语法高亮显示层 */
   .code-backdrop {
     z-index: 1;
     pointer-events: none;
@@ -251,7 +244,6 @@ const HTML = `<!DOCTYPE html>
     border-left: 3px solid #3b82f6;
   }
 
-  /* 胶囊控件样式 */
   .pill-group {
     display: inline-flex;
     align-items: center;
@@ -281,7 +273,6 @@ const HTML = `<!DOCTYPE html>
     color: #ffffff !important;
   }
 
-  /* ── 现代化文件选项卡样式 ────────────────────────── */
   #file-tabs {
     background-color: var(--tab-bar-bg);
   }
@@ -327,7 +318,25 @@ const HTML = `<!DOCTYPE html>
     font-weight: 600;
   }
 
-  /* 滚动条美化 */
+  /* 状态指示点 */
+  .dirty-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 9999px;
+    background-color: #3b82f6;
+    display: inline-block;
+    flex-shrink: 0;
+  }
+  .pristine-square {
+    width: 5px;
+    height: 5px;
+    border-radius: 1px;
+    background-color: #94a3b8;
+    display: inline-block;
+    flex-shrink: 0;
+    opacity: 0.6;
+  }
+
   ::-webkit-scrollbar { width: 6px; height: 6px; }
   ::-webkit-scrollbar-track { background: transparent; }
   ::-webkit-scrollbar-thumb { background: #64748b66; border-radius: 3px; }
@@ -399,7 +408,7 @@ const HTML = `<!DOCTYPE html>
         <button class="pill-btn" data-lang="ja">日本語</button>
       </span>
 
-      <!-- 深色 / 浅色 模式切换按钮 (正圆且居中) -->
+      <!-- 深色 / 浅色 模式切换按钮 -->
       <button id="theme-toggle-btn" class="w-7 h-7 rounded-full theme-bg-input theme-text-secondary hover:theme-text-primary transition-colors flex items-center justify-center shrink-0" title="切换深色/浅色模式">
         <svg id="theme-icon-sun" class="w-4 h-4 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
         <svg id="theme-icon-moon" class="w-4 h-4 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
@@ -649,7 +658,6 @@ applyTranslations();
   const commentsBody = $('#comments-body');
   const toast = $('#toast');
 
-  // 字号与主题相关元素
   const fontDecreaseBtn = $('#font-decrease-btn');
   const fontIncreaseBtn = $('#font-increase-btn');
   const fontResetBtn = $('#font-reset-btn');
@@ -678,7 +686,6 @@ applyTranslations();
     localStorage.setItem('gist_font_size', currentFontSize);
     if (fontSizeVal) fontSizeVal.textContent = currentFontSize;
 
-    // 同步更新所有代码展示层与编辑层样式
     const els = editorArea.querySelectorAll('pre, textarea.code-editor, .code-backdrop code');
     els.forEach(el => {
       el.style.fontSize = currentFontSize + 'px';
@@ -747,7 +754,6 @@ applyTranslations();
     return '';
   }
 
-  // 高亮一段文本并返回 HTML
   function getHighlightedCodeHtml(text, lang) {
     if (!window.hljs) return escHtml(text);
     if (lang && hljs.getLanguage(lang)) {
@@ -966,6 +972,7 @@ applyTranslations();
     isEditing = true;
     editContent = {};
     editFileNames = Object.keys(draft.files);
+    activeFileName = editFileNames[0];
     editPublic = false;
     for (var name in draft.files) { editContent[name] = draft.files[name].content; }
     allGists.unshift(draft);
@@ -989,6 +996,7 @@ applyTranslations();
     if (draft) {
       selectedGistDetail = draft; selectedGist = draft;
       isEditing = true; editContent = {}; editFileNames = Object.keys(draft.files); editPublic = false;
+      activeFileName = editFileNames[0];
       for (var name in draft.files) { editContent[name] = draft.files[name].content; }
       editBtn.classList.add('hidden'); deleteBtn.classList.add('hidden'); saveBtn.classList.remove('hidden'); cancelEditBtn.classList.remove('hidden');
       visibilityBtn.classList.remove('hidden'); updateVisibilityIcon(); renderContent();
@@ -1001,6 +1009,7 @@ applyTranslations();
       selectedGistDetail = await api('/gists/' + id);
       selectedGist = selectedGistDetail;
       isEditing = false;
+      activeFileName = Object.keys(selectedGistDetail.files)[0];
       editBtn.classList.remove('hidden'); deleteBtn.classList.remove('hidden'); saveBtn.classList.add('hidden'); cancelEditBtn.classList.add('hidden');
       visibilityBtn.classList.add('hidden');
       renderContent();
@@ -1013,6 +1022,37 @@ applyTranslations();
       emptyState.innerHTML = '<div class="text-center text-red-500"><p class="text-sm">' + I18N.t('emptyState.loadFailed', { message: e.message }) + '</p></div>';
       showToast(I18N.t('toast.loadFailed', { message: e.message }), 'error');
     }
+  }
+
+  /* ── 判断单个文件是否已被修改 ── */
+  function isFileDirty(name) {
+    if (!isEditing || !selectedGistDetail) return false;
+    // 新增的文件默认为修改状态
+    if (!selectedGistDetail.files || !selectedGistDetail.files[name]) {
+      return true;
+    }
+    var orig = selectedGistDetail.files[name].content || '';
+    var curr = editContent[name] !== undefined ? editContent[name] : orig;
+    return orig !== curr;
+  }
+
+  /* ── 状态标识生成：脏文件显示小圆点，未修改处于编辑态显示小方点 ── */
+  function renderIndicatorHtml(name) {
+    if (!isEditing) return '';
+    if (isFileDirty(name)) {
+      return '<span class="dirty-dot" title="已修改未保存"></span>';
+    }
+    return '<span class="pristine-square" title="编辑中 (未变动)"></span>';
+  }
+
+  /* ── 捕获当前正在编辑的 Tab 内容和重命名 ── */
+  function syncCurrentEditorToState() {
+    if (!isEditing) return;
+    var ta = editorArea.querySelector('textarea.code-editor');
+    if (ta && ta.dataset.file) {
+      editContent[ta.dataset.file] = ta.value;
+    }
+    collectFileNames();
   }
 
   function renderContent() {
@@ -1036,11 +1076,15 @@ applyTranslations();
     var fileNames = isEditing ? editFileNames : Object.keys(files);
     var renderName = (activeFileName && fileNames.indexOf(activeFileName) !== -1) ? activeFileName : fileNames[0];
 
-    // 渲染选项卡结构
+    // 渲染带有状态区分的小点
     if (isEditing) {
       fileTabs.innerHTML = fileNames.map(function(name) {
         var active = name === renderName ? ' tab-active' : '';
-        return '<div class="file-tab-edit-item flex items-center gap-1 shrink-0 px-2 py-1 text-xs mono cursor-pointer' + active + '" data-file="' + escAttr(name) + '"><input class="file-name-input bg-transparent text-xs mono px-1 py-1 outline-none theme-text-primary w-28" value="' + escAttr(name) + '" data-file="' + escAttr(name) + '" spellcheck="false">' + (fileNames.length > 1 ? '<button class="delete-file-btn theme-text-muted hover:text-red-500 px-1" data-file="' + escAttr(name) + '" title="' + I18N.t('files.deleteFile') + '">&times;</button>' : '') + '</div>';
+        return '<div class="file-tab-edit-item flex items-center gap-1.5 shrink-0 px-2 py-1 text-xs mono cursor-pointer' + active + '" data-file="' + escAttr(name) + '">' +
+          renderIndicatorHtml(name) +
+          '<input class="file-name-input bg-transparent text-xs mono px-1 py-1 outline-none theme-text-primary w-28" value="' + escAttr(name) + '" data-file="' + escAttr(name) + '" spellcheck="false">' +
+          (fileNames.length > 1 ? '<button class="delete-file-btn theme-text-muted hover:text-red-500 px-1" data-file="' + escAttr(name) + '" title="' + I18N.t('files.deleteFile') + '">&times;</button>' : '') +
+          '</div>';
       }).join('') + '<button id="add-file-btn" class="shrink-0 px-3 py-1.5 text-xs font-semibold theme-text-muted hover:theme-text-primary transition-colors" title="' + I18N.t('files.addFile') + '">+</button>';
     } else {
       fileTabs.innerHTML = fileNames.map(function(name) {
@@ -1052,6 +1096,21 @@ applyTranslations();
     var fileData = g.files[renderName] || { content: '', language: 'Text', truncated: false };
     renderFileViewer(renderName, fileData);
     highlightActiveTab(renderName);
+  }
+
+  /* ── 动态局部刷新各 Tab 上的修改指示器 ── */
+  function refreshTabIndicators() {
+    if (!isEditing) return;
+    fileTabs.querySelectorAll('.file-tab-edit-item').forEach(function(el) {
+      var fname = el.dataset.file;
+      var dotContainer = el.querySelector('.dirty-dot, .pristine-square');
+      var newHtml = renderIndicatorHtml(fname);
+      if (dotContainer) {
+        dotContainer.outerHTML = newHtml;
+      } else {
+        el.insertAdjacentHTML('afterbegin', newHtml);
+      }
+    });
   }
 
   function highlightActiveTab(name) {
@@ -1078,13 +1137,12 @@ applyTranslations();
   function switchFile(name) {
     var g = selectedGistDetail;
     if (!g) return;
-    var file = g.files[name];
-    if (!file) return;
+    var file = g.files[name] || { content: editContent[name] || '', language: 'Text', truncated: false };
     renderFileViewer(name, file);
     highlightActiveTab(name);
   }
 
-  /* ── 核心：渲染代码编辑器/查看器 (支持编辑模式实时语法高亮) ── */
+  /* ── 核心：渲染代码编辑器/查看器 ── */
   function renderFileViewer(name, file) {
     var content = isEditing ? (editContent[name] !== undefined ? editContent[name] : file.content) : file.content;
     var truncated = file.truncated;
@@ -1094,7 +1152,6 @@ applyTranslations();
     var displayLang = file.language || (hlLang ? hlLang.toUpperCase() : 'PLAINTEXT');
 
     if (isEditing) {
-      // 编辑模式：双层覆盖同步架构
       editorArea.innerHTML = 
         '<div class="flex items-center justify-between px-4 py-1.5 theme-bg-surface border-b theme-border shrink-0">' +
           '<span class="text-[10px] theme-text-muted uppercase">' + escHtml(displayLang) + '</span>' +
@@ -1111,8 +1168,7 @@ applyTranslations();
 
       function syncHighlight() {
         var val = ta.value;
-        // 末尾换行补足避免两层光标与文本高度不同步
-        if (val[val.length - 1] === '\\n') val += ' ';
+        if (val[val.length - 1] === '\n') val += ' ';
         code.innerHTML = getHighlightedCodeHtml(val, hlLang);
       }
 
@@ -1124,11 +1180,11 @@ applyTranslations();
       ta.addEventListener('input', function() {
         editContent[name] = ta.value;
         syncHighlight();
+        refreshTabIndicators();
       });
 
       ta.addEventListener('scroll', syncScroll);
 
-      // 友好支持 Tab 键缩进 2 空格
       ta.addEventListener('keydown', function(e) {
         if (e.key === 'Tab') {
           e.preventDefault();
@@ -1138,14 +1194,14 @@ applyTranslations();
           ta.selectionStart = ta.selectionEnd = start + 2;
           editContent[name] = ta.value;
           syncHighlight();
+          refreshTabIndicators();
         }
       });
 
       syncHighlight();
       syncScroll();
     } else {
-      // 查看模式
-      var linesCount = content ? content.split('\\n').length : 0;
+      var linesCount = content ? content.split('\n').length : 0;
       editorArea.innerHTML = 
         '<div class="flex items-center justify-between px-4 py-1.5 theme-bg-surface border-b theme-border shrink-0">' +
           '<span class="text-[10px] theme-text-muted uppercase">' + escHtml(displayLang) + '</span>' +
@@ -1244,11 +1300,8 @@ applyTranslations();
   saveBtn.addEventListener('click', async function() {
     var g = selectedGistDetail;
     if (!g || saveBtn.disabled) return;
-    var ta = editorArea.querySelector('textarea.code-editor');
-    if (ta && ta.dataset.file) {
-      editContent[ta.dataset.file] = ta.value;
-    }
-    if (isEditing) { collectFileNames(); }
+    syncCurrentEditorToState();
+
     for (var i = 0; i < editFileNames.length; i++) {
       var fn = editFileNames[i];
       if (!fn.trim()) { showToast(I18N.t('toast.filenameEmpty'), 'error'); return; }
@@ -1298,37 +1351,42 @@ applyTranslations();
   fileTabs.addEventListener('click', function(e) {
     var g = selectedGistDetail;
     if (!g) return;
+
+    // 添加新文件
     if (e.target.closest('#add-file-btn')) {
+      syncCurrentEditorToState();
       var base = 'new-file', newName = base + '.txt', n = 1;
       while (editFileNames.indexOf(newName) !== -1) { newName = base + '-' + n + '.txt'; n++; }
-      editFileNames.push(newName); editContent[newName] = '';
-      var curTa = editorArea.querySelector('textarea.code-editor');
-      if (curTa) editContent[curTa.dataset.file] = curTa.value;
+      editFileNames.push(newName);
+      editContent[newName] = '';
+      activeFileName = newName;
       renderContent();
-      renderFileViewer(newName, { content: '', language: 'Text', truncated: false });
-      highlightActiveTab(newName);
       return;
     }
+
+    // 删除文件
     var delBtn = e.target.closest('.delete-file-btn');
     if (delBtn) {
+      syncCurrentEditorToState();
       var name = delBtn.dataset.file;
       editFileNames = editFileNames.filter(function(f) { return f !== name; });
       delete editContent[name];
-      var curTa2 = editorArea.querySelector('textarea.code-editor');
-      if (curTa2 && curTa2.dataset.file !== name) editContent[curTa2.dataset.file] = curTa2.value;
+      if (activeFileName === name) {
+        activeFileName = editFileNames[0] || null;
+      }
       renderContent();
-      var first = editFileNames[0];
-      if (first) { renderFileViewer(first, { content: editContent[first] || '', language: 'Text', truncated: false }); highlightActiveTab(first); }
       return;
     }
+
+    // Tab 自由切换逻辑（无论是否处于编辑模式）
     if (isEditing) {
       var wrapper = e.target.closest('.file-tab-edit-item');
-      if (!wrapper || e.target.tagName === 'INPUT' || e.target.closest('button')) return;
-      var fname = wrapper.dataset.file;
-      var curTa3 = editorArea.querySelector('textarea.code-editor');
-      if (curTa3) editContent[curTa3.dataset.file] = curTa3.value;
-      renderFileViewer(fname, { content: editContent[fname] || '', language: 'Text', truncated: false });
-      highlightActiveTab(fname);
+      if (!wrapper || e.target.closest('button')) return;
+      var targetName = wrapper.dataset.file;
+      if (targetName && targetName !== activeFileName) {
+        syncCurrentEditorToState();
+        switchFile(targetName);
+      }
     } else {
       var tab = e.target.closest('.file-tab-btn');
       if (!tab) return;
@@ -1344,13 +1402,22 @@ applyTranslations();
     if (idx !== -1) {
       editFileNames[idx] = newName;
       e.target.dataset.file = newName;
-      if (editContent[oldName] !== undefined) { editContent[newName] = editContent[oldName]; delete editContent[oldName]; }
+      if (editContent[oldName] !== undefined) {
+        editContent[newName] = editContent[oldName];
+        delete editContent[oldName];
+      }
+      if (activeFileName === oldName) {
+        activeFileName = newName;
+      }
       var curTa = editorArea.querySelector('textarea.code-editor');
-      if (curTa && curTa.dataset.file === oldName) { curTa.dataset.file = newName; }
+      if (curTa && curTa.dataset.file === oldName) {
+        curTa.dataset.file = newName;
+      }
       var wrapper = e.target.closest('[data-file]');
       if (wrapper) wrapper.dataset.file = newName;
       var delBtn = wrapper ? wrapper.querySelector('.delete-file-btn') : null;
       if (delBtn) delBtn.dataset.file = newName;
+      refreshTabIndicators();
     }
   });
 
@@ -1361,7 +1428,10 @@ applyTranslations();
       if (oldName !== newName) {
         var idx = editFileNames.indexOf(oldName);
         if (idx !== -1) editFileNames[idx] = newName;
-        if (editContent[oldName] !== undefined) { editContent[newName] = editContent[oldName]; delete editContent[oldName]; }
+        if (editContent[oldName] !== undefined) {
+          editContent[newName] = editContent[oldName];
+          delete editContent[oldName];
+        }
         inp.dataset.file = newName;
       }
     });
