@@ -1365,7 +1365,7 @@ applyTranslations();
     }
     if (isEditing) {
       var wrapper = e.target.closest('.file-tab-edit-item');
-      if (!wrapper || e.target.closest('button')) return; // 移除 `e.target.tagName === 'INPUT'` 条件，以便点击输入框也能触发切换
+      if (!wrapper || e.target.closest('button')) return; // 移除 e.target.tagName === 'INPUT' 条件，以便点击输入框也能触发切换
       var fname = wrapper.dataset.file;
       var curTa3 = editorArea.querySelector('textarea.code-editor');
       if (curTa3) {
