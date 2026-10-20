@@ -118,7 +118,7 @@ const HTML = `<!DOCTYPE html>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/properties.min.js"><\/script>
 <style>
 /*! tailwindcss v4.2.4 | MIT License | https://tailwindcss.com */
-@layer properties{@supports (((-webkit-hyphens:none)) and (not (margin-trim:inline))) or ((-moz-orient:inline) and (not (color:rgb(from red r g b)))){*,:before,:after,::backdrop{--tw-translate-x:0;--tw-translate-y:0;--tw-translate-z:0;--tw-rotate-x:initial;--tw-rotate-y:initial;--tw-rotate-z:initial;--tw-skew-x:initial;--tw-skew-y:initial;--tw-space-y-reverse:0;--tw-divide-y-reverse:0;--tw-border-style:solid;--tw-leading:initial;--tw-font-weight:initial;--tw-shadow:0 0 #0000;--tw-shadow-color:initial;--tw-shadow-alpha:100%;--tw-inset-shadow:0 0 #0000;--tw-inset-shadow-color:initial;--tw-inset-shadow-alpha:100%;--tw-ring-color:initial;--tw-ring-shadow:0 0 #0000;--tw-inset-ring-color:initial;--tw-inset-ring-shadow:0 0 #0000;--tw-ring-inset:initial;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-offset-shadow:0 0 #0000;--tw-duration:initial}}}@layer theme{:root,:host{--font-sans:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";--font-mono:'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;--color-red-400:oklch(70.4% .191 22.216);--color-red-600:oklch(57.7% .245 27.325);--color-red-700:oklch(50.5% .213 27.518);--color-yellow-400:oklch(85.2% .199 91.936);--color-yellow-500:oklch(79.5% .184 86.047);--color-green-600:oklch(62.7% .194 149.214);--color-green-700:oklch(52.7% .154 150.069);--color-blue-400:oklch(70.7% .165 254.624);--color-blue-500:oklch(62.3% .214 259.815);--color-blue-600:oklch(54.6% .245 262.881);--color-blue-700:oklch(48.8% .243 264.376);--color-black:#000;--color-white:#fff;--spacing:.25rem;--container-sm:24rem;--container-md:28rem;--text-xs:.75rem;--text-xs--line-height:calc(1 / .75);--text-sm:.875rem;--text-sm--line-height:calc(1.25 / .875);--text-xl:1.25rem;--text-xl--line-height:calc(1.75 / 1.25);--font-weight-medium:500;--font-weight-semibold:600;--leading-relaxed:1.625;--radius-md:.375rem;--radius-lg:.5rem;--radius-xl:.75rem;--animate-spin:spin 1s linear infinite;--default-transition-duration:.15s;--default-transition-timing-function:cubic-bezier(.4, 0, .2, 1);--default-font-family:var(--font-sans);--default-mono-font-family:var(--font-mono)}}@layer base{*,:after,:before,::backdrop{box-sizing:border-box;border:0 solid;margin:0;padding:0}::file-selector-button{box-sizing:border-box;border:0 solid;margin:0;padding:0}html,:host{-webkit-text-size-adjust:100%;tab-size:4;line-height:1.5;font-family:var(--default-font-family,ui-sans-serif, system-ui, sans-serif);font-feature-settings:var(--default-font-feature-settings,normal);font-variation-settings:var(--default-font-variation-settings,normal);-webkit-tap-highlight-color:transparent}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;-webkit-text-decoration:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,samp,pre{font-family:var(--default-mono-font-family,'JetBrains Mono',monospace);font-feature-settings:var(--default-mono-font-feature-settings,normal);font-variation-settings:var(--default-mono-font-variation-settings,normal);font-size:1em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,select,optgroup,textarea{font:inherit;letter-spacing:inherit;color:inherit;background-color:#0000;border-radius:0}textarea{resize:vertical}[hidden]:where(:not([hidden=until-found])){display:none!important}}@layer utilities{.pointer-events-none{pointer-events:none}.absolute{position:absolute}.fixed{position:fixed}.relative{position:relative}.inset-0{inset:0}.right-4{right:1rem}.bottom-4{bottom:1rem}.z-20{z-index:20}.z-50{z-index:50}.mx-4{margin-inline:1rem}.mx-auto{margin-inline:auto}.mt-0\\.5{margin-top:.125rem}.mt-1{margin-top:.25rem}.mt-1\\.5{margin-top:.375rem}.mt-2{margin-top:.5rem}.mb-1{margin-bottom:.25rem}.mb-1\\.5{margin-bottom:.375rem}.mb-3{margin-bottom:.75rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.ml-7{margin-left:1.75rem}.mr-1{margin-right:.25rem}.flex{display:flex}.hidden{display:none}.h-2{height:.5rem}.h-2\\.5{height:.625rem}.h-3{height:.75rem}.h-3\\.5{height:.875rem}.h-4{height:1rem}.h-5{height:1.25rem}.h-7{height:1.75rem}.h-8{height:2rem}.h-12{height:3rem}.h-16{height:4rem}.h-full{height:100%}.w-2{width:.5rem}.w-2\\.5{width:.625rem}.w-3{width:.75rem}.w-3\\.5{width:.875rem}.w-4{width:1rem}.w-5{width:1.25rem}.w-7{width:1.75rem}.w-8{width:2rem}.w-12{width:3rem}.w-16{width:4rem}.w-28{width:7rem}.w-72{width:18rem}.w-full{width:100%}.max-w-md{max-width:28rem}.max-w-sm{max-width:24rem}.flex-1{flex:1}.shrink-0{flex-shrink:0}.translate-y-20{transform:translateY(5rem)}.animate-spin{animation:spin 1s linear infinite}.cursor-not-allowed{cursor:not-allowed}.cursor-pointer{cursor:pointer}.resize-none{resize:none}.flex-col{flex-direction:column}.items-center{align-items:center}.justify-between{justify-content:space-between}.justify-center{justify-content:center}.gap-0{gap:0px}.gap-0\\.5{gap:.125rem}.gap-1{gap:.25rem}.gap-1\\.5{gap:.375rem}.gap-2{gap:.5rem}.gap-3{gap:.75rem}.truncate{text-overflow:ellipsis;white-space:nowrap;overflow:hidden}.overflow-auto{overflow:auto}.overflow-hidden{overflow:hidden}.overflow-x-auto{overflow-x:auto}.overflow-y-auto{overflow-y:auto}.rounded{border-radius:.25rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:.5rem}.rounded-md{border-radius:.375rem}.rounded-xl{border-radius:.75rem}.border{border-width:1px}.border-t{border-top-width:1px}.border-r{border-right-width:1px}.border-b{border-bottom-width:1px}.border-b-2{border-bottom-width:2px}.p-3{padding:.75rem}.p-4{padding:1rem}.p-6{padding:1.5rem}.px-1{padding-inline:.25rem}.px-2{padding-inline:.5rem}.px-3{padding-inline:.75rem}.px-4{padding-inline:1rem}.py-1{padding-block:.25rem}.py-1\\.5{padding-block:.375rem}.py-2{padding-block:.5rem}.py-2\\.5{padding-block:.625rem}.py-12{padding-block:3rem}.pb-2{padding-bottom:.5rem}.text-center{text-align:center}.text-sm{font-size:.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:.75rem;line-height:1rem}.text-\\[10px\\]{font-size:10px}.leading-relaxed{line-height:1.625}.font-medium{font-weight:500}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.opacity-0{opacity:0}.opacity-25{opacity:.25}.opacity-50{opacity:.5}.opacity-70{opacity:.7}.opacity-75{opacity:.75}.shadow-2xl{box-shadow:0 25px 50px -12px rgba(0,0,0,0.25)}.shadow-lg{box-shadow:0 10px 15px -3px rgba(0,0,0,0.1)}.transition-colors{transition:background-color .15s, border-color .15s, color .15s}.transition-all{transition:all .3s ease}.outline-none{outline:none}@keyframes spin{to{transform:rotate(360deg)}}}
+@layer properties{@supports (((-webkit-hyphens:none)) and (not (margin-trim:inline))) or ((-moz-orient:inline) and (not (color:rgb(from red r g b)))){*,:before,:after,::backdrop{--tw-translate-x:0;--tw-translate-y:0;--tw-translate-z:0;--tw-rotate-x:initial;--tw-rotate-y:initial;--tw-rotate-z:initial;--tw-skew-x:initial;--tw-skew-y:initial;--tw-space-y-reverse:0;--tw-divide-y-reverse:0;--tw-border-style:solid;--tw-leading:initial;--tw-font-weight:initial;--tw-shadow:0 0 #0000;--tw-shadow-color:initial;--tw-shadow-alpha:100%;--tw-inset-shadow:0 0 #0000;--tw-inset-shadow-color:initial;--tw-inset-shadow-alpha:100%;--tw-ring-color:initial;--tw-ring-shadow:0 0 #0000;--tw-inset-ring-color:initial;--tw-inset-ring-shadow:0 0 #0000;--tw-ring-inset:initial;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-offset-shadow:0 0 #0000;--tw-duration:initial}}}@layer theme{:root,:host{--font-sans:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";--font-mono:'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;--color-red-400:oklch(70.4% .191 22.216);--color-red-600:oklch(57.7% .245 27.325);--color-red-700:oklch(50.5% .213 27.518);--color-yellow-400:oklch(85.2% .199 91.936);--color-yellow-500:oklch(79.5% .184 86.047);--color-green-600:oklch(62.7% .194 149.214);--color-green-700:oklch(52.7% .154 150.069);--color-blue-400:oklch(70.7% .165 254.624);--color-blue-500:oklch(62.3% .214 259.815);--color-blue-600:oklch(54.6% .245 262.881);--color-blue-700:oklch(48.8% .243 264.376);--color-black:#000;--color-white:#fff;--spacing:.25rem;--container-sm:24rem;--container-md:28rem;--text-xs:.75rem;--text-xs--line-height:calc(1 / .75);--text-sm:.875rem;--text-sm--line-height:calc(1.25 / .875);--text-xl:1.25rem;--text-xl--line-height:calc(1.75 / 1.25);--font-weight-medium:500;--font-weight-semibold:600;--leading-relaxed:1.625;--radius-md:.375rem;--radius-lg:.5rem;--radius-xl:.75rem;--animate-spin:spin 1s linear infinite;--default-transition-duration:.15s;--default-transition-timing-function:cubic-bezier(.4, 0, .2, 1);--default-font-family:var(--font-sans);--default-mono-font-family:var(--font-mono)}}@layer base{*,:after,:before,::backdrop{box-sizing:border-box;border:0 solid;margin:0;padding:0}::file-selector-button{box-sizing:border-box;border:0 solid;margin:0;padding:0}html,:host{-webkit-text-size-adjust:100%;tab-size:4;line-height:1.5;font-family:var(--default-font-family,ui-sans-serif, system-ui, sans-serif);font-feature-settings:var(--default-font-feature-settings,normal);font-variation-settings:var(--default-font-variation-settings,normal);-webkit-tap-highlight-color:transparent}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;-webkit-text-decoration:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,samp,pre{font-family:var(--default-mono-font-family,'JetBrains Mono',monospace);font-feature-settings:var(--default-mono-font-feature-settings,normal);font-variation-settings:var(--default-mono-font-variation-settings,normal);font-size:1em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,select,optgroup,textarea{font:inherit;letter-spacing:inherit;color:inherit;background-color:#0000;border-radius:0}textarea{resize:vertical}[hidden]:where(:not([hidden=until-found])){display:none!important}}@layer utilities{.pointer-events-none{pointer-events:none}.absolute{position:absolute}.fixed{position:fixed}.relative{position:relative}.inset-0{inset:0}.right-4{right:1rem}.bottom-4{bottom:1rem}.z-20{z-index:20}.z-50{z-index:50}.mx-1{margin-inline:.25rem}.mx-4{margin-inline:1rem}.mx-auto{margin-inline:auto}.mt-0\\.5{margin-top:.125rem}.mt-1{margin-top:.25rem}.mt-1\\.5{margin-top:.375rem}.mt-2{margin-top:.5rem}.mb-1{margin-bottom:.25rem}.mb-1\\.5{margin-bottom:.375rem}.mb-3{margin-bottom:.75rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.ml-7{margin-left:1.75rem}.mr-1{margin-right:.25rem}.flex{display:flex}.inline-flex{display:inline-flex}.hidden{display:none}.h-2{height:.5rem}.h-2\\.5{height:.625rem}.h-3{height:.75rem}.h-3\\.5{height:.875rem}.h-4{height:1rem}.h-5{height:1.25rem}.h-7{height:1.75rem}.h-8{height:2rem}.h-12{height:3rem}.h-16{height:4rem}.h-full{height:100%}.w-2{width:.5rem}.w-2\\.5{width:.625rem}.w-3{width:.75rem}.w-3\\.5{width:.875rem}.w-4{width:1rem}.w-5{width:1.25rem}.w-7{width:1.75rem}.w-8{width:2rem}.w-12{width:3rem}.w-16{width:4rem}.w-28{width:7rem}.w-72{width:18rem}.w-full{width:100%}.max-w-md{max-width:28rem}.max-w-sm{max-width:24rem}.flex-1{flex:1}.shrink-0{flex-shrink:0}.translate-y-20{transform:translateY(5rem)}.animate-spin{animation:spin 1s linear infinite}.cursor-not-allowed{cursor:not-allowed}.cursor-pointer{cursor:pointer}.resize-none{resize:none}.flex-col{flex-direction:column}.items-center{align-items:center}.justify-between{justify-content:space-between}.justify-center{justify-content:center}.gap-0{gap:0px}.gap-0\\.5{gap:.125rem}.gap-1{gap:.25rem}.gap-1\\.5{gap:.375rem}.gap-2{gap:.5rem}.gap-3{gap:.75rem}.gap-4{gap:1rem}.truncate{text-overflow:ellipsis;white-space:nowrap;overflow:hidden}.overflow-auto{overflow:auto}.overflow-hidden{overflow:hidden}.overflow-x-auto{overflow-x:auto}.overflow-y-auto{overflow-y:auto}.rounded{border-radius:.25rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:.5rem}.rounded-md{border-radius:.375rem}.rounded-xl{border-radius:.75rem}.border{border-width:1px}.border-t{border-top-width:1px}.border-r{border-right-width:1px}.border-b{border-bottom-width:1px}.border-b-2{border-bottom-width:2px}.p-3{padding:.75rem}.p-4{padding:1rem}.p-6{padding:1.5rem}.px-1{padding-inline:.25rem}.px-2{padding-inline:.5rem}.px-3{padding-inline:.75rem}.px-4{padding-inline:1rem}.py-1{padding-block:.25rem}.py-1\\.5{padding-block:.375rem}.py-2{padding-block:.5rem}.py-2\\.5{padding-block:.625rem}.py-12{padding-block:3rem}.pb-2{padding-bottom:.5rem}.text-center{text-align:center}.text-sm{font-size:.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:.75rem;line-height:1rem}.text-\\[10px\\]{font-size:10px}.leading-relaxed{line-height:1.625}.font-medium{font-weight:500}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.opacity-0{opacity:0}.opacity-25{opacity:.25}.opacity-50{opacity:.5}.opacity-70{opacity:.7}.opacity-75{opacity:.75}.shadow-2xl{box-shadow:0 25px 50px -12px rgba(0,0,0,0.25)}.shadow-lg{box-shadow:0 10px 15px -3px rgba(0,0,0,0.1)}.transition-colors{transition:background-color .15s, border-color .15s, color .15s}.transition-all{transition:all .3s ease}.outline-none{outline:none}@keyframes spin{to{transform:rotate(360deg)}}}
 
   /* ── 浅色 / 深色 主题色彩系统 ────────────────────────── */
   :root {
@@ -222,7 +222,6 @@ const HTML = `<!DOCTYPE html>
     overflow-y: auto;
   }
 
-  /* 顶层透明交互 Textarea */
   textarea.code-editor {
     z-index: 2;
     background: transparent;
@@ -231,13 +230,11 @@ const HTML = `<!DOCTYPE html>
     resize: none;
   }
 
-  /* 避免由于拼写检测下划线导致偏移 */
   textarea.code-editor::selection {
     background: rgba(59, 130, 246, 0.35);
     color: transparent;
   }
 
-  /* 底层语法高亮显示层 */
   .code-backdrop {
     z-index: 1;
     pointer-events: none;
@@ -279,6 +276,26 @@ const HTML = `<!DOCTYPE html>
   .pill-btn.active {
     background-color: #3b82f6 !important;
     color: #ffffff !important;
+  }
+
+  /* ── 顶部操作按钮组视觉样式 ──────────────────────── */
+  .action-group {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 0.375rem;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-input);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+  }
+  .action-group > button + button {
+    border-left: 1px solid var(--border-color);
+  }
+  .group-separator {
+    width: 1px;
+    height: 1.15rem;
+    background-color: var(--border-color);
+    margin: 0 0.15rem;
   }
 
   /* ── 现代化文件选项卡样式 ────────────────────────── */
@@ -455,7 +472,7 @@ const HTML = `<!DOCTYPE html>
             <h2 id="gist-title" class="text-sm font-semibold theme-text-primary truncate"></h2>
             <p id="gist-meta" class="text-xs theme-text-muted mt-0.5 truncate"></p>
           </div>
-          <div class="flex items-center gap-2 shrink-0">
+          <div class="flex items-center gap-2.5 shrink-0">
             <!-- 胶囊样式字号调节器 -->
             <div class="pill-group mr-1">
               <button id="font-decrease-btn" class="pill-btn mono font-medium" data-i18n="[title]fontSize.decrease" title="减小字号">A-</button>
@@ -463,42 +480,47 @@ const HTML = `<!DOCTYPE html>
               <button id="font-increase-btn" class="pill-btn mono font-medium" data-i18n="[title]fontSize.increase" title="增大字号">A+</button>
             </div>
 
-            <!-- 编辑当前 Tab 按钮 -->
-            <button id="edit-btn" class="px-3 py-1.5 text-xs theme-bg-input hover:opacity-80 theme-text-primary rounded-md transition-colors flex items-center gap-1">
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
-              <span data-i18n="editor.edit">编辑</span>
-            </button>
+            <!-- 按钮组 1：当前 Tab 状态操作组（只读时显示 [编辑]，编辑时显示 [保存 | 取消]） -->
+            <div id="tab-edit-group" class="action-group hidden">
+              <button id="save-btn" class="px-3 py-1.5 text-xs bg-blue-600 hover:bg-blue-700 text-white transition-colors flex items-center gap-1 cursor-pointer">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v11a2 2 0 01-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+                <span data-i18n="editor.save">保存</span>
+              </button>
+              <button id="cancel-edit-btn" class="px-3 py-1.5 text-xs theme-bg-input hover:opacity-80 theme-text-primary transition-colors cursor-pointer" data-i18n="editor.cancel">
+                取消
+              </button>
+            </div>
 
-            <!-- 保存当前 Tab 按钮 -->
-            <button id="save-btn" class="px-3 py-1.5 text-xs bg-blue-600 hover:bg-blue-700 text-white rounded-md transition-colors flex items-center gap-1 hidden">
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v11a2 2 0 01-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
-              <span data-i18n="editor.save">保存</span>
-            </button>
+            <div id="tab-readonly-group" class="action-group">
+              <button id="edit-btn" class="px-3 py-1.5 text-xs theme-bg-input hover:opacity-80 theme-text-primary transition-colors flex items-center gap-1 cursor-pointer">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+                <span data-i18n="editor.edit">编辑</span>
+              </button>
+            </div>
 
-            <!-- 保存全部 Tab 按钮 -->
-            <button id="save-all-btn" class="px-3 py-1.5 text-xs bg-green-600 hover:bg-green-700 text-white rounded-md transition-colors flex items-center gap-1 hidden">
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v11a2 2 0 01-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
-              <span data-i18n="editor.saveAll">保存全部</span>
-            </button>
+            <!-- 按钮组 2：全局保存全部组（只要有任意 1 个 Tab 处于编辑模式就显示，与第一组视觉分开） -->
+            <div id="save-all-group" class="action-group hidden">
+              <button id="save-all-btn" class="px-3 py-1.5 text-xs bg-green-600 hover:bg-green-700 text-white transition-colors flex items-center gap-1 cursor-pointer">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v11a2 2 0 01-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+                <span data-i18n="editor.saveAll">保存全部</span>
+              </button>
+            </div>
 
-            <!-- 取消当前 Tab 编辑按钮 -->
-            <button id="cancel-edit-btn" class="px-3 py-1.5 text-xs theme-bg-input hover:opacity-80 theme-text-primary rounded-md transition-colors hidden" data-i18n="editor.cancel">
-              取消
-            </button>
+            <div class="group-separator"></div>
 
             <!-- 切换可见性按钮 -->
-            <button id="visibility-btn" class="px-2 py-1.5 text-xs theme-bg-input hover:opacity-80 theme-text-primary rounded-md transition-colors hidden" data-i18n="[title]editor.toggleVisibility" title="切换可见性">
+            <button id="visibility-btn" class="px-2 py-1.5 text-xs theme-bg-input hover:opacity-80 theme-text-primary rounded-md border theme-border transition-colors hidden cursor-pointer" data-i18n="[title]editor.toggleVisibility" title="切换可见性">
               <svg id="visibility-icon-lock" class="w-3.5 h-3.5 text-yellow-500" fill="currentColor" viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1s3.1 1.39 3.1 3.1v2z"/></svg>
               <svg id="visibility-icon-globe" class="w-3.5 h-3.5 theme-text-muted hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
             </button>
 
             <!-- 删除整个 Gist 按钮 -->
-            <button id="delete-btn" class="px-3 py-1.5 text-xs theme-bg-input hover:bg-red-600 hover:text-white theme-text-primary rounded-md transition-colors flex items-center gap-1">
+            <button id="delete-btn" class="px-3 py-1.5 text-xs theme-bg-input hover:bg-red-600 hover:text-white theme-text-primary rounded-md border theme-border transition-colors flex items-center gap-1 cursor-pointer">
               <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/></svg>
               <span data-i18n="editor.delete">删除</span>
             </button>
 
-            <a id="gist-link" href="#" target="_blank" class="px-3 py-1.5 text-xs theme-text-muted hover:theme-text-primary transition-colors flex items-center gap-1">
+            <a id="gist-link" href="#" target="_blank" class="px-2.5 py-1.5 text-xs theme-text-muted hover:theme-text-primary transition-colors flex items-center gap-1">
               <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
               <span data-i18n="editor.github">GitHub</span>
             </a>
@@ -636,12 +658,18 @@ applyTranslations();
   const gistTitle = $('#gist-title');
   const gistMeta = $('#gist-meta');
   const gistLink = $('#gist-link');
+
+  // 按钮组及按钮元素
+  const tabEditGroup = $('#tab-edit-group');
+  const tabReadonlyGroup = $('#tab-readonly-group');
+  const saveAllGroup = $('#save-all-group');
   const editBtn = $('#edit-btn');
   const deleteBtn = $('#delete-btn');
   const saveBtn = $('#save-btn');
   const saveAllBtn = $('#save-all-btn');
   const cancelEditBtn = $('#cancel-edit-btn');
   const visibilityBtn = $('#visibility-btn');
+
   const deleteModal = $('#delete-modal');
   const deleteCancelBtn = $('#delete-cancel-btn');
   const deleteConfirmBtn = $('#delete-confirm-btn');
@@ -681,17 +709,17 @@ applyTranslations();
   let rememberedUserData = null;
 
   /* ── 多标签编辑器核心状态 ── */
-  let editingTabs = new Set(); // 记录当前处于编辑模式的文件名 (currentName)
-  let editContent = {};        // 记录编辑中的文本内容: currentName -> content
-  let originalNames = {};      // 记录文件名映射: currentName -> 原始文件名 (新建文件则为 null)
+  let editingTabs = new Set();      // 记录当前处于编辑模式的文件名 (currentName)
+  let editContent = {};             // 记录编辑中的文本内容: currentName -> content
+  let originalNames = {};           // 记录文件名映射: currentName -> 原始文件名 (新建文件则为 null)
   let deletedOrigFiles = new Set(); // 记录在编辑过程中被删除的原始文件名
-  let editFileNames = [];      // 当前 Tab 顺序列表
-  let editDescription = '';    // 编辑中的 Gist 描述
-  let editPublic = false;      // 编辑中的可见性
-  let activeFileName = null;   // 当前激活显示的 Tab 文件名
+  let editFileNames = [];           // 当前 Tab 顺序列表
+  let editDescription = '';         // 编辑中的 Gist 描述
+  let editPublic = false;           // 编辑中的可见性
+  let activeFileName = null;        // 当前激活显示的 Tab 文件名
 
   function hasAnyEditing() {
-    return editingTabs.size > 0 || deletedOrigFiles.size > 0 || (selectedGistDetail && selectedGistDetail.isNew);
+    return editingTabs.size > 0;
   }
 
   function isTabEditing(name) {
@@ -1057,46 +1085,29 @@ applyTranslations();
     }
   }
 
-  /* ── 根据当前各 Tab 状态更新顶部操作栏按钮 ── */
+  /* ── 根据当前各 Tab 状态更新顶部操作栏按钮组 ── */
   function updateHeaderButtons() {
     var g = selectedGistDetail;
     if (!g) return;
     var activeEditing = isTabEditing(activeFileName);
     var anyEditing = hasAnyEditing();
 
-    // 编辑按钮：仅当当前激活的 Tab 处于只读模式时显示
+    // 规则 2、3、4：当前 Tab 处于编辑模式时显示 [保存 | 取消] 按钮组；处于只读模式时仅显示 [编辑] 按钮组
     if (activeEditing) {
-      editBtn.classList.add('hidden');
+      tabEditGroup.classList.remove('hidden');
+      tabReadonlyGroup.classList.add('hidden');
     } else {
-      editBtn.classList.remove('hidden');
+      tabEditGroup.classList.add('hidden');
+      tabReadonlyGroup.classList.remove('hidden');
     }
 
-    // 保存按钮（保存当前 Tab）：当前 Tab 处于编辑模式且不是未保存的全新 Gist 时显示
-    if (activeEditing && !g.isNew) {
-      saveBtn.classList.remove('hidden');
-    } else {
-      saveBtn.classList.add('hidden');
-    }
-
-    // 保存全部按钮：当为新建 Gist，或有超过1个 Tab 正在编辑，或有已删除的文件，或当前查看只读 Tab 但后台有其他未保存的编辑 Tab 时显示
-    if (g.isNew || editingTabs.size > 1 || deletedOrigFiles.size > 0 || (editingTabs.size === 1 && !activeEditing)) {
-      saveAllBtn.classList.remove('hidden');
-    } else {
-      saveAllBtn.classList.add('hidden');
-    }
-
-    // 取消按钮：当前 Tab 处于编辑模式，或者有全局未保存改动时显示
-    if (activeEditing || anyEditing) {
-      cancelEditBtn.classList.remove('hidden');
-    } else {
-      cancelEditBtn.classList.add('hidden');
-    }
-
-    // 可见性与删除按钮
+    // 规则 1、5：所有 Tab 中只要有 1 个处于编辑模式，就显示独立的 [保存全部] 按钮组，否则隐藏
     if (anyEditing) {
+      saveAllGroup.classList.remove('hidden');
       visibilityBtn.classList.remove('hidden');
       updateVisibilityIcon();
     } else {
+      saveAllGroup.classList.add('hidden');
       visibilityBtn.classList.add('hidden');
     }
 
@@ -1107,7 +1118,7 @@ applyTranslations();
     }
   }
 
-  /* ── 仅重绘文件选项卡栏（不重建编辑器 DOM，保持焦点与流畅切换） ── */
+  /* ── 仅重绘文件选项卡栏 ── */
   function renderTabs() {
     var g = selectedGistDetail;
     if (!g) return;
@@ -1116,11 +1127,9 @@ applyTranslations();
       var isAct = (name === activeFileName);
       var isEd = isTabEditing(name);
       var activeClass = isAct ? ' tab-active' : '';
-      // 编辑模式下显示蓝色小方块指示器
       var squareHtml = isEd ? '<span class="tab-edit-square" title="Editing"></span>' : '';
 
       if (isEd) {
-        // 只有当前激活的编辑 Tab 才渲染为 input，非激活的编辑 Tab 渲染为普通 span，彻底解决点击无法切换 Tab 的问题
         var namePart = isAct
           ? '<input class="file-name-input bg-transparent text-xs mono px-1.5 py-0.5 outline-none theme-text-primary w-28" value="' + escAttr(name) + '" data-file="' + escAttr(name) + '" spellcheck="false">'
           : '<span class="px-1 py-0.5 select-none">' + escHtml(name) + '</span>';
@@ -1198,7 +1207,6 @@ applyTranslations();
   /* ── 切换 Tab ── */
   function switchTab(targetName) {
     if (!selectedGistDetail || targetName === activeFileName) return;
-    // 保存当前正在编辑的文本内容到状态字典
     var curTa = editorArea.querySelector('textarea.code-editor');
     if (curTa && curTa.dataset.file) {
       editContent[curTa.dataset.file] = curTa.value;
@@ -1207,7 +1215,7 @@ applyTranslations();
     renderContent();
   }
 
-  /* ── 渲染代码编辑器/查看器 (根据当前 Tab 独立判断是否处于编辑模式) ── */
+  /* ── 渲染代码编辑器/查看器 ── */
   function renderFileViewer(name, file) {
     var tabIsEditing = isTabEditing(name);
     var content = editContent[name] !== undefined ? editContent[name] : (file ? file.content : '');
@@ -1290,13 +1298,13 @@ applyTranslations();
     if (ta) ta.focus();
   });
 
-  /* ── 点击“取消”：取消当前 Tab 的编辑状态并还原该文件内容 ── */
+  /* ── 点击“取消”：仅在当前 Tab 处于编辑模式时可用，取消当前 Tab 编辑并还原 ── */
   cancelEditBtn.addEventListener('click', function() {
     var g = selectedGistDetail;
-    if (!g) return;
+    if (!g || !activeFileName || !isTabEditing(activeFileName)) return;
 
-    // 如果是未保存的新建 Gist，直接移除草稿
-    if (g.isNew) {
+    // 如果是未保存的新建 Gist 且仅剩一个 Tab，直接移除草稿
+    if (g.isNew && editFileNames.length <= 1) {
       allGists = allGists.filter(function(x) { return x.id !== '__new__'; });
       gists = gists.filter(function(x) { return x.id !== '__new__'; });
       if (!searchInput.value.trim()) gists = allGists;
@@ -1308,32 +1316,27 @@ applyTranslations();
       return;
     }
 
-    if (activeFileName && isTabEditing(activeFileName)) {
-      var origName = originalNames[activeFileName];
-      if (origName === null) {
-        // 如果是新添加但未保存的 Tab，取消时直接移除该 Tab
-        editingTabs.delete(activeFileName);
+    var origName = originalNames[activeFileName];
+    if (origName === null) {
+      // 新添加但未保存的 Tab，取消时直接移除该 Tab
+      editingTabs.delete(activeFileName);
+      delete editContent[activeFileName];
+      delete originalNames[activeFileName];
+      editFileNames = editFileNames.filter(function(f) { return f !== activeFileName; });
+      activeFileName = editFileNames[0] || null;
+    } else {
+      // 已有文件，恢复原始文件名与内容，并退出该 Tab 的编辑模式
+      var origContent = g.files[origName] ? g.files[origName].content : '';
+      editingTabs.delete(activeFileName);
+      if (activeFileName !== origName) {
+        var idx = editFileNames.indexOf(activeFileName);
+        if (idx !== -1) editFileNames[idx] = origName;
         delete editContent[activeFileName];
         delete originalNames[activeFileName];
-        editFileNames = editFileNames.filter(function(f) { return f !== activeFileName; });
-        activeFileName = editFileNames[0] || null;
-      } else {
-        // 如果是已有文件，恢复其原始文件名与内容，并退出该 Tab 的编辑模式
-        var origContent = g.files[origName] ? g.files[origName].content : '';
-        editingTabs.delete(activeFileName);
-        if (activeFileName !== origName) {
-          var idx = editFileNames.indexOf(activeFileName);
-          if (idx !== -1) editFileNames[idx] = origName;
-          delete editContent[activeFileName];
-          delete originalNames[activeFileName];
-          activeFileName = origName;
-        }
-        editContent[origName] = origContent;
-        originalNames[origName] = origName;
+        activeFileName = origName;
       }
-    } else {
-      // 如果当前在只读 Tab 上点击取消（例如曾删除了其他文件），则重置整个 Gist 状态
-      initGistState(g);
+      editContent[origName] = origContent;
+      originalNames[origName] = origName;
     }
 
     if (!hasAnyEditing()) {
@@ -1357,9 +1360,6 @@ applyTranslations();
   async function saveCurrentTab() {
     var g = selectedGistDetail;
     if (!g || !activeFileName || !isTabEditing(activeFileName)) return;
-    if (g.isNew) {
-      return saveAllTabs();
-    }
 
     var ta = editorArea.querySelector('textarea.code-editor');
     if (ta && ta.dataset.file) {
@@ -1368,15 +1368,13 @@ applyTranslations();
 
     var fn = activeFileName;
     if (!fn.trim()) { showToast(I18N.t('toast.filenameEmpty'), 'error'); return; }
-    // 检查重名
     var dupCount = editFileNames.filter(function(x) { return x === fn; }).length;
     if (dupCount > 1) { showToast(I18N.t('toast.filenameDuplicate', { name: fn }), 'error'); return; }
     if (!(editContent[fn] || '').trim()) { showToast(I18N.t('toast.fileContentEmpty', { name: fn }), 'error'); return; }
 
     var filesPayload = {};
     var origName = originalNames[fn];
-    if (origName && origName !== fn) {
-      // GitHub Gist API 重命名方式或置空原文件名
+    if (!g.isNew && origName && origName !== fn) {
       filesPayload[origName] = { filename: fn, content: editContent[fn] };
     } else {
       filesPayload[fn] = { content: editContent[fn] };
@@ -1387,24 +1385,49 @@ applyTranslations();
 
     setSaving(true);
     try {
-      var updated = await api('/gists/' + g.id, {
-        method: 'PATCH',
-        body: JSON.stringify({ description: description, files: filesPayload })
-      });
-      selectedGistDetail = updated;
-      selectedGist = updated;
+      if (g.isNew) {
+        // 如果是在新建 Gist 上点击单个 Tab 的“保存”，则只提交这一个 Tab 创建 Gist，同时保留其他未保存 Tab 的编辑状态
+        var created = await api('/gists', {
+          method: 'POST',
+          body: JSON.stringify({ description: description, public: editPublic, files: filesPayload })
+        });
+        allGists = allGists.filter(function(x) { return x.id !== '__new__'; });
+        gists = gists.filter(function(x) { return x.id !== '__new__'; });
+        allGists.unshift(created);
+        if (searchInput.value.trim()) { gists.unshift(created); } else { gists = allGists; }
+        selectedGistDetail = created;
+        selectedGist = created;
 
-      // 仅将当前 Tab 标记为已保存（只读），保留其他正在编辑的 Tab 状态
-      editingTabs.delete(fn);
-      originalNames[fn] = fn;
-      if (updated.files[fn]) {
-        editContent[fn] = updated.files[fn].content;
+        editingTabs.delete(fn);
+        originalNames[fn] = fn;
+        if (created.files[fn]) {
+          editContent[fn] = created.files[fn].content;
+        }
+        setSaving(false);
+        renderGistList();
+        renderContent();
+        loadComments();
+        showToast(I18N.t('toast.gistCreated'), 'success');
+      } else {
+        var updated = await api('/gists/' + g.id, {
+          method: 'PATCH',
+          body: JSON.stringify({ description: description, public: editPublic, files: filesPayload })
+        });
+        selectedGistDetail = updated;
+        selectedGist = updated;
+
+        // 仅将当前 Tab 标记为已保存（只读），保留其他正在编辑的 Tab 状态
+        editingTabs.delete(fn);
+        originalNames[fn] = fn;
+        if (updated.files[fn]) {
+          editContent[fn] = updated.files[fn].content;
+        }
+
+        setSaving(false);
+        renderContent();
+        loadGists();
+        showToast(I18N.t('toast.gistSaved'), 'success');
       }
-
-      setSaving(false);
-      renderContent();
-      loadGists();
-      showToast(I18N.t('toast.gistSaved'), 'success');
     } catch (e) {
       setSaving(false);
       showToast(I18N.t('toast.saveFailed', { message: e.message }), 'error');
@@ -1427,7 +1450,9 @@ applyTranslations();
       if (!fn.trim()) { showToast(I18N.t('toast.filenameEmpty'), 'error'); return; }
       if (seen.has(fn)) { showToast(I18N.t('toast.filenameDuplicate', { name: fn }), 'error'); return; }
       seen.add(fn);
-      if (!(editContent[fn] || '').trim()) { showToast(I18N.t('toast.fileContentEmpty', { name: fn }), 'error'); return; }
+      if (isTabEditing(fn) || g.isNew) {
+        if (!(editContent[fn] || '').trim()) { showToast(I18N.t('toast.fileContentEmpty', { name: fn }), 'error'); return; }
+      }
     }
 
     var filesPayload = {};
@@ -1476,7 +1501,7 @@ applyTranslations();
       } else {
         var updated = await api('/gists/' + g.id, {
           method: 'PATCH',
-          body: JSON.stringify({ description: description, files: filesPayload })
+          body: JSON.stringify({ description: description, public: editPublic, files: filesPayload })
         });
         selectedGistDetail = updated;
         selectedGist = updated;
@@ -1544,7 +1569,7 @@ applyTranslations();
     // 3. 点击当前已激活的输入框时不触发切换重绘
     if (e.target.tagName === 'INPUT') return;
 
-    // 4. 点击任意其他 Tab（无论目标 Tab 是编辑态还是只读态）自由切换
+    // 4. 点击任意其他 Tab 自由切换
     var tabItem = e.target.closest('[data-file]');
     if (tabItem && tabItem.dataset.file) {
       switchTab(tabItem.dataset.file);
@@ -1588,7 +1613,6 @@ applyTranslations();
       var delBtn = wrapper ? wrapper.querySelector('.delete-file-btn') : null;
       if (delBtn) delBtn.dataset.file = newName;
 
-      // 根据新文件后缀动态更新语法高亮语言标签
       var hlLang = detectHljsLanguage(newName, '');
       var langLabel = document.getElementById('editor-lang-label');
       if (langLabel) langLabel.textContent = hlLang ? hlLang.toUpperCase() : 'PLAINTEXT';
