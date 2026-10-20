@@ -196,6 +196,28 @@ const HTML = `<!DOCTYPE html>
     font-size: inherit !important;
   }
 
+  /* ── 防止标题切换编辑框时发生高度抖动 ──────────────── */
+  #gist-title {
+    height: 26px;
+    display: flex;
+    align-items: center;
+  }
+  #desc-input {
+    height: 26px;
+    line-height: 24px;
+    padding: 0 8px;
+  }
+  .title-readonly-text {
+    display: inline-block;
+    height: 26px;
+    line-height: 24px;
+    border: 1px solid transparent;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 100%;
+  }
+
   /* ── 实时高亮编辑器容器样式 ─────────────────────── */
   .editor-wrapper {
     position: relative;
@@ -288,7 +310,6 @@ const HTML = `<!DOCTYPE html>
     background-color: var(--bg-input);
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
   }
-  /* 关键修复：确保 .hidden 能覆盖 .action-group 的 inline-flex */
   .action-group.hidden {
     display: none !important;
   }
@@ -473,7 +494,7 @@ const HTML = `<!DOCTYPE html>
 
         <div class="flex items-center justify-between px-4 py-2 border-b theme-border theme-bg-surface shrink-0 gap-4">
           <div class="flex-1 min-w-0">
-            <h2 id="gist-title" class="text-sm font-semibold theme-text-primary truncate"></h2>
+            <h2 id="gist-title" class="text-sm font-semibold theme-text-primary"></h2>
             <p id="gist-meta" class="text-xs theme-text-muted mt-0.5 truncate"></p>
           </div>
           <div class="flex items-center gap-2.5 shrink-0">
@@ -1170,7 +1191,7 @@ applyTranslations();
     if (anyEditing) {
       var existingInput = document.getElementById('desc-input');
       if (!existingInput) {
-        gistTitle.innerHTML = '<input id="desc-input" class="w-full theme-bg-input border theme-border rounded px-2 py-1 text-sm font-semibold theme-text-primary focus:outline-none focus:ring-1 focus:ring-blue-500" value="' + escAttr(editDescription) + '" placeholder="' + I18N.t('gistMeta.descPlaceholder') + '">';
+        gistTitle.innerHTML = '<input id="desc-input" class="w-full theme-bg-input border theme-border rounded text-sm font-semibold theme-text-primary focus:outline-none focus:ring-1 focus:ring-blue-500" value="' + escAttr(editDescription) + '" placeholder="' + I18N.t('gistMeta.descPlaceholder') + '">';
         document.getElementById('desc-input').addEventListener('input', function(e) {
           editDescription = e.target.value;
         });
@@ -1178,7 +1199,7 @@ applyTranslations();
         existingInput.value = editDescription;
       }
     } else {
-      gistTitle.textContent = desc;
+      gistTitle.innerHTML = '<span class="title-readonly-text">' + escHtml(desc) + '</span>';
     }
 
     if (g.isNew) {
