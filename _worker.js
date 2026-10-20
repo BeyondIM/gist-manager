@@ -118,7 +118,7 @@ const HTML = `<!DOCTYPE html>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/properties.min.js"><\/script>
 <style>
 /*! tailwindcss v4.2.4 | MIT License | https://tailwindcss.com */
-@layer properties{@supports (((-webkit-hyphens:none)) and (not (margin-trim:inline))) or ((-moz-orient:inline) and (not (color:rgb(from red r g b)))){*,:before,:after,::backdrop{--tw-translate-x:0;--tw-translate-y:0;--tw-translate-z:0;--tw-rotate-x:initial;--tw-rotate-y:initial;--tw-rotate-z:initial;--tw-skew-x:initial;--tw-skew-y:initial;--tw-space-y-reverse:0;--tw-divide-y-reverse:0;--tw-border-style:solid;--tw-leading:initial;--tw-font-weight:initial;--tw-shadow:0 0 #0000;--tw-shadow-color:initial;--tw-shadow-alpha:100%;--tw-inset-shadow:0 0 #0000;--tw-inset-shadow-color:initial;--tw-inset-shadow-alpha:100%;--tw-ring-color:initial;--tw-ring-shadow:0 0 #0000;--tw-inset-ring-color:initial;--tw-inset-ring-shadow:0 0 #0000;--tw-ring-inset:initial;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-offset-shadow:0 0 #0000;--tw-duration:initial}}}@layer theme{:root,:host{--font-sans:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";--font-mono:'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;--color-red-400:oklch(70.4% .191 22.216);--color-red-600:oklch(57.7% .245 27.325);--color-red-700:oklch(50.5% .213 27.518);--color-yellow-400:oklch(85.2% .199 91.936);--color-yellow-500:oklch(79.5% .184 86.047);--color-green-600:oklch(62.7% .194 149.214);--color-green-700:oklch(52.7% .154 150.069);--color-blue-400:oklch(70.7% .165 254.624);--color-blue-500:oklch(62.3% .214 259.815);--color-blue-600:oklch(54.6% .245 262.881);--color-blue-700:oklch(48.8% .243 264.376);--color-black:#000;--color-white:#fff;--spacing:.25rem;--container-sm:24rem;--container-md:28rem;--text-xs:.75rem;--text-xs--line-height:calc(1 / .75);--text-sm:.875rem;--text-sm--line-height:calc(1.25 / .875);--text-xl:1.25rem;--text-xl--line-height:calc(1.75 / 1.25);--font-weight-medium:500;--font-weight-semibold:600;--leading-relaxed:1.625;--radius-md:.375rem;--radius-lg:.5rem;--radius-xl:.75rem;--animate-spin:spin 1s linear infinite;--default-transition-duration:.15s;--default-transition-timing-function:cubic-bezier(.4, 0, .2, 1);--default-font-family:var(--font-sans);--default-mono-font-family:var(--font-mono)}}@layer base{*,:after,:before,::backdrop{box-sizing:border-box;border:0 solid;margin:0;padding:0}::file-selector-button{box-sizing:border-box;border:0 solid;margin:0;padding:0}html,:host{-webkit-text-size-adjust:100%;tab-size:4;line-height:1.5;font-family:var(--default-font-family,ui-sans-serif, system-ui, sans-serif);font-feature-settings:var(--default-font-feature-settings,normal);font-variation-settings:var(--default-font-variation-settings,normal);-webkit-tap-highlight-color:transparent}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;-webkit-text-decoration:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,samp,pre{font-family:var(--default-mono-font-family,'JetBrains Mono',monospace);font-feature-settings:var(--default-mono-font-feature-settings,normal);font-variation-settings:var(--default-mono-font-variation-settings,normal);font-size:1em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,select,optgroup,textarea{font:inherit;letter-spacing:inherit;color:inherit;background-color:#0000;border-radius:0}textarea{resize:vertical}[hidden]:where(:not([hidden=until-found])){display:none!important}}@layer utilities{.pointer-events-none{pointer-events:none}.absolute{position:absolute}.fixed{position:fixed}.relative{position:relative}.inset-0{inset:0}.right-4{right:1rem}.bottom-4{bottom:1rem}.z-20{z-index:20}.z-50{z-index:50}.mx-4{margin-inline:1rem}.mx-auto{margin-inline:auto}.mt-0\\.5{margin-top:.125rem}.mt-1{margin-top:.25rem}.mt-1\\.5{margin-top:.375rem}.mt-2{margin-top:.5rem}.mb-1{margin-bottom:.25rem}.mb-1\\.5{margin-bottom:.375rem}.mb-3{margin-bottom:.75rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.ml-7{margin-left:1.75rem}.flex{display:flex}.hidden{display:none}.h-3{height:.75rem}.h-3\\.5{height:.875rem}.h-4{height:1rem}.h-5{height:1.25rem}.h-7{height:1.75rem}.h-8{height:2rem}.h-12{height:3rem}.h-16{height:4rem}.h-full{height:100%}.w-3{width:.75rem}.w-3\\.5{width:.875rem}.w-4{width:1rem}.w-5{width:1.25rem}.w-7{width:1.75rem}.w-8{width:2rem}.w-12{width:3rem}.w-16{width:4rem}.w-28{width:7rem}.w-72{width:18rem}.w-full{width:100%}.max-w-md{max-width:28rem}.max-w-sm{max-width:24rem}.flex-1{flex:1}.shrink-0{flex-shrink:0}.translate-y-20{transform:translateY(5rem)}.animate-spin{animation:spin 1s linear infinite}.cursor-not-allowed{cursor:not-allowed}.cursor-pointer{cursor:pointer}.resize-none{resize:none}.flex-col{flex-direction:column}.items-center{align-items:center}.justify-between{justify-content:space-between}.justify-center{justify-content:center}.gap-0\\.5{gap:.125rem}.gap-1{gap:.25rem}.gap-1\\.5{gap:.375rem}.gap-2{gap:.5rem}.gap-3{gap:.75rem}.truncate{text-overflow:ellipsis;white-space:nowrap;overflow:hidden}.overflow-auto{overflow:auto}.overflow-hidden{overflow:hidden}.overflow-x-auto{overflow-x:auto}.overflow-y-auto{overflow-y:auto}.rounded{border-radius:.25rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:.5rem}.rounded-md{border-radius:.375rem}.rounded-xl{border-radius:.75rem}.border{border-width:1px}.border-t{border-top-width:1px}.border-r{border-right-width:1px}.border-b{border-bottom-width:1px}.border-b-2{border-bottom-width:2px}.p-3{padding:.75rem}.p-4{padding:1rem}.p-6{padding:1.5rem}.px-1{padding-inline:.25rem}.px-2{padding-inline:.5rem}.px-3{padding-inline:.75rem}.px-4{padding-inline:1rem}.py-1{padding-block:.25rem}.py-1\\.5{padding-block:.375rem}.py-2{padding-block:.5rem}.py-2\\.5{padding-block:.625rem}.py-12{padding-block:3rem}.pb-2{padding-bottom:.5rem}.text-center{text-align:center}.text-sm{font-size:.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:.75rem;line-height:1rem}.text-\\[10px\\]{font-size:10px}.leading-relaxed{line-height:1.625}.font-medium{font-weight:500}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.opacity-0{opacity:0}.opacity-25{opacity:.25}.opacity-50{opacity:.5}.opacity-70{opacity:.7}.opacity-75{opacity:.75}.shadow-2xl{box-shadow:0 25px 50px -12px rgba(0,0,0,0.25)}.shadow-lg{box-shadow:0 10px 15px -3px rgba(0,0,0,0.1)}.transition-colors{transition:background-color .15s, border-color .15s, color .15s}.transition-all{transition:all .3s ease}.outline-none{outline:none}@keyframes spin{to{transform:rotate(360deg)}}}
+@layer properties{@supports (((-webkit-hyphens:none)) and (not (margin-trim:inline))) or ((-moz-orient:inline) and (not (color:rgb(from red r g b)))){*,:before,:after,::backdrop{--tw-translate-x:0;--tw-translate-y:0;--tw-translate-z:0;--tw-rotate-x:initial;--tw-rotate-y:initial;--tw-rotate-z:initial;--tw-skew-x:initial;--tw-skew-y:initial;--tw-space-y-reverse:0;--tw-divide-y-reverse:0;--tw-border-style:solid;--tw-leading:initial;--tw-font-weight:initial;--tw-shadow:0 0 #0000;--tw-shadow-color:initial;--tw-shadow-alpha:100%;--tw-inset-shadow:0 0 #0000;--tw-inset-shadow-color:initial;--tw-inset-shadow-alpha:100%;--tw-ring-color:initial;--tw-ring-shadow:0 0 #0000;--tw-inset-ring-color:initial;--tw-inset-ring-shadow:0 0 #0000;--tw-ring-inset:initial;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-offset-shadow:0 0 #0000;--tw-duration:initial}}}@layer theme{:root,:host{--font-sans:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";--font-mono:'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;--color-red-400:oklch(70.4% .191 22.216);--color-red-600:oklch(57.7% .245 27.325);--color-red-700:oklch(50.5% .213 27.518);--color-yellow-400:oklch(85.2% .199 91.936);--color-yellow-500:oklch(79.5% .184 86.047);--color-green-600:oklch(62.7% .194 149.214);--color-green-700:oklch(52.7% .154 150.069);--color-blue-400:oklch(70.7% .165 254.624);--color-blue-500:oklch(62.3% .214 259.815);--color-blue-600:oklch(54.6% .245 262.881);--color-blue-700:oklch(48.8% .243 264.376);--color-black:#000;--color-white:#fff;--spacing:.25rem;--container-sm:24rem;--container-md:28rem;--text-xs:.75rem;--text-xs--line-height:calc(1 / .75);--text-sm:.875rem;--text-sm--line-height:calc(1.25 / .875);--text-xl:1.25rem;--text-xl--line-height:calc(1.75 / 1.25);--font-weight-medium:500;--font-weight-semibold:600;--leading-relaxed:1.625;--radius-md:.375rem;--radius-lg:.5rem;--radius-xl:.75rem;--animate-spin:spin 1s linear infinite;--default-transition-duration:.15s;--default-transition-timing-function:cubic-bezier(.4, 0, .2, 1);--default-font-family:var(--font-sans);--default-mono-font-family:var(--font-mono)}}@layer base{*,:after,:before,::backdrop{box-sizing:border-box;border:0 solid;margin:0;padding:0}::file-selector-button{box-sizing:border-box;border:0 solid;margin:0;padding:0}html,:host{-webkit-text-size-adjust:100%;tab-size:4;line-height:1.5;font-family:var(--default-font-family,ui-sans-serif, system-ui, sans-serif);font-feature-settings:var(--default-font-feature-settings,normal);font-variation-settings:var(--default-font-variation-settings,normal);-webkit-tap-highlight-color:transparent}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;-webkit-text-decoration:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,samp,pre{font-family:var(--default-mono-font-family,'JetBrains Mono',monospace);font-feature-settings:var(--default-mono-font-feature-settings,normal);font-variation-settings:var(--default-mono-font-variation-settings,normal);font-size:1em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,select,optgroup,textarea{font:inherit;letter-spacing:inherit;color:inherit;background-color:#0000;border-radius:0}textarea{resize:vertical}[hidden]:where(:not([hidden=until-found])){display:none!important}}@layer utilities{.pointer-events-none{pointer-events:none}.absolute{position:absolute}.fixed{position:fixed}.relative{position:relative}.inset-0{inset:0}.right-4{right:1rem}.bottom-4{bottom:1rem}.z-20{z-index:20}.z-50{z-index:50}.mx-4{margin-inline:1rem}.mx-auto{margin-inline:auto}.mt-0\\.5{margin-top:.125rem}.mt-1{margin-top:.25rem}.mt-1\\.5{margin-top:.375rem}.mt-2{margin-top:.5rem}.mb-1{margin-bottom:.25rem}.mb-1\\.5{margin-bottom:.375rem}.mb-3{margin-bottom:.75rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.ml-7{margin-left:1.75rem}.mr-1{margin-right:.25rem}.flex{display:flex}.hidden{display:none}.h-2{height:.5rem}.h-2\\.5{height:.625rem}.h-3{height:.75rem}.h-3\\.5{height:.875rem}.h-4{height:1rem}.h-5{height:1.25rem}.h-7{height:1.75rem}.h-8{height:2rem}.h-12{height:3rem}.h-16{height:4rem}.h-full{height:100%}.w-2{width:.5rem}.w-2\\.5{width:.625rem}.w-3{width:.75rem}.w-3\\.5{width:.875rem}.w-4{width:1rem}.w-5{width:1.25rem}.w-7{width:1.75rem}.w-8{width:2rem}.w-12{width:3rem}.w-16{width:4rem}.w-28{width:7rem}.w-72{width:18rem}.w-full{width:100%}.max-w-md{max-width:28rem}.max-w-sm{max-width:24rem}.flex-1{flex:1}.shrink-0{flex-shrink:0}.translate-y-20{transform:translateY(5rem)}.animate-spin{animation:spin 1s linear infinite}.cursor-not-allowed{cursor:not-allowed}.cursor-pointer{cursor:pointer}.resize-none{resize:none}.flex-col{flex-direction:column}.items-center{align-items:center}.justify-between{justify-content:space-between}.justify-center{justify-content:center}.gap-0{gap:0px}.gap-0\\.5{gap:.125rem}.gap-1{gap:.25rem}.gap-1\\.5{gap:.375rem}.gap-2{gap:.5rem}.gap-3{gap:.75rem}.truncate{text-overflow:ellipsis;white-space:nowrap;overflow:hidden}.overflow-auto{overflow:auto}.overflow-hidden{overflow:hidden}.overflow-x-auto{overflow-x:auto}.overflow-y-auto{overflow-y:auto}.rounded{border-radius:.25rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:.5rem}.rounded-md{border-radius:.375rem}.rounded-xl{border-radius:.75rem}.border{border-width:1px}.border-t{border-top-width:1px}.border-r{border-right-width:1px}.border-b{border-bottom-width:1px}.border-b-2{border-bottom-width:2px}.p-3{padding:.75rem}.p-4{padding:1rem}.p-6{padding:1.5rem}.px-1{padding-inline:.25rem}.px-2{padding-inline:.5rem}.px-3{padding-inline:.75rem}.px-4{padding-inline:1rem}.py-1{padding-block:.25rem}.py-1\\.5{padding-block:.375rem}.py-2{padding-block:.5rem}.py-2\\.5{padding-block:.625rem}.py-12{padding-block:3rem}.pb-2{padding-bottom:.5rem}.text-center{text-align:center}.text-sm{font-size:.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:.75rem;line-height:1rem}.text-\\[10px\\]{font-size:10px}.leading-relaxed{line-height:1.625}.font-medium{font-weight:500}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.opacity-0{opacity:0}.opacity-25{opacity:.25}.opacity-50{opacity:.5}.opacity-70{opacity:.7}.opacity-75{opacity:.75}.shadow-2xl{box-shadow:0 25px 50px -12px rgba(0,0,0,0.25)}.shadow-lg{box-shadow:0 10px 15px -3px rgba(0,0,0,0.1)}.transition-colors{transition:background-color .15s, border-color .15s, color .15s}.transition-all{transition:all .3s ease}.outline-none{outline:none}@keyframes spin{to{transform:rotate(360deg)}}}
 
   /* ── 浅色 / 深色 主题色彩系统 ────────────────────────── */
   :root {
@@ -286,45 +286,43 @@ const HTML = `<!DOCTYPE html>
     background-color: var(--tab-bar-bg);
   }
 
-  .file-tab-btn {
+  .file-tab-btn, .file-tab-edit-item {
     border-top: 2px solid transparent;
     border-right: 1px solid var(--border-color);
     background: transparent;
     color: var(--text-muted);
     transition: all 0.15s ease;
+    user-select: none;
   }
 
-  .file-tab-btn:hover {
+  .file-tab-btn:hover, .file-tab-edit-item:hover {
     background-color: var(--tab-inactive-hover);
     color: var(--text-primary);
   }
 
-  .file-tab-btn.tab-active {
+  .file-tab-btn.tab-active, .file-tab-edit-item.tab-active {
     background-color: var(--tab-active-bg) !important;
     color: #3b82f6 !important;
     border-top-color: #3b82f6 !important;
     font-weight: 600;
-  }
-
-  .file-tab-edit-item {
-    border-top: 2px solid transparent;
-    border-right: 1px solid var(--border-color);
-    background: transparent;
-    transition: all 0.15s ease;
-  }
-
-  .file-tab-edit-item:hover {
-    background-color: var(--tab-inactive-hover);
-  }
-
-  .file-tab-edit-item.tab-active {
-    background-color: var(--tab-active-bg) !important;
-    border-top-color: #3b82f6 !important;
   }
 
   .file-tab-edit-item.tab-active input {
     color: #3b82f6 !important;
     font-weight: 600;
+    background-color: rgba(59, 130, 246, 0.08);
+    border-radius: 3px;
+  }
+
+  /* Tab 上的编辑状态小方块指示器 */
+  .tab-edit-square {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    background-color: #3b82f6;
+    border-radius: 1.5px;
+    flex-shrink: 0;
+    box-shadow: 0 0 4px rgba(59, 130, 246, 0.6);
   }
 
   /* 滚动条美化 */
@@ -399,7 +397,7 @@ const HTML = `<!DOCTYPE html>
         <button class="pill-btn" data-lang="ja">日本語</button>
       </span>
 
-      <!-- 深色 / 浅色 模式切换按钮 (正圆且居中) -->
+      <!-- 深色 / 浅色 模式切换按钮 -->
       <button id="theme-toggle-btn" class="w-7 h-7 rounded-full theme-bg-input theme-text-secondary hover:theme-text-primary transition-colors flex items-center justify-center shrink-0" title="切换深色/浅色模式">
         <svg id="theme-icon-sun" class="w-4 h-4 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
         <svg id="theme-icon-moon" class="w-4 h-4 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
@@ -441,23 +439,23 @@ const HTML = `<!DOCTYPE html>
       <div id="gist-content" class="flex-1 flex flex-col overflow-hidden hidden relative">
         <div id="saving-overlay" class="absolute inset-0 z-20 flex items-center justify-center hidden" style="background-color: var(--modal-mask);">
           <div class="flex flex-col items-center gap-3">
-            <svg class="spinner w-8 h-8 text-blue-400" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"/></svg>
+            <svg class="animate-spin w-8 h-8 text-blue-400" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"/></svg>
             <span class="text-sm text-gray-200" data-i18n="overlay.saving">正在保存...</span>
           </div>
         </div>
         <div id="loading-overlay" class="absolute inset-0 z-20 flex items-center justify-center hidden" style="background-color: var(--modal-mask);">
           <div class="flex flex-col items-center gap-3">
-            <svg class="spinner w-8 h-8 text-blue-400" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"/></svg>
+            <svg class="animate-spin w-8 h-8 text-blue-400" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"/></svg>
             <span class="text-sm text-gray-200" data-i18n="overlay.loading">正在加载...</span>
           </div>
         </div>
 
-        <div class="flex items-center justify-between px-4 py-2 border-b theme-border theme-bg-surface shrink-0">
-          <div>
-            <h2 id="gist-title" class="text-sm font-semibold theme-text-primary"></h2>
-            <p id="gist-meta" class="text-xs theme-text-muted mt-0.5"></p>
+        <div class="flex items-center justify-between px-4 py-2 border-b theme-border theme-bg-surface shrink-0 gap-4">
+          <div class="flex-1 min-w-0">
+            <h2 id="gist-title" class="text-sm font-semibold theme-text-primary truncate"></h2>
+            <p id="gist-meta" class="text-xs theme-text-muted mt-0.5 truncate"></p>
           </div>
-          <div class="flex items-center gap-2">
+          <div class="flex items-center gap-2 shrink-0">
             <!-- 胶囊样式字号调节器 -->
             <div class="pill-group mr-1">
               <button id="font-decrease-btn" class="pill-btn mono font-medium" data-i18n="[title]fontSize.decrease" title="减小字号">A-</button>
@@ -465,25 +463,41 @@ const HTML = `<!DOCTYPE html>
               <button id="font-increase-btn" class="pill-btn mono font-medium" data-i18n="[title]fontSize.increase" title="增大字号">A+</button>
             </div>
 
+            <!-- 编辑当前 Tab 按钮 -->
             <button id="edit-btn" class="px-3 py-1.5 text-xs theme-bg-input hover:opacity-80 theme-text-primary rounded-md transition-colors flex items-center gap-1">
               <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
               <span data-i18n="editor.edit">编辑</span>
             </button>
-            <button id="delete-btn" class="px-3 py-1.5 text-xs theme-bg-input hover:bg-red-600 hover:text-white theme-text-primary rounded-md transition-colors flex items-center gap-1">
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/></svg>
-              <span data-i18n="editor.delete">删除</span>
-            </button>
+
+            <!-- 保存当前 Tab 按钮 -->
             <button id="save-btn" class="px-3 py-1.5 text-xs bg-blue-600 hover:bg-blue-700 text-white rounded-md transition-colors flex items-center gap-1 hidden">
               <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v11a2 2 0 01-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
               <span data-i18n="editor.save">保存</span>
             </button>
+
+            <!-- 保存全部 Tab 按钮 -->
+            <button id="save-all-btn" class="px-3 py-1.5 text-xs bg-green-600 hover:bg-green-700 text-white rounded-md transition-colors flex items-center gap-1 hidden">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v11a2 2 0 01-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+              <span data-i18n="editor.saveAll">保存全部</span>
+            </button>
+
+            <!-- 取消当前 Tab 编辑按钮 -->
             <button id="cancel-edit-btn" class="px-3 py-1.5 text-xs theme-bg-input hover:opacity-80 theme-text-primary rounded-md transition-colors hidden" data-i18n="editor.cancel">
               取消
             </button>
+
+            <!-- 切换可见性按钮 -->
             <button id="visibility-btn" class="px-2 py-1.5 text-xs theme-bg-input hover:opacity-80 theme-text-primary rounded-md transition-colors hidden" data-i18n="[title]editor.toggleVisibility" title="切换可见性">
               <svg id="visibility-icon-lock" class="w-3.5 h-3.5 text-yellow-500" fill="currentColor" viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1s3.1 1.39 3.1 3.1v2z"/></svg>
               <svg id="visibility-icon-globe" class="w-3.5 h-3.5 theme-text-muted hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
             </button>
+
+            <!-- 删除整个 Gist 按钮 -->
+            <button id="delete-btn" class="px-3 py-1.5 text-xs theme-bg-input hover:bg-red-600 hover:text-white theme-text-primary rounded-md transition-colors flex items-center gap-1">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/></svg>
+              <span data-i18n="editor.delete">删除</span>
+            </button>
+
             <a id="gist-link" href="#" target="_blank" class="px-3 py-1.5 text-xs theme-text-muted hover:theme-text-primary transition-colors flex items-center gap-1">
               <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
               <span data-i18n="editor.github">GitHub</span>
@@ -492,7 +506,7 @@ const HTML = `<!DOCTYPE html>
         </div>
 
         <!-- 选项卡展示区 -->
-        <div id="file-tabs" class="flex gap-0 px-2 border-b theme-border shrink-0 overflow-x-auto"></div>
+        <div id="file-tabs" class="flex items-center gap-0 px-2 border-b theme-border shrink-0 overflow-x-auto"></div>
         <div id="editor-area" class="flex-1 overflow-hidden flex flex-col"></div>
 
         <div id="comments-section" class="border-t theme-border theme-bg-surface shrink-0" style="max-height: 40%;">
@@ -539,14 +553,14 @@ var RES={
     "nav":{"appName":"Gist Manager","refresh":"刷新","changeToken":"更换Token"},
     "sidebar":{"searchPlaceholder":"搜索 Gist...","new":"新建","loading":"加载中...","notFound":"没有找到 Gist"},
     "emptyState":{"hint":"选择左侧的 Gist 查看内容","loadFailed":"加载失败: {{message}}"},
-    "editor":{"edit":"编辑","delete":"删除","save":"保存","saving":"保存中...","cancel":"取消","toggleVisibility":"切换可见性","github":"GitHub"},
+    "editor":{"edit":"编辑","delete":"删除","save":"保存","saveAll":"保存全部","saving":"保存中...","cancel":"取消","toggleVisibility":"切换可见性","github":"GitHub"},
     "fontSize":{"decrease":"减小字号","increase":"增大字号","reset":"重置字号 (14px)"},
     "gistMeta":{"descPlaceholder":"Gist 描述","unsaved":"未保存的 Gist","created":"创建于","updated":"更新于","noDesc":"(无描述)","newGist":"(新建 Gist)","unsavedBadge":"未保存"},
     "files":{"deleteFile":"删除文件","addFile":"添加文件"},
     "viewer":{"truncated":"⚠ 此文件内容被截断，编辑并保存可能丢失数据","lines":"行"},
     "overlay":{"saving":"正在保存...","loading":"正在加载..."},
     "comments":{"title":"评论","placeholder":"写评论...","submit":"提交评论","saveFirst":"保存后才可以评论","noComments":"暂无评论","enterContent":"请输入评论内容","posted":"评论已提交","postFailed":"评论失败: {{message}}"},
-    "toast":{"loadFailed":"加载 Gist 失败: {{message}}","filenameEmpty":"文件名不能为空","fileContentEmpty":"文件 \\\"{{name}}\\\" 内容不能为空","gistCreated":"Gist 已创建","gistSaved":"Gist 已保存","saveFailed":"保存失败: {{message}}"},
+    "toast":{"loadFailed":"加载 Gist 失败: {{message}}","filenameEmpty":"文件名不能为空","filenameDuplicate":"文件名 \\\"{{name}}\\\" 已存在","fileContentEmpty":"文件 \\\"{{name}}\\\" 内容不能为空","gistCreated":"Gist 已创建","gistSaved":"已保存","saveFailed":"保存失败: {{message}}"},
     "delete":{"confirmTitle":"确认删除此gist？","confirmText":"确认","cancelText":"取消","deleting":"删除中...","deleteFailed":"删除失败: {{message}}"},
     "lang":{"zh-CN":"中文","en":"English","ja":"日本語"}
   },
@@ -556,14 +570,14 @@ var RES={
     "nav":{"appName":"Gist Manager","refresh":"Refresh","changeToken":"Change Token"},
     "sidebar":{"searchPlaceholder":"Search Gists...","new":"New","loading":"Loading...","notFound":"No Gists found"},
     "emptyState":{"hint":"Select a Gist from the left to view","loadFailed":"Load failed: {{message}}"},
-    "editor":{"edit":"Edit","delete":"Delete","save":"Save","saving":"Saving...","cancel":"Cancel","toggleVisibility":"Toggle visibility","github":"GitHub"},
+    "editor":{"edit":"Edit","delete":"Delete","save":"Save","saveAll":"Save All","saving":"Saving...","cancel":"Cancel","toggleVisibility":"Toggle visibility","github":"GitHub"},
     "fontSize":{"decrease":"Decrease font size","increase":"Increase font size","reset":"Reset font size (14px)"},
     "gistMeta":{"descPlaceholder":"Gist description","unsaved":"Unsaved Gist","created":"Created","updated":"Updated","noDesc":"(no description)","newGist":"(New Gist)","unsavedBadge":"Unsaved"},
     "files":{"deleteFile":"Delete file","addFile":"Add file"},
     "viewer":{"truncated":"⚠ File content is truncated. Editing and saving may lose data.","lines":"lines"},
     "overlay":{"saving":"Saving...","loading":"Loading..."},
     "comments":{"title":"Comments","placeholder":"Write a comment...","submit":"Submit Comment","saveFirst":"Save before commenting","noComments":"No comments yet","enterContent":"Please enter a comment","posted":"Comment posted","postFailed":"Comment failed: {{message}}"},
-    "toast":{"loadFailed":"Failed to load Gist: {{message}}","filenameEmpty":"Filename cannot be empty","fileContentEmpty":"File \\\"{{name}}\\\" content cannot be empty","gistCreated":"Gist created","gistSaved":"Gist saved","saveFailed":"Save failed: {{message}}"},
+    "toast":{"loadFailed":"Failed to load Gist: {{message}}","filenameEmpty":"Filename cannot be empty","filenameDuplicate":"Filename \\\"{{name}}\\\" already exists","fileContentEmpty":"File \\\"{{name}}\\\" content cannot be empty","gistCreated":"Gist created","gistSaved":"Saved","saveFailed":"Save failed: {{message}}"},
     "delete":{"confirmTitle":"Confirm delete this gist?","confirmText":"Confirm","cancelText":"Cancel","deleting":"Deleting...","deleteFailed":"Delete failed: {{message}}"},
     "lang":{"zh-CN":"中文","en":"English","ja":"日本語"}
   },
@@ -573,14 +587,14 @@ var RES={
     "nav":{"appName":"Gist Manager","refresh":"更新","changeToken":"トークン変更"},
     "sidebar":{"searchPlaceholder":"Gistを検索...","new":"新規","loading":"読み込み中...","notFound":"Gistが見つかりません"},
     "emptyState":{"hint":"左側からGistを選択して表示","loadFailed":"読み込み失敗: {{message}}"},
-    "editor":{"edit":"編集","delete":"削除","save":"保存","saving":"保存中...","cancel":"キャンセル","toggleVisibility":"公開設定切り替え","github":"GitHub"},
+    "editor":{"edit":"編集","delete":"削除","save":"保存","saveAll":"すべて保存","saving":"保存中...","cancel":"キャンセル","toggleVisibility":"公開設定切り替え","github":"GitHub"},
     "fontSize":{"decrease":"文字サイズ縮小","increase":"文字サイズ拡大","reset":"文字サイズ初期化 (14px)"},
     "gistMeta":{"descPlaceholder":"Gistの説明","unsaved":"未保存のGist","created":"作成日","updated":"更新日","noDesc":"(説明なし)","newGist":"(新規Gist)","unsavedBadge":"未保存"},
     "files":{"deleteFile":"ファイルを削除","addFile":"ファイルを追加"},
     "viewer":{"truncated":"⚠ ファイルの内容が切り詰められています。編集して保存するとデータが失われる可能性があります","lines":"行"},
     "overlay":{"saving":"保存中...","loading":"読み込み中..."},
     "comments":{"title":"コメント","placeholder":"コメントを書く...","submit":"コメントを送信","saveFirst":"保存後にコメントできます","noComments":"まだコメントはありません","enterContent":"コメントを入力してください","posted":"コメントを投稿しました","postFailed":"コメント失敗: {{message}}"},
-    "toast":{"loadFailed":"Gistの読み込みに失敗: {{message}}","filenameEmpty":"ファイル名を空にすることはできません","fileContentEmpty":"ファイル \\\"{{name}}\\\" の内容を空にすることはできません","gistCreated":"Gistを作成しました","gistSaved":"Gistを保存しました","saveFailed":"保存失敗: {{message}}"},
+    "toast":{"loadFailed":"Gistの読み込みに失敗: {{message}}","filenameEmpty":"ファイル名を空にすることはできません","filenameDuplicate":"ファイル名 \\\"{{name}}\\\" は既に存在します","fileContentEmpty":"ファイル \\\"{{name}}\\\" の内容を空にすることはできません","gistCreated":"Gistを作成しました","gistSaved":"保存しました","saveFailed":"保存失敗: {{message}}"},
     "delete":{"confirmTitle":"このGistを削除しますか？","confirmText":"確認","cancelText":"キャンセル","deleting":"削除中...","deleteFailed":"削除失敗: {{message}}"},
     "lang":{"zh-CN":"中文","en":"English","ja":"日本語"}
   }
@@ -625,6 +639,7 @@ applyTranslations();
   const editBtn = $('#edit-btn');
   const deleteBtn = $('#delete-btn');
   const saveBtn = $('#save-btn');
+  const saveAllBtn = $('#save-all-btn');
   const cancelEditBtn = $('#cancel-edit-btn');
   const visibilityBtn = $('#visibility-btn');
   const deleteModal = $('#delete-modal');
@@ -660,15 +675,49 @@ applyTranslations();
   const hljsThemeLink = $('#hljs-theme');
 
   let gists = [];
+  let allGists = [];
   let selectedGist = null;
   let selectedGistDetail = null;
-  let isEditing = false;
-  let editContent = {};
-  let editFileNames = [];
-  let editPublic = false;
-  let activeFileName = null;
-  let allGists = [];
   let rememberedUserData = null;
+
+  /* ── 多标签编辑器核心状态 ── */
+  let editingTabs = new Set(); // 记录当前处于编辑模式的文件名 (currentName)
+  let editContent = {};        // 记录编辑中的文本内容: currentName -> content
+  let originalNames = {};      // 记录文件名映射: currentName -> 原始文件名 (新建文件则为 null)
+  let deletedOrigFiles = new Set(); // 记录在编辑过程中被删除的原始文件名
+  let editFileNames = [];      // 当前 Tab 顺序列表
+  let editDescription = '';    // 编辑中的 Gist 描述
+  let editPublic = false;      // 编辑中的可见性
+  let activeFileName = null;   // 当前激活显示的 Tab 文件名
+
+  function hasAnyEditing() {
+    return editingTabs.size > 0 || deletedOrigFiles.size > 0 || (selectedGistDetail && selectedGistDetail.isNew);
+  }
+
+  function isTabEditing(name) {
+    return editingTabs.has(name);
+  }
+
+  function initGistState(g) {
+    editingTabs.clear();
+    deletedOrigFiles.clear();
+    editContent = {};
+    originalNames = {};
+    editFileNames = Object.keys(g.files);
+    editDescription = g.description || '';
+    editPublic = !!g.public;
+
+    for (var name in g.files) {
+      editContent[name] = g.files[name].content;
+      originalNames[name] = g.isNew ? null : name;
+      if (g.isNew) {
+        editingTabs.add(name);
+      }
+    }
+    if (!activeFileName || editFileNames.indexOf(activeFileName) === -1) {
+      activeFileName = editFileNames[0] || null;
+    }
+  }
 
   /* ── 字号管理 ── */
   let currentFontSize = parseInt(localStorage.getItem('gist_font_size'), 10) || 14;
@@ -678,7 +727,6 @@ applyTranslations();
     localStorage.setItem('gist_font_size', currentFontSize);
     if (fontSizeVal) fontSizeVal.textContent = currentFontSize;
 
-    // 同步更新所有代码展示层与编辑层样式
     const els = editorArea.querySelectorAll('pre, textarea.code-editor, .code-backdrop code');
     els.forEach(el => {
       el.style.fontSize = currentFontSize + 'px';
@@ -737,8 +785,8 @@ applyTranslations();
       'py': 'python', 'python': 'python', 'sql': 'sql', 'html': 'xml', 'xml': 'xml', 'css': 'css'
     };
 
-    if (filename.toLowerCase().indexOf('nginx') !== -1) return 'nginx';
-    if (filename.toLowerCase() === '.bashrc' || filename.toLowerCase() === '.zshrc') return 'bash';
+    if ((filename || '').toLowerCase().indexOf('nginx') !== -1) return 'nginx';
+    if ((filename || '').toLowerCase() === '.bashrc' || (filename || '').toLowerCase() === '.zshrc') return 'bash';
 
     var detected = extMap[ext] || extMap[l] || l;
     if (detected && hljs.getLanguage(detected)) {
@@ -747,7 +795,6 @@ applyTranslations();
     return '';
   }
 
-  // 高亮一段文本并返回 HTML
   function getHighlightedCodeHtml(text, lang) {
     if (!window.hljs) return escHtml(text);
     if (lang && hljs.getLanguage(lang)) {
@@ -763,20 +810,14 @@ applyTranslations();
   }
 
   function setSaving(active) {
+    const btns = [saveBtn, saveAllBtn, cancelEditBtn, editBtn];
     if (active) {
-      saveBtn.disabled = true;
-      saveBtn.innerHTML = '<svg class="spinner w-3.5 h-3.5" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"/><\/svg> ' + I18N.t('editor.saving');
-      saveBtn.classList.add('opacity-70', 'cursor-not-allowed');
-      cancelEditBtn.disabled = true;
-      cancelEditBtn.classList.add('opacity-50', 'cursor-not-allowed');
+      btns.forEach(b => { b.disabled = true; b.classList.add('opacity-50', 'cursor-not-allowed'); });
       savingOverlay.classList.remove('hidden');
     } else {
-      saveBtn.disabled = false;
-      saveBtn.innerHTML = '<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v11a2 2 0 01-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/><\/svg> ' + I18N.t('editor.save');
-      saveBtn.classList.remove('opacity-70', 'cursor-not-allowed');
-      cancelEditBtn.disabled = false;
-      cancelEditBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+      btns.forEach(b => { b.disabled = false; b.classList.remove('opacity-50', 'cursor-not-allowed'); });
       savingOverlay.classList.add('hidden');
+      updateHeaderButtons();
     }
   }
 
@@ -902,7 +943,7 @@ applyTranslations();
     allGists = [];
     selectedGist = null;
     selectedGistDetail = null;
-    isEditing = false;
+    editingTabs.clear();
     tokenModal.classList.remove('hidden');
     app.classList.add('hidden');
     tokenInput.value = '';
@@ -956,6 +997,11 @@ applyTranslations();
   });
 
   newGistBtn.addEventListener('click', function() {
+    var existingNew = allGists.find(function(x) { return x.id === '__new__'; });
+    if (existingNew) {
+      selectGist('__new__');
+      return;
+    }
     var draft = {
       isNew: true, id: '__new__', description: '', public: false, html_url: '',
       created_at: new Date().toISOString(), updated_at: new Date().toISOString(),
@@ -963,19 +1009,12 @@ applyTranslations();
     };
     selectedGistDetail = draft;
     selectedGist = draft;
-    isEditing = true;
-    editContent = {};
-    editFileNames = Object.keys(draft.files);
-    editPublic = false;
-    for (var name in draft.files) { editContent[name] = draft.files[name].content; }
+    activeFileName = 'new-file.txt';
+    initGistState(draft);
+
     allGists.unshift(draft);
     if (searchInput.value.trim()) { gists.unshift(draft); } else { gists = allGists; }
     renderGistList();
-    editBtn.classList.add('hidden'); deleteBtn.classList.add('hidden');
-    saveBtn.classList.remove('hidden');
-    cancelEditBtn.classList.remove('hidden');
-    visibilityBtn.classList.remove('hidden');
-    updateVisibilityIcon();
     renderContent();
     commentsList.innerHTML = '<div class="p-4 text-xs theme-text-muted text-center">' + I18N.t('comments.saveFirst') + '</div>';
     commentCount.textContent = '0';
@@ -985,24 +1024,27 @@ applyTranslations();
     gistList.querySelectorAll('.gist-item').forEach(function(el) { el.classList.remove('active'); });
     var target = gistList.querySelector('[data-id="' + id + '"]');
     if (target) target.classList.add('active');
+
     var draft = allGists.find(function(g) { return g.id === id && g.isNew; });
     if (draft) {
-      selectedGistDetail = draft; selectedGist = draft;
-      isEditing = true; editContent = {}; editFileNames = Object.keys(draft.files); editPublic = false;
-      for (var name in draft.files) { editContent[name] = draft.files[name].content; }
-      editBtn.classList.add('hidden'); deleteBtn.classList.add('hidden'); saveBtn.classList.remove('hidden'); cancelEditBtn.classList.remove('hidden');
-      visibilityBtn.classList.remove('hidden'); updateVisibilityIcon(); renderContent();
+      selectedGistDetail = draft;
+      selectedGist = draft;
+      activeFileName = Object.keys(draft.files)[0];
+      initGistState(draft);
+      renderContent();
       commentsList.innerHTML = '<div class="p-4 text-xs theme-text-muted text-center">' + I18N.t('comments.saveFirst') + '</div>';
       commentCount.textContent = '0';
       return;
     }
-    emptyState.classList.add('hidden'); gistContent.classList.remove('hidden'); loadingOverlay.classList.remove('hidden');
+
+    emptyState.classList.add('hidden');
+    gistContent.classList.remove('hidden');
+    loadingOverlay.classList.remove('hidden');
     try {
       selectedGistDetail = await api('/gists/' + id);
       selectedGist = selectedGistDetail;
-      isEditing = false;
-      editBtn.classList.remove('hidden'); deleteBtn.classList.remove('hidden'); saveBtn.classList.add('hidden'); cancelEditBtn.classList.add('hidden');
-      visibilityBtn.classList.add('hidden');
+      activeFileName = Object.keys(selectedGistDetail.files)[0] || null;
+      initGistState(selectedGistDetail);
       renderContent();
       loadComments();
       loadingOverlay.classList.add('hidden');
@@ -1015,90 +1057,171 @@ applyTranslations();
     }
   }
 
-  function renderContent() {
+  /* ── 根据当前各 Tab 状态更新顶部操作栏按钮 ── */
+  function updateHeaderButtons() {
     var g = selectedGistDetail;
     if (!g) return;
-    emptyState.classList.add('hidden'); gistContent.classList.remove('hidden');
-    var desc = g.description || (g.isNew ? I18N.t('gistMeta.newGist') : I18N.t('gistMeta.noDesc'));
-    if (isEditing) {
-      gistTitle.innerHTML = '<input id="desc-input" class="w-full theme-bg-input border theme-border rounded px-2 py-1 text-sm font-semibold theme-text-primary focus:outline-none focus:ring-1 focus:ring-blue-500" value="' + escAttr(g.description || '') + '" placeholder="' + I18N.t('gistMeta.descPlaceholder') + '">';
+    var activeEditing = isTabEditing(activeFileName);
+    var anyEditing = hasAnyEditing();
+
+    // 编辑按钮：仅当当前激活的 Tab 处于只读模式时显示
+    if (activeEditing) {
+      editBtn.classList.add('hidden');
+    } else {
+      editBtn.classList.remove('hidden');
+    }
+
+    // 保存按钮（保存当前 Tab）：当前 Tab 处于编辑模式且不是未保存的全新 Gist 时显示
+    if (activeEditing && !g.isNew) {
+      saveBtn.classList.remove('hidden');
+    } else {
+      saveBtn.classList.add('hidden');
+    }
+
+    // 保存全部按钮：当为新建 Gist，或有超过1个 Tab 正在编辑，或有已删除的文件，或当前查看只读 Tab 但后台有其他未保存的编辑 Tab 时显示
+    if (g.isNew || editingTabs.size > 1 || deletedOrigFiles.size > 0 || (editingTabs.size === 1 && !activeEditing)) {
+      saveAllBtn.classList.remove('hidden');
+    } else {
+      saveAllBtn.classList.add('hidden');
+    }
+
+    // 取消按钮：当前 Tab 处于编辑模式，或者有全局未保存改动时显示
+    if (activeEditing || anyEditing) {
+      cancelEditBtn.classList.remove('hidden');
+    } else {
+      cancelEditBtn.classList.add('hidden');
+    }
+
+    // 可见性与删除按钮
+    if (anyEditing) {
+      visibilityBtn.classList.remove('hidden');
+      updateVisibilityIcon();
+    } else {
+      visibilityBtn.classList.add('hidden');
+    }
+
+    if (g.isNew) {
+      deleteBtn.classList.add('hidden');
+    } else {
+      deleteBtn.classList.remove('hidden');
+    }
+  }
+
+  /* ── 仅重绘文件选项卡栏（不重建编辑器 DOM，保持焦点与流畅切换） ── */
+  function renderTabs() {
+    var g = selectedGistDetail;
+    if (!g) return;
+
+    fileTabs.innerHTML = editFileNames.map(function(name) {
+      var isAct = (name === activeFileName);
+      var isEd = isTabEditing(name);
+      var activeClass = isAct ? ' tab-active' : '';
+      // 编辑模式下显示蓝色小方块指示器
+      var squareHtml = isEd ? '<span class="tab-edit-square" title="Editing"></span>' : '';
+
+      if (isEd) {
+        // 只有当前激活的编辑 Tab 才渲染为 input，非激活的编辑 Tab 渲染为普通 span，彻底解决点击无法切换 Tab 的问题
+        var namePart = isAct
+          ? '<input class="file-name-input bg-transparent text-xs mono px-1.5 py-0.5 outline-none theme-text-primary w-28" value="' + escAttr(name) + '" data-file="' + escAttr(name) + '" spellcheck="false">'
+          : '<span class="px-1 py-0.5 select-none">' + escHtml(name) + '</span>';
+
+        var delBtnHtml = editFileNames.length > 1
+          ? '<button class="delete-file-btn theme-text-muted hover:text-red-500 px-1 ml-0.5 rounded" data-file="' + escAttr(name) + '" title="' + I18N.t('files.deleteFile') + '">&times;</button>'
+          : '';
+
+        return '<div class="file-tab-edit-item flex items-center gap-1.5 shrink-0 px-3 py-1.5 text-xs mono cursor-pointer' + activeClass + '" data-file="' + escAttr(name) + '">' +
+          squareHtml + namePart + delBtnHtml +
+        '</div>';
+      } else {
+        return '<button class="file-tab-btn flex items-center gap-1.5 px-4 py-2 text-xs mono transition-colors shrink-0 cursor-pointer' + activeClass + '" data-file="' + escAttr(name) + '">' +
+          squareHtml + '<span>' + escHtml(name) + '</span>' +
+        '</button>';
+      }
+    }).join('') + '<button id="add-file-btn" class="shrink-0 px-3 py-1.5 text-xs font-semibold theme-text-muted hover:theme-text-primary transition-colors cursor-pointer" title="' + I18N.t('files.addFile') + '">+</button>';
+  }
+
+  function renderHeaderMeta() {
+    var g = selectedGistDetail;
+    if (!g) return;
+    var anyEditing = hasAnyEditing();
+    var desc = editDescription || (g.isNew ? I18N.t('gistMeta.newGist') : I18N.t('gistMeta.noDesc'));
+
+    if (anyEditing) {
+      var existingInput = document.getElementById('desc-input');
+      if (!existingInput) {
+        gistTitle.innerHTML = '<input id="desc-input" class="w-full theme-bg-input border theme-border rounded px-2 py-1 text-sm font-semibold theme-text-primary focus:outline-none focus:ring-1 focus:ring-blue-500" value="' + escAttr(editDescription) + '" placeholder="' + I18N.t('gistMeta.descPlaceholder') + '">';
+        document.getElementById('desc-input').addEventListener('input', function(e) {
+          editDescription = e.target.value;
+        });
+      } else if (document.activeElement !== existingInput) {
+        existingInput.value = editDescription;
+      }
     } else {
       gistTitle.textContent = desc;
     }
+
     if (g.isNew) {
-      gistMeta.textContent = I18N.t('gistMeta.unsaved'); gistLink.href = '#'; gistLink.classList.add('hidden');
+      gistMeta.textContent = I18N.t('gistMeta.unsaved');
+      gistLink.href = '#';
+      gistLink.classList.add('hidden');
     } else {
       var locale = I18N.lang || 'zh-CN';
       gistMeta.textContent = I18N.t('gistMeta.created') + ' ' + new Date(g.created_at).toLocaleString(locale) + ' · ' + I18N.t('gistMeta.updated') + ' ' + new Date(g.updated_at).toLocaleString(locale);
-      gistLink.href = g.html_url; gistLink.classList.remove('hidden');
-    }
-    var files = g.files;
-    var fileNames = isEditing ? editFileNames : Object.keys(files);
-    var renderName = (activeFileName && fileNames.indexOf(activeFileName) !== -1) ? activeFileName : fileNames[0];
-
-    // 渲染选项卡结构
-    if (isEditing) {
-      fileTabs.innerHTML = fileNames.map(function(name) {
-        var active = name === renderName ? ' tab-active' : '';
-        return '<div class="file-tab-edit-item flex items-center gap-1 shrink-0 px-2 py-1 text-xs mono cursor-pointer' + active + '" data-file="' + escAttr(name) + '"><input class="file-name-input bg-transparent text-xs mono px-1 py-1 outline-none theme-text-primary w-28" value="' + escAttr(name) + '" data-file="' + escAttr(name) + '" spellcheck="false">' + (fileNames.length > 1 ? '<button class="delete-file-btn theme-text-muted hover:text-red-500 px-1" data-file="' + escAttr(name) + '" title="' + I18N.t('files.deleteFile') + '">&times;</button>' : '') + '</div>';
-      }).join('') + '<button id="add-file-btn" class="shrink-0 px-3 py-1.5 text-xs font-semibold theme-text-muted hover:theme-text-primary transition-colors" title="' + I18N.t('files.addFile') + '">+</button>';
-    } else {
-      fileTabs.innerHTML = fileNames.map(function(name) {
-        var active = name === renderName ? ' tab-active' : '';
-        return '<button class="file-tab-btn px-4 py-2 text-xs mono transition-colors shrink-0' + active + '" data-file="' + escAttr(name) + '">' + escHtml(name) + '</button>';
-      }).join('');
-    }
-
-    var fileData = g.files[renderName] || { content: '', language: 'Text', truncated: false };
-    renderFileViewer(renderName, fileData);
-    highlightActiveTab(renderName);
-  }
-
-  function highlightActiveTab(name) {
-    activeFileName = name;
-    if (isEditing) {
-      fileTabs.querySelectorAll('.file-tab-edit-item').forEach(function(el) {
-        if (el.dataset.file === name) {
-          el.classList.add('tab-active');
-        } else {
-          el.classList.remove('tab-active');
-        }
-      });
-    } else {
-      fileTabs.querySelectorAll('.file-tab-btn').forEach(function(t) {
-        if (t.dataset.file === name) {
-          t.classList.add('tab-active');
-        } else {
-          t.classList.remove('tab-active');
-        }
-      });
+      gistLink.href = g.html_url;
+      gistLink.classList.remove('hidden');
     }
   }
 
-  function switchFile(name) {
+  function renderContent() {
     var g = selectedGistDetail;
     if (!g) return;
-    var file = g.files[name];
-    if (!file) return;
-    renderFileViewer(name, file);
-    highlightActiveTab(name);
+    emptyState.classList.add('hidden');
+    gistContent.classList.remove('hidden');
+
+    if (!activeFileName || editFileNames.indexOf(activeFileName) === -1) {
+      activeFileName = editFileNames[0] || null;
+    }
+
+    renderHeaderMeta();
+    updateHeaderButtons();
+    renderTabs();
+
+    if (activeFileName) {
+      var origName = originalNames[activeFileName];
+      var fileData = (origName && g.files[origName]) ? g.files[origName] : { content: '', language: null, truncated: false };
+      renderFileViewer(activeFileName, fileData);
+    } else {
+      editorArea.innerHTML = '';
+    }
   }
 
-  /* ── 核心：渲染代码编辑器/查看器 (支持编辑模式实时语法高亮) ── */
-  function renderFileViewer(name, file) {
-    var content = isEditing ? (editContent[name] !== undefined ? editContent[name] : file.content) : file.content;
-    var truncated = file.truncated;
-    var fontStyle = 'font-size: ' + currentFontSize + 'px; line-height: ' + (currentFontSize * 1.55) + 'px;';
-    var hlLang = detectHljsLanguage(name, file.language);
-    var langClass = hlLang ? 'language-' + hlLang : '';
-    var displayLang = file.language || (hlLang ? hlLang.toUpperCase() : 'PLAINTEXT');
+  /* ── 切换 Tab ── */
+  function switchTab(targetName) {
+    if (!selectedGistDetail || targetName === activeFileName) return;
+    // 保存当前正在编辑的文本内容到状态字典
+    var curTa = editorArea.querySelector('textarea.code-editor');
+    if (curTa && curTa.dataset.file) {
+      editContent[curTa.dataset.file] = curTa.value;
+    }
+    activeFileName = targetName;
+    renderContent();
+  }
 
-    if (isEditing) {
-      // 编辑模式：双层覆盖同步架构
+  /* ── 渲染代码编辑器/查看器 (根据当前 Tab 独立判断是否处于编辑模式) ── */
+  function renderFileViewer(name, file) {
+    var tabIsEditing = isTabEditing(name);
+    var content = editContent[name] !== undefined ? editContent[name] : (file ? file.content : '');
+    var truncated = file && file.truncated;
+    var fontStyle = 'font-size: ' + currentFontSize + 'px; line-height: ' + (currentFontSize * 1.55) + 'px;';
+    var hlLang = detectHljsLanguage(name, file ? file.language : '');
+    var langClass = hlLang ? 'language-' + hlLang : '';
+    var displayLang = (file && file.language) || (hlLang ? hlLang.toUpperCase() : 'PLAINTEXT');
+
+    if (tabIsEditing) {
       editorArea.innerHTML = 
         '<div class="flex items-center justify-between px-4 py-1.5 theme-bg-surface border-b theme-border shrink-0">' +
-          '<span class="text-[10px] theme-text-muted uppercase">' + escHtml(displayLang) + '</span>' +
-          '<span class="text-[10px] text-blue-500 font-medium">Editing</span>' +
+          '<span id="editor-lang-label" class="text-[10px] theme-text-muted uppercase">' + escHtml(displayLang) + '</span>' +
+          '<span class="text-[10px] text-blue-500 font-medium flex items-center gap-1.5"><span class="tab-edit-square"></span>Editing</span>' +
         '</div>' +
         '<div class="editor-wrapper">' +
           '<pre class="editor-layer code-backdrop mono leading-relaxed" style="' + fontStyle + '"><code id="editor-highlight-code" class="mono ' + langClass + '"></code></pre>' +
@@ -1110,10 +1233,11 @@ applyTranslations();
       var code = document.getElementById('editor-highlight-code');
 
       function syncHighlight() {
+        var curFile = ta.dataset.file || name;
+        var currentHlLang = detectHljsLanguage(curFile, '');
         var val = ta.value;
-        // 末尾换行补足避免两层光标与文本高度不同步
         if (val[val.length - 1] === '\\n') val += ' ';
-        code.innerHTML = getHighlightedCodeHtml(val, hlLang);
+        code.innerHTML = getHighlightedCodeHtml(val, currentHlLang);
       }
 
       function syncScroll() {
@@ -1122,13 +1246,13 @@ applyTranslations();
       }
 
       ta.addEventListener('input', function() {
-        editContent[name] = ta.value;
+        var curFile = ta.dataset.file;
+        editContent[curFile] = ta.value;
         syncHighlight();
       });
 
       ta.addEventListener('scroll', syncScroll);
 
-      // 友好支持 Tab 键缩进 2 空格
       ta.addEventListener('keydown', function(e) {
         if (e.key === 'Tab') {
           e.preventDefault();
@@ -1136,7 +1260,7 @@ applyTranslations();
           var end = ta.selectionEnd;
           ta.value = ta.value.substring(0, start) + '  ' + ta.value.substring(end);
           ta.selectionStart = ta.selectionEnd = start + 2;
-          editContent[name] = ta.value;
+          editContent[ta.dataset.file] = ta.value;
           syncHighlight();
         }
       });
@@ -1144,7 +1268,6 @@ applyTranslations();
       syncHighlight();
       syncScroll();
     } else {
-      // 查看模式
       var linesCount = content ? content.split('\\n').length : 0;
       editorArea.innerHTML = 
         '<div class="flex items-center justify-between px-4 py-1.5 theme-bg-surface border-b theme-border shrink-0">' +
@@ -1157,18 +1280,322 @@ applyTranslations();
     }
   }
 
+  /* ── 点击“编辑”：将当前激活的 Tab 设为编辑模式 ── */
   editBtn.addEventListener('click', function() {
-    isEditing = true;
-    editContent = {};
     var g = selectedGistDetail;
-    if (!g) return;
-    editFileNames = Object.keys(g.files);
-    editPublic = g.public;
-    for (var name in g.files) { editContent[name] = g.files[name].content; }
-    editBtn.classList.add('hidden'); deleteBtn.classList.add('hidden'); saveBtn.classList.remove('hidden'); cancelEditBtn.classList.remove('hidden');
-    visibilityBtn.classList.remove('hidden'); updateVisibilityIcon(); renderContent();
+    if (!g || !activeFileName) return;
+    editingTabs.add(activeFileName);
+    renderContent();
+    var ta = document.getElementById('active-code-editor');
+    if (ta) ta.focus();
   });
 
+  /* ── 点击“取消”：取消当前 Tab 的编辑状态并还原该文件内容 ── */
+  cancelEditBtn.addEventListener('click', function() {
+    var g = selectedGistDetail;
+    if (!g) return;
+
+    // 如果是未保存的新建 Gist，直接移除草稿
+    if (g.isNew) {
+      allGists = allGists.filter(function(x) { return x.id !== '__new__'; });
+      gists = gists.filter(function(x) { return x.id !== '__new__'; });
+      if (!searchInput.value.trim()) gists = allGists;
+      selectedGistDetail = null;
+      selectedGist = null;
+      editingTabs.clear();
+      renderGistList();
+      resetContent();
+      return;
+    }
+
+    if (activeFileName && isTabEditing(activeFileName)) {
+      var origName = originalNames[activeFileName];
+      if (origName === null) {
+        // 如果是新添加但未保存的 Tab，取消时直接移除该 Tab
+        editingTabs.delete(activeFileName);
+        delete editContent[activeFileName];
+        delete originalNames[activeFileName];
+        editFileNames = editFileNames.filter(function(f) { return f !== activeFileName; });
+        activeFileName = editFileNames[0] || null;
+      } else {
+        // 如果是已有文件，恢复其原始文件名与内容，并退出该 Tab 的编辑模式
+        var origContent = g.files[origName] ? g.files[origName].content : '';
+        editingTabs.delete(activeFileName);
+        if (activeFileName !== origName) {
+          var idx = editFileNames.indexOf(activeFileName);
+          if (idx !== -1) editFileNames[idx] = origName;
+          delete editContent[activeFileName];
+          delete originalNames[activeFileName];
+          activeFileName = origName;
+        }
+        editContent[origName] = origContent;
+        originalNames[origName] = origName;
+      }
+    } else {
+      // 如果当前在只读 Tab 上点击取消（例如曾删除了其他文件），则重置整个 Gist 状态
+      initGistState(g);
+    }
+
+    if (!hasAnyEditing()) {
+      editDescription = g.description || '';
+      editPublic = !!g.public;
+    }
+    renderContent();
+  });
+
+  function updateVisibilityIcon() {
+    if (editPublic) { visibilityLock.classList.add('hidden'); visibilityGlobe.classList.remove('hidden'); }
+    else { visibilityLock.classList.remove('hidden'); visibilityGlobe.classList.add('hidden'); }
+  }
+
+  visibilityBtn.addEventListener('click', function() {
+    editPublic = !editPublic;
+    updateVisibilityIcon();
+  });
+
+  /* ── 保存当前激活的 Tab ── */
+  async function saveCurrentTab() {
+    var g = selectedGistDetail;
+    if (!g || !activeFileName || !isTabEditing(activeFileName)) return;
+    if (g.isNew) {
+      return saveAllTabs();
+    }
+
+    var ta = editorArea.querySelector('textarea.code-editor');
+    if (ta && ta.dataset.file) {
+      editContent[ta.dataset.file] = ta.value;
+    }
+
+    var fn = activeFileName;
+    if (!fn.trim()) { showToast(I18N.t('toast.filenameEmpty'), 'error'); return; }
+    // 检查重名
+    var dupCount = editFileNames.filter(function(x) { return x === fn; }).length;
+    if (dupCount > 1) { showToast(I18N.t('toast.filenameDuplicate', { name: fn }), 'error'); return; }
+    if (!(editContent[fn] || '').trim()) { showToast(I18N.t('toast.fileContentEmpty', { name: fn }), 'error'); return; }
+
+    var filesPayload = {};
+    var origName = originalNames[fn];
+    if (origName && origName !== fn) {
+      // GitHub Gist API 重命名方式或置空原文件名
+      filesPayload[origName] = { filename: fn, content: editContent[fn] };
+    } else {
+      filesPayload[fn] = { content: editContent[fn] };
+    }
+
+    var descInput = document.getElementById('desc-input');
+    var description = descInput ? descInput.value.trim() : editDescription;
+
+    setSaving(true);
+    try {
+      var updated = await api('/gists/' + g.id, {
+        method: 'PATCH',
+        body: JSON.stringify({ description: description, files: filesPayload })
+      });
+      selectedGistDetail = updated;
+      selectedGist = updated;
+
+      // 仅将当前 Tab 标记为已保存（只读），保留其他正在编辑的 Tab 状态
+      editingTabs.delete(fn);
+      originalNames[fn] = fn;
+      if (updated.files[fn]) {
+        editContent[fn] = updated.files[fn].content;
+      }
+
+      setSaving(false);
+      renderContent();
+      loadGists();
+      showToast(I18N.t('toast.gistSaved'), 'success');
+    } catch (e) {
+      setSaving(false);
+      showToast(I18N.t('toast.saveFailed', { message: e.message }), 'error');
+    }
+  }
+
+  /* ── 保存全部 Tab ── */
+  async function saveAllTabs() {
+    var g = selectedGistDetail;
+    if (!g) return;
+
+    var ta = editorArea.querySelector('textarea.code-editor');
+    if (ta && ta.dataset.file) {
+      editContent[ta.dataset.file] = ta.value;
+    }
+
+    var seen = new Set();
+    for (var i = 0; i < editFileNames.length; i++) {
+      var fn = editFileNames[i];
+      if (!fn.trim()) { showToast(I18N.t('toast.filenameEmpty'), 'error'); return; }
+      if (seen.has(fn)) { showToast(I18N.t('toast.filenameDuplicate', { name: fn }), 'error'); return; }
+      seen.add(fn);
+      if (!(editContent[fn] || '').trim()) { showToast(I18N.t('toast.fileContentEmpty', { name: fn }), 'error'); return; }
+    }
+
+    var filesPayload = {};
+    if (g.isNew) {
+      editFileNames.forEach(function(name) {
+        filesPayload[name] = { content: editContent[name] || '' };
+      });
+    } else {
+      deletedOrigFiles.forEach(function(delOrig) {
+        filesPayload[delOrig] = null;
+      });
+      editFileNames.forEach(function(name) {
+        if (isTabEditing(name)) {
+          var orig = originalNames[name];
+          if (orig && orig !== name) {
+            filesPayload[orig] = { filename: name, content: editContent[name] || '' };
+          } else {
+            filesPayload[name] = { content: editContent[name] || '' };
+          }
+        }
+      });
+    }
+
+    var descInput = document.getElementById('desc-input');
+    var description = descInput ? descInput.value.trim() : editDescription;
+
+    setSaving(true);
+    try {
+      if (g.isNew) {
+        var created = await api('/gists', {
+          method: 'POST',
+          body: JSON.stringify({ description: description, public: editPublic, files: filesPayload })
+        });
+        allGists = allGists.filter(function(x) { return x.id !== '__new__'; });
+        gists = gists.filter(function(x) { return x.id !== '__new__'; });
+        allGists.unshift(created);
+        if (searchInput.value.trim()) { gists.unshift(created); } else { gists = allGists; }
+        selectedGistDetail = created;
+        selectedGist = created;
+        initGistState(created);
+        setSaving(false);
+        renderGistList();
+        renderContent();
+        loadComments();
+        showToast(I18N.t('toast.gistCreated'), 'success');
+      } else {
+        var updated = await api('/gists/' + g.id, {
+          method: 'PATCH',
+          body: JSON.stringify({ description: description, files: filesPayload })
+        });
+        selectedGistDetail = updated;
+        selectedGist = updated;
+        initGistState(updated);
+        setSaving(false);
+        renderContent();
+        loadGists();
+        showToast(I18N.t('toast.gistSaved'), 'success');
+      }
+    } catch (e) {
+      setSaving(false);
+      showToast(I18N.t('toast.saveFailed', { message: e.message }), 'error');
+    }
+  }
+
+  saveBtn.addEventListener('click', saveCurrentTab);
+  saveAllBtn.addEventListener('click', saveAllTabs);
+
+  /* ── 选项卡交互：切换、添加文件、删除文件、重命名 ── */
+  fileTabs.addEventListener('click', function(e) {
+    var g = selectedGistDetail;
+    if (!g) return;
+
+    // 1. 添加新文件 Tab（自动进入编辑模式）
+    if (e.target.closest('#add-file-btn')) {
+      var curTa = editorArea.querySelector('textarea.code-editor');
+      if (curTa && curTa.dataset.file) {
+        editContent[curTa.dataset.file] = curTa.value;
+      }
+      var base = 'new-file', newName = base + '.txt', n = 1;
+      while (editFileNames.indexOf(newName) !== -1) { newName = base + '-' + n + '.txt'; n++; }
+      editFileNames.push(newName);
+      editContent[newName] = '';
+      originalNames[newName] = null;
+      editingTabs.add(newName);
+      activeFileName = newName;
+      renderContent();
+      var nameInp = fileTabs.querySelector('.file-name-input');
+      if (nameInp) { nameInp.focus(); nameInp.select(); }
+      return;
+    }
+
+    // 2. 删除某个文件 Tab
+    var delBtn = e.target.closest('.delete-file-btn');
+    if (delBtn) {
+      e.stopPropagation();
+      var name = delBtn.dataset.file;
+      var curTa2 = editorArea.querySelector('textarea.code-editor');
+      if (curTa2 && curTa2.dataset.file && curTa2.dataset.file !== name) {
+        editContent[curTa2.dataset.file] = curTa2.value;
+      }
+      var orig = originalNames[name];
+      if (orig) deletedOrigFiles.add(orig);
+      editingTabs.delete(name);
+      delete editContent[name];
+      delete originalNames[name];
+      editFileNames = editFileNames.filter(function(f) { return f !== name; });
+      if (activeFileName === name) {
+        activeFileName = editFileNames[0] || null;
+      }
+      renderContent();
+      return;
+    }
+
+    // 3. 点击当前已激活的输入框时不触发切换重绘
+    if (e.target.tagName === 'INPUT') return;
+
+    // 4. 点击任意其他 Tab（无论目标 Tab 是编辑态还是只读态）自由切换
+    var tabItem = e.target.closest('[data-file]');
+    if (tabItem && tabItem.dataset.file) {
+      switchTab(tabItem.dataset.file);
+    }
+  });
+
+  // 实时修改当前编辑 Tab 的文件名
+  fileTabs.addEventListener('input', function(e) {
+    if (!e.target.classList.contains('file-name-input')) return;
+    var oldName = e.target.dataset.file;
+    var newName = e.target.value;
+    if (oldName === newName) return;
+
+    var idx = editFileNames.indexOf(oldName);
+    if (idx !== -1) {
+      editFileNames[idx] = newName;
+      e.target.dataset.file = newName;
+
+      if (editContent[oldName] !== undefined) {
+        editContent[newName] = editContent[oldName];
+        delete editContent[oldName];
+      }
+      if (originalNames[oldName] !== undefined) {
+        originalNames[newName] = originalNames[oldName];
+        delete originalNames[oldName];
+      }
+      if (editingTabs.has(oldName)) {
+        editingTabs.delete(oldName);
+        editingTabs.add(newName);
+      }
+      if (activeFileName === oldName) {
+        activeFileName = newName;
+      }
+
+      var curTa = editorArea.querySelector('textarea.code-editor');
+      if (curTa && curTa.dataset.file === oldName) {
+        curTa.dataset.file = newName;
+      }
+      var wrapper = e.target.closest('.file-tab-edit-item');
+      if (wrapper) wrapper.dataset.file = newName;
+      var delBtn = wrapper ? wrapper.querySelector('.delete-file-btn') : null;
+      if (delBtn) delBtn.dataset.file = newName;
+
+      // 根据新文件后缀动态更新语法高亮语言标签
+      var hlLang = detectHljsLanguage(newName, '');
+      var langLabel = document.getElementById('editor-lang-label');
+      if (langLabel) langLabel.textContent = hlLang ? hlLang.toUpperCase() : 'PLAINTEXT';
+    }
+  });
+
+  /* ── 删除整个 Gist ── */
   deleteBtn.addEventListener('click', function() {
     deleteError.classList.add('hidden');
     deleteModal.classList.remove('hidden');
@@ -1199,6 +1626,7 @@ applyTranslations();
       closeDeleteModal();
       selectedGistDetail = null;
       selectedGist = null;
+      editingTabs.clear();
       allGists = allGists.filter(function(x) { return x.id !== g.id; });
       gists = gists.filter(function(x) { return x.id !== g.id; });
       if (!searchInput.value.trim()) gists = allGists;
@@ -1214,162 +1642,10 @@ applyTranslations();
     }
   });
 
-  cancelEditBtn.addEventListener('click', function() {
-    var g = selectedGistDetail;
-    if (g && g.isNew) {
-      allGists = allGists.filter(function(x) { return x.id !== '__new__'; });
-      gists = gists.filter(function(x) { return x.id !== '__new__'; });
-      if (!searchInput.value.trim()) gists = allGists;
-      selectedGistDetail = null; selectedGist = null;
-      isEditing = false; editContent = {};
-      editBtn.classList.remove('hidden'); deleteBtn.classList.remove('hidden'); saveBtn.classList.add('hidden'); cancelEditBtn.classList.add('hidden');
-      visibilityBtn.classList.add('hidden'); renderGistList(); resetContent();
-      return;
-    }
-    isEditing = false; editContent = {}; editFileNames = [];
-    editBtn.classList.remove('hidden'); deleteBtn.classList.remove('hidden'); saveBtn.classList.add('hidden'); cancelEditBtn.classList.add('hidden');
-    visibilityBtn.classList.add('hidden'); renderContent();
-  });
-
-  function updateVisibilityIcon() {
-    if (editPublic) { visibilityLock.classList.add('hidden'); visibilityGlobe.classList.remove('hidden'); }
-    else { visibilityLock.classList.remove('hidden'); visibilityGlobe.classList.add('hidden'); }
-  }
-
-  visibilityBtn.addEventListener('click', function() {
-    editPublic = !editPublic;
-    updateVisibilityIcon();
-  });
-
-  saveBtn.addEventListener('click', async function() {
-    var g = selectedGistDetail;
-    if (!g || saveBtn.disabled) return;
-    var ta = editorArea.querySelector('textarea.code-editor');
-    if (ta && ta.dataset.file) {
-      editContent[ta.dataset.file] = ta.value;
-    }
-    if (isEditing) { collectFileNames(); }
-    for (var i = 0; i < editFileNames.length; i++) {
-      var fn = editFileNames[i];
-      if (!fn.trim()) { showToast(I18N.t('toast.filenameEmpty'), 'error'); return; }
-      if (!(editContent[fn] || '').trim()) { showToast(I18N.t('toast.fileContentEmpty', { name: fn }), 'error'); return; }
-    }
-
-    var files = {};
-    if (g.isNew) {
-      editFileNames.forEach(function(name) { files[name] = { content: editContent[name] || '' }; });
-    } else {
-      Object.keys(g.files).forEach(function(oldName) {
-        if (editFileNames.indexOf(oldName) === -1) { files[oldName] = null; }
-      });
-      editFileNames.forEach(function(name) { files[name] = { content: editContent[name] || '' }; });
-    }
-    var descInput = document.getElementById('desc-input');
-    var description = descInput ? descInput.value.trim() : g.description;
-    setSaving(true);
-    try {
-      if (g.isNew) {
-        var created = await api('/gists', { method: 'POST', body: JSON.stringify({ description: description, public: editPublic, files: files }) });
-        allGists = allGists.filter(function(x) { return x.id !== '__new__'; });
-        gists = gists.filter(function(x) { return x.id !== '__new__'; });
-        allGists.unshift(created);
-        if (searchInput.value.trim()) { gists.unshift(created); } else { gists = allGists; }
-        selectedGistDetail = created; selectedGist = created;
-        isEditing = false; editContent = {}; editFileNames = []; editPublic = false;
-        editBtn.classList.remove('hidden'); deleteBtn.classList.remove('hidden'); saveBtn.classList.add('hidden'); cancelEditBtn.classList.add('hidden');
-        visibilityBtn.classList.add('hidden'); setSaving(false);
-        renderGistList(); renderContent(); loadComments();
-        showToast(I18N.t('toast.gistCreated'), 'success');
-      } else {
-        var updated = await api('/gists/' + g.id, { method: 'PATCH', body: JSON.stringify({ description: description, public: editPublic, files: files }) });
-        selectedGistDetail = updated; selectedGist = updated;
-        isEditing = false; editContent = {}; editFileNames = []; editPublic = false;
-        editBtn.classList.remove('hidden'); deleteBtn.classList.remove('hidden'); saveBtn.classList.add('hidden'); cancelEditBtn.classList.add('hidden');
-        visibilityBtn.classList.add('hidden'); setSaving(false);
-        renderContent(); loadGists();
-        showToast(I18N.t('toast.gistSaved'), 'success');
-      }
-    } catch (e) {
-      setSaving(false);
-      showToast(I18N.t('toast.saveFailed', { message: e.message }), 'error');
-    }
-  });
-
-  fileTabs.addEventListener('click', function(e) {
-    var g = selectedGistDetail;
-    if (!g) return;
-    if (e.target.closest('#add-file-btn')) {
-      var base = 'new-file', newName = base + '.txt', n = 1;
-      while (editFileNames.indexOf(newName) !== -1) { newName = base + '-' + n + '.txt'; n++; }
-      editFileNames.push(newName); editContent[newName] = '';
-      var curTa = editorArea.querySelector('textarea.code-editor');
-      if (curTa) editContent[curTa.dataset.file] = curTa.value;
-      renderContent();
-      renderFileViewer(newName, { content: '', language: 'Text', truncated: false });
-      highlightActiveTab(newName);
-      return;
-    }
-    var delBtn = e.target.closest('.delete-file-btn');
-    if (delBtn) {
-      var name = delBtn.dataset.file;
-      editFileNames = editFileNames.filter(function(f) { return f !== name; });
-      delete editContent[name];
-      var curTa2 = editorArea.querySelector('textarea.code-editor');
-      if (curTa2 && curTa2.dataset.file !== name) editContent[curTa2.dataset.file] = curTa2.value;
-      renderContent();
-      var first = editFileNames[0];
-      if (first) { renderFileViewer(first, { content: editContent[first] || '', language: 'Text', truncated: false }); highlightActiveTab(first); }
-      return;
-    }
-    if (isEditing) {
-      var wrapper = e.target.closest('.file-tab-edit-item');
-      if (!wrapper || e.target.tagName === 'INPUT' || e.target.closest('button')) return;
-      var fname = wrapper.dataset.file;
-      var curTa3 = editorArea.querySelector('textarea.code-editor');
-      if (curTa3) editContent[curTa3.dataset.file] = curTa3.value;
-      renderFileViewer(fname, { content: editContent[fname] || '', language: 'Text', truncated: false });
-      highlightActiveTab(fname);
-    } else {
-      var tab = e.target.closest('.file-tab-btn');
-      if (!tab) return;
-      switchFile(tab.dataset.file);
-    }
-  });
-
-  fileTabs.addEventListener('input', function(e) {
-    if (!e.target.classList.contains('file-name-input')) return;
-    var oldName = e.target.dataset.file;
-    var newName = e.target.value;
-    var idx = editFileNames.indexOf(oldName);
-    if (idx !== -1) {
-      editFileNames[idx] = newName;
-      e.target.dataset.file = newName;
-      if (editContent[oldName] !== undefined) { editContent[newName] = editContent[oldName]; delete editContent[oldName]; }
-      var curTa = editorArea.querySelector('textarea.code-editor');
-      if (curTa && curTa.dataset.file === oldName) { curTa.dataset.file = newName; }
-      var wrapper = e.target.closest('[data-file]');
-      if (wrapper) wrapper.dataset.file = newName;
-      var delBtn = wrapper ? wrapper.querySelector('.delete-file-btn') : null;
-      if (delBtn) delBtn.dataset.file = newName;
-    }
-  });
-
-  function collectFileNames() {
-    document.querySelectorAll('.file-name-input').forEach(function(inp) {
-      var oldName = inp.dataset.file;
-      var newName = inp.value;
-      if (oldName !== newName) {
-        var idx = editFileNames.indexOf(oldName);
-        if (idx !== -1) editFileNames[idx] = newName;
-        if (editContent[oldName] !== undefined) { editContent[newName] = editContent[oldName]; delete editContent[oldName]; }
-        inp.dataset.file = newName;
-      }
-    });
-  }
-
+  /* ── 评论管理 ── */
   async function loadComments() {
     var g = selectedGistDetail;
-    if (!g) return;
+    if (!g || g.isNew) return;
     try {
       var comments = await api('/gists/' + g.id + '/comments?per_page=100');
       renderComments(comments);
@@ -1392,7 +1668,7 @@ applyTranslations();
 
   postCommentBtn.addEventListener('click', async function() {
     var g = selectedGistDetail;
-    if (!g) return;
+    if (!g || g.isNew) return;
     var body = commentInput.value.trim();
     if (!body) { showToast(I18N.t('comments.enterContent'), 'error'); return; }
     try {
